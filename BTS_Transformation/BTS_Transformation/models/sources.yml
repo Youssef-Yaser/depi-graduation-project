@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: BTS_Airline_DB
+    database: BTS_AIRLINE_DB     
+    schema: RAW
+    description: "BTS airline raw data source"
+
+    tables:
+      - name: flights_2024
+        identifier: RAW_FLIGHTS_2024 
+        description: "Historical flights data for 2024"
+
+      - name: flights_2025
+        identifier: RAW_FLIGHTS_2025  
+        description: "Historical flights data for 2025"
+      
+      - name: raw_airport_info
+        identifier: RAW_AIRPORT_INFO
+        description: "Raw airport information data"
+
+      - name: raw_airline_info 
+        identifier: RAW_AIRLINE_INFO
+        description: "Raw airline information data"

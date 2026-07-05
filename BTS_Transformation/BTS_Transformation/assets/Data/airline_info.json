@@ -1,0 +1,197 @@
+[
+  {
+    "Airline_Code": "DL",
+    "Airline_Name": "Delta Air Lines",
+    "Founded_Year": 1925,
+    "Airline_Type": "Mainline",
+    "Corporate_Info": {
+      "Parent_Company": "Delta Air Lines Inc.",
+      "Headquarters_City": "Atlanta",
+      "Headquarters_State": "Georgia"
+    },
+    "Hub_Airport": "ATL",
+    "Airline_Rating": 4.8
+  },
+  {
+    "Airline_Code": "B6",
+    "Airline_Name": "JetBlue Airways",
+    "Founded_Year": 1998,
+    "Airline_Type": "Mainline",
+    "Corporate_Info": {
+      "Parent_Company": "JetBlue Airways Corp.",
+      "Headquarters_City": "Long Island City",
+      "Headquarters_State": "New York"
+    },
+    "Hub_Airport": "JFK",
+    "Airline_Rating": 4.0
+  },
+  {
+    "Airline_Code": "HA",
+    "Airline_Name": "Hawaiian Airlines",
+    "Founded_Year": 1929,
+    "Airline_Type": "Mainline",
+    "Corporate_Info": {
+      "Parent_Company": "Alaska Air Group",
+      "Headquarters_City": "Honolulu",
+      "Headquarters_State": "Hawaii"
+    },
+    "Hub_Airport": "HNL",
+    "Airline_Rating": 4.5
+  },
+  {
+    "Airline_Code": "OH",
+    "Airline_Name": "PSA Airlines",
+    "Founded_Year": 1979,
+    "Airline_Type": "Regional",
+    "Corporate_Info": {
+      "Parent_Company": "American Airlines Group",
+      "Headquarters_City": "Vandalia",
+      "Headquarters_State": "Ohio"
+    },
+    "Hub_Airport": "CLT",
+    "Airline_Rating": 3.8
+  },
+  {
+    "Airline_Code": "AA",
+    "Airline_Name": "American Airlines",
+    "Founded_Year": 1926,
+    "Airline_Type": "Mainline",
+    "Corporate_Info": {
+      "Parent_Company": "American Airlines Group",
+      "Headquarters_City": "Fort Worth",
+      "Headquarters_State": "Texas"
+    },
+    "Hub_Airport": "DFW",
+    "Airline_Rating": 4.1
+  },
+  {
+    "Airline_Code": "AS",
+    "Airline_Name": "Alaska Airlines",
+    "Founded_Year": 1932,
+    "Airline_Type": "Mainline",
+    "Corporate_Info": {
+      "Parent_Company": "Alaska Air Group",
+      "Headquarters_City": "Seattle",
+      "Headquarters_State": "Washington"
+    },
+    "Hub_Airport": "SEA",
+    "Airline_Rating": 4.6
+  },
+  {
+    "Airline_Code": "NK",
+    "Airline_Name": "Spirit Airlines",
+    "Founded_Year": 1980,
+    "Airline_Type": "Mainline (ULCC)",
+    "Corporate_Info": {
+      "Parent_Company": "Spirit Airlines Inc.",
+      "Headquarters_City": "Miramar",
+      "Headquarters_State": "Florida"
+    },
+    "Hub_Airport": "FLL",
+    "Airline_Rating": 3.5
+  },
+  {
+    "Airline_Code": "WN",
+    "Airline_Name": "Southwest Airlines",
+    "Founded_Year": 1967,
+    "Airline_Type": "Mainline",
+    "Corporate_Info": {
+      "Parent_Company": "Southwest Airlines Co.",
+      "Headquarters_City": "Dallas",
+      "Headquarters_State": "Texas"
+    },
+    "Hub_Airport": "DAL",
+    "Airline_Rating": 4.7
+  },
+  {
+    "Airline_Code": "YX",
+    "Airline_Name": "Republic Airways",
+    "Founded_Year": 1974,
+    "Airline_Type": "Regional",
+    "Corporate_Info": {
+      "Parent_Company": "Republic Airways Holdings",
+      "Headquarters_City": "Indianapolis",
+      "Headquarters_State": "Indiana"
+    },
+    "Hub_Airport": "IND",
+    "Airline_Rating": 4.0
+  },
+  {
+    "Airline_Code": "MQ",
+    "Airline_Name": "Envoy Air",
+    "Founded_Year": 1984,
+    "Airline_Type": "Regional",
+    "Corporate_Info": {
+      "Parent_Company": "American Airlines Group",
+      "Headquarters_City": "Fort Worth",
+      "Headquarters_State": "Texas"
+    },
+    "Hub_Airport": "DFW",
+    "Airline_Rating": 3.9
+  },
+  {
+    "Airline_Code": "OO",
+    "Airline_Name": "SkyWest Airlines",
+    "Founded_Year": 1972,
+    "Airline_Type": "Regional",
+    "Corporate_Info": {
+      "Parent_Company": "SkyWest Inc.",
+      "Headquarters_City": "St. George",
+      "Headquarters_State": "Utah"
+    },
+    "Hub_Airport": "SLC",
+    "Airline_Rating": 4.4
+  },
+  {
+    "Airline_Code": "UA",
+    "Airline_Name": "United Airlines",
+    "Founded_Year": 1926,
+    "Airline_Type": "Mainline",
+    "Corporate_Info": {
+      "Parent_Company": "United Airlines Holdings",
+      "Headquarters_City": "Chicago",
+      "Headquarters_State": "Illinois"
+    },
+    "Hub_Airport": "ORD",
+    "Airline_Rating": 4.3
+  },
+  {
+    "Airline_Code": "F9",
+    "Airline_Name": "Frontier Airlines",
+    "Founded_Year": 1994,
+    "Airline_Type": "Mainline (ULCC)",
+    "Corporate_Info": {
+      "Parent_Company": "Frontier Group Holdings",
+      "Headquarters_City": "Denver",
+      "Headquarters_State": "Colorado"
+    },
+    "Hub_Airport": "DEN",
+    "Airline_Rating": 3.7
+  },
+  {
+    "Airline_Code": "G4",
+    "Airline_Name": "Allegiant Air",
+    "Founded_Year": 1997,
+    "Airline_Type": "Mainline (ULCC)",
+    "Corporate_Info": {
+      "Parent_Company": "Allegiant Travel Co.",
+      "Headquarters_City": "Las Vegas",
+      "Headquarters_State": "Nevada"
+    },
+    "Hub_Airport": "LAS",
+    "Airline_Rating": 4.2
+  },
+  {
+    "Airline_Code": "9E",
+    "Airline_Name": "Endeavor Air",
+    "Founded_Year": 1984,
+    "Airline_Type": "Regional",
+    "Corporate_Info": {
+      "Parent_Company": "Delta Air Lines Inc.",
+      "Headquarters_City": "Minneapolis",
+      "Headquarters_State": "Minnesota"
+    },
+    "Hub_Airport": "MSP",
+    "Airline_Rating": 4.0
+  }
+]

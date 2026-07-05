@@ -1,0 +1,606 @@
+version: 2
+
+models:
+
+  # ==========================================
+  # DIMENSION MODELS
+  # Core lookup tables for flights
+  # ==========================================
+
+  - name: dim_date
+    description: "Dimension table for calendar dates used to filter and group flights by time."
+    config:
+      contract:
+        enforced: true
+    tests:
+      - no_future_flight_dates
+    columns:
+      - name: Date_Key
+        description: "Unique surrogate primary key for the date."
+        data_type: integer
+        constraints:
+          - type: not_null
+          - type: primary_key
+            warn_unenforced: false
+        tests:
+          - unique
+          - not_null
+          - dbt_utils.at_least_one:
+              column_name: Date_Key
+
+      - name: FlightDate
+        description: "The actual calendar date of the flight."
+        data_type: date
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+
+      - name: Year
+        description: "The calendar year of the flight (e.g., 2024, 2025)."
+        data_type: integer
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+               values: [2024, 2025]
+
+      - name: Quarter
+        description: "The calendar quarter of the year (1-4)."
+        data_type: integer
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+               values: [1, 2, 3, 4]
+
+      - name: Month
+        description: "The calendar month of the year (1-12)."
+        data_type: integer
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+               values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+      - name: DayOfMonth
+        description: "The day of the month (1-31)."
+        data_type: integer
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 31
+
+      - name: DayOfWeek
+        description: "The day of the week, represented as a number (1-7)."
+        data_type: integer
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [1, 2, 3, 4, 5, 6, 7]
+
+      - name: Day_Name
+        description: "The short name of the day of the week (e.g., Mon, Tue)."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
+      - name: Is_Holiday
+        description: "Boolean flag indicating if the date is a Holiday or Not."
+        data_type: boolean
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: Holiday_Name
+        description: "The name of the holiday if the date is a holiday; otherwise, NO HOLIDAY."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+
+  - name: dim_airport
+    description: "Dimension table containing location and identification details for airports."
+    config:
+      contract:
+        enforced: true
+  
+    tests:
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "LEN(Airport_Code) = 3"
+
+    columns:
+      - name: Airport_Code
+        description: "Standard 3-letter IATA or FAA code for the airport."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - unique
+          - not_null
+
+      - name: Airport_Name
+        description: "The full, official name of the airport."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+
+      - name: City_Name
+        description: "The city where the airport is located."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+
+      - name: State_Name
+        description: "The full name of the state where the airport is located."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+
+      - name: Country
+        description: "The country where the airport is located."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+
+      - name: Airport_Type
+        description: "The classification of the airport size (e.g., large_airport, medium_airport, small_airport)."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['large_airport', 'medium_airport', 'small_airport']
+
+  - name: dim_airline
+    description: "Dimension table for airlines/carriers operating the flights."
+    config:
+      contract:
+        enforced: true
+
+    tests:
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "LEN(Airline_Code) = 2"
+
+    columns:
+      - name: Airline_Code
+        description: "Standard reporting code for the airline."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - unique
+          - not_null
+
+      - name: Airline_Name
+        description: "The full official name of the airline."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+      
+      - name: Airline_Rating
+        description: "The rating of the airline based on customer reviews and performance metrics."
+        data_type: float
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0.0
+                max_value: 5.0
+      
+      - name: Airline_type
+        description: "The type of airline (Regional ,Mainline ,Mainline (ULCC))"
+        data_type: varchar
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Regional', 'Mainline', 'Mainline (ULCC)']
+
+  # ==========================================
+  # FACT MODELS
+  # Transactional data broken down into logical domains
+  # ==========================================
+
+  - name: fact_flight
+    description: "Core fact table storing the primary scheduled routing and metadata for flights."
+    config:
+      contract:
+        enforced: true
+    tests:
+      - flight_distance_positive
+      - origin_destination_different
+      - dbt_utils.at_least_one:
+          column_name: Flight_Key
+    columns:
+      - name: Flight_Key
+        description: "Unique identifier for a specific flight record."
+        data_type: varchar
+        constraints:
+          - type: not_null
+          - type: primary_key
+            warn_unenforced: false
+        tests:
+          - unique
+          - not_null
+
+      - name: Date_Key
+        description: "Foreign key joining to dim_date."
+        data_type: integer
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: Date_Key
+
+      - name: Origin_Airport_Code
+        description: "Foreign key joining to dim_airport for the departure airport."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_airport')
+                field: Airport_Code
+
+      - name: Dest_Airport_Code
+        description: "Foreign key joining to dim_airport for the destination airport."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_airport')
+                field: Airport_Code
+
+      - name: Airline_Code
+        description: "Foreign key joining to dim_airline."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_airline')
+                field: Airline_Code
+
+      - name: Flight_Number
+        description: "The official flight number designated by the airline."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+
+      - name: Tail_Number
+        description: "The registration number of the aircraft used for the flight."
+        data_type: varchar
+        tests:
+          - dbt_utils.not_null_proportion:
+              arguments:
+                at_least: 0.80
+
+      - name: Scheduled_Departure_HHMM
+        description: "The scheduled departure time in local time (HHMM format)."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - is_valid_hhmm # Validates HHMM format (0-2400, max 4 digits)
+
+      - name: Scheduled_Arrival_HHMM
+        description: "The scheduled arrival time in local time (HHMM format)."
+        data_type: varchar
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - is_valid_hhmm # Validates HHMM format (0-2400, max 4 digits)
+
+      - name: Flight_Distance_Miles
+        description: "The distance between the origin and destination airports in miles."
+        data_type: integer
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 10000
+
+      - name: Actual_Air_Time_Minutes
+        description: "The actual time the aircraft spent in the air, in minutes."
+        data_type: integer
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 1000
+              config:
+                where: "Actual_Air_Time_Minutes IS NOT NULL"
+
+  - name: fact_flight_operation
+    description: "Fact table tracking the actual operational metrics, cancellations, and diversions of flights."
+    config:
+      contract:
+        enforced: true
+    tests:
+      - cancelled_flight_not_diverted
+      - cancellation_have_reason
+      - dbt_utils.at_least_one:
+          column_name: Flight_Key
+
+    columns:
+      - name: Flight_Key
+        description: "Foreign key joining to fact_flight. Unique per operation record."
+        data_type: varchar
+        constraints:
+          - type: not_null
+          - type: primary_key
+            warn_unenforced: false
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fact_flight')
+                field: Flight_Key
+
+      - name: Actual_Departure_HHMM
+        description: "The actual departure time from the gate (HHMM format)."
+        data_type: varchar
+        tests:
+          - is_valid_hhmm:
+              # Validates HHMM format (0-2400, max 4 digits)
+              config:
+                where: "Actual_Departure_HHMM IS NOT NULL"
+
+      - name: Actual_Arrival_HHMM
+        description: "The actual arrival time at the gate (HHMM format)."
+        data_type: varchar
+        tests:
+          - is_valid_hhmm:
+              # Validates HHMM format (0-2400, max 4 digits)
+              config:
+                where: "Actual_Arrival_HHMM IS NOT NULL"
+
+      - name: Taxi_Out_Minutes
+        description: "The time elapsed between gate departure and wheels off, in minutes."
+        data_type: integer
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1440
+              # Maximum taxi time of 24 hours (1440 minutes) is a reasonable upper bound for extreme cases.
+              config:
+                where: "Taxi_Out_Minutes IS NOT NULL"
+
+      - name: Taxi_In_Minutes
+        description: "The time elapsed between wheels on and gate arrival, in minutes."
+        data_type: integer
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1440
+              # Maximum taxi time of 24 hours (1440 minutes) is a reasonable upper bound for extreme cases.
+              config:
+                where: "Taxi_In_Minutes IS NOT NULL"
+
+      - name: Is_Cancelled
+        description: "Boolean flag indicating if the flight was cancelled (true/false)."
+        data_type: boolean
+        tests:
+          - accepted_values:
+              arguments:
+                values: [true, false]
+              config:
+                where: "Is_Cancelled IS NOT NULL"
+
+      - name: Cancellation_Reason
+        description: "Categorized reason for flight cancellation, if applicable."
+        data_type: varchar
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Carrier', 'Weather', 'National Air System', 'Security']
+              config:
+                where: "Cancellation_Reason IS NOT NULL"
+
+      - name: Is_Diverted
+        description: "Boolean flag indicating if the flight was diverted to another airport (true/false)."
+        data_type: boolean
+        tests:
+          - accepted_values:
+              arguments:
+                values: [true, false]
+              config:
+                where: "Is_Diverted IS NOT NULL"
+
+  - name: fact_flight_delay
+    description: "Fact table breaking down the delay minutes and specific delay categories for flights."
+    config:
+      contract:
+        enforced: true
+    tests:
+      - cancelled_flight_no_delay
+      - delay_Arrival_requires_minutes
+      - dbt_utils.at_least_one:
+          column_name: Flight_Key
+
+    columns:
+      - name: Flight_Key
+        description: "Foreign key joining to fact_flight. Unique per delay record."
+        data_type: varchar
+        constraints:
+          - type: not_null
+          - type: primary_key
+            warn_unenforced: false
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fact_flight')
+                field: Flight_Key
+
+      - name: Departure_Delay_Minutes
+        description: "Difference in minutes between scheduled and actual departure time. Early departures show as negative numbers."
+        data_type: integer
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: -1440
+                max_value: 5760
+              # Min value is -1440 (24 hours) and max value is 5760 (4 days) is a reasonable upper bound for extreme cases.
+              config:
+                where: "Departure_Delay_Minutes IS NOT NULL"
+
+      - name: Arrival_Delay_Minutes
+        description: "Difference in minutes between scheduled and actual arrival time. Early arrivals show as negative numbers."
+        data_type: integer
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: -1440
+                max_value: 5760
+              # Maximum delay of 4 days (5760 minutes) is a reasonable upper bound for extreme cases.
+              config:
+                where: "Arrival_Delay_Minutes IS NOT NULL"
+
+      - name: Is_Departure_Delayed
+        description: "Boolean flag indicating if the departure was delayed beyond a certain threshold."
+        data_type: boolean
+        tests:
+          - accepted_values:
+              arguments:
+                values: [true, false]
+              config:
+                where: "Is_Departure_Delayed IS NOT NULL"
+
+      - name: Is_Arrival_Delayed
+        description: "Boolean flag indicating if the arrival was delayed beyond a certain threshold."
+        data_type: boolean
+        tests:
+          - accepted_values:
+              arguments:
+                values: [true, false]
+              config:
+                where: "Is_Arrival_Delayed IS NOT NULL"
+
+      # ------------------------------------------
+      # Delay Categories (in Minutes)
+      # ------------------------------------------
+      - name: Carrier_Delay_Minutes
+        description: "Minutes of delay attributed to the carrier (e.g., maintenance, crew issues)."
+        data_type: integer
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 5760
+                # Maximum delay of 4 days (5760 minutes) is a reasonable upper bound for extreme cases.
+              config:
+                where: "Carrier_Delay_Minutes IS NOT NULL"
+                severity: warn
+
+      - name: Weather_Delay_Minutes
+        description: "Minutes of delay attributed to extreme weather conditions."
+        data_type: integer
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 2880
+                # Maximum delay of 2 days (2880 minutes) is a reasonable upper bound for weather-related delays.
+              config:
+                where: "Weather_Delay_Minutes IS NOT NULL"
+                severity: warn
+
+      - name: Air_System_Delay_Minutes
+        description: "Minutes of delay attributed to the national aviation system (e.g., heavy traffic, ATC)."
+        data_type: integer
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 2880
+                # Maximum delay of 2 days (2880 minutes) is a reasonable upper bound for air system delays.
+              config:
+                where: "Air_System_Delay_Minutes IS NOT NULL"
+                severity: warn
+
+      - name: Security_Delay_Minutes
+        description: "Minutes of delay attributed to security issues (e.g., terminal evacuation, screening delays)."
+        data_type: integer
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1440
+              # Maximum delay of 1 day (1440 minutes) is a reasonable upper bound for security-related delays.
+              config:
+                where: "Security_Delay_Minutes IS NOT NULL"
+                severity: warn
+
+      - name: Late_Aircraft_Delay_Minutes
+        description: "Minutes of delay attributed to the late arrival of the same aircraft from a previous flight."
+        data_type: integer
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 2880
+                # Maximum delay of 2 days (2880 minutes) is a reasonable upper bound for late aircraft delays.
+              config:
+                where: "Late_Aircraft_Delay_Minutes IS NOT NULL"
+                severity: warn
+

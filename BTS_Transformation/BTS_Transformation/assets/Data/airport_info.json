@@ -1,0 +1,5730 @@
+[
+  {
+    "Airport_Code": "AUS",
+    "Airport_Name": "Austin-Bergstrom International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Austin",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.1975,
+      "Longitude": -97.6664,
+      "Elevation_ft": 489
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BWI",
+    "Airport_Name": "Baltimore/Washington International Thurgood Marshall Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Baltimore",
+      "State": "Maryland",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.1754,
+      "Longitude": -76.6683,
+      "Elevation_ft": 146
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "EUG",
+    "Airport_Name": "Eugene Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Eugene",
+      "State": "Oregon",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.1246,
+      "Longitude": -123.2119,
+      "Elevation_ft": 374
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "LIH",
+    "Airport_Name": "Lihue Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Lihue",
+      "State": "Hawaii",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 21.976,
+      "Longitude": -159.339,
+      "Elevation_ft": 153
+    },
+    "Timezone": "Pacific/Honolulu"
+  },
+  {
+    "Airport_Code": "MAF",
+    "Airport_Name": "Midland International Air and Space Port",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Midland",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 31.9425,
+      "Longitude": -102.2019,
+      "Elevation_ft": 2871
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "MDW",
+    "Airport_Name": "Chicago Midway International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Chicago",
+      "State": "Illinois",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.7859,
+      "Longitude": -87.7524,
+      "Elevation_ft": 620
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "OGG",
+    "Airport_Name": "Kahului Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Kahului",
+      "State": "Hawaii",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 20.8986,
+      "Longitude": -156.4305,
+      "Elevation_ft": 54
+    },
+    "Timezone": "Pacific/Honolulu"
+  },
+  {
+    "Airport_Code": "VPS",
+    "Airport_Name": "Destin-Fort Walton Beach Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Fort Walton Beach",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.4832,
+      "Longitude": -86.5254,
+      "Elevation_ft": 87
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "GRR",
+    "Airport_Name": "Gerald R. Ford International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Grand Rapids",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.8808,
+      "Longitude": -85.5228,
+      "Elevation_ft": 794
+    },
+    "Timezone": "America/Detroit"
+  },
+  {
+    "Airport_Code": "HNL",
+    "Airport_Name": "Daniel K. Inouye International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Honolulu",
+      "State": "Hawaii",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 21.3187,
+      "Longitude": -157.9224,
+      "Elevation_ft": 13
+    },
+    "Timezone": "Pacific/Honolulu"
+  },
+  {
+    "Airport_Code": "IAH",
+    "Airport_Name": "George Bush Intercontinental Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Houston",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 29.9902,
+      "Longitude": -95.3368,
+      "Elevation_ft": 97
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ICT",
+    "Airport_Name": "Wichita Dwight D. Eisenhower National Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Wichita",
+      "State": "Kansas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.6499,
+      "Longitude": -97.4331,
+      "Elevation_ft": 1333
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "LAS",
+    "Airport_Name": "Harry Reid International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Las Vegas",
+      "State": "Nevada",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 36.084,
+      "Longitude": -115.1537,
+      "Elevation_ft": 2181
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "OMA",
+    "Airport_Name": "Eppley Airfield",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Omaha",
+      "State": "Nebraska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.3032,
+      "Longitude": -95.894,
+      "Elevation_ft": 984
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "SRQ",
+    "Airport_Name": "Sarasota-Bradenton International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Sarasota",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 27.3954,
+      "Longitude": -82.5544,
+      "Elevation_ft": 30
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "ONT",
+    "Airport_Name": "Ontario International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Ontario",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 34.056,
+      "Longitude": -117.6012,
+      "Elevation_ft": 944
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "AVL",
+    "Airport_Name": "Asheville Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Asheville",
+      "State": "North Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.4362,
+      "Longitude": -82.5418,
+      "Elevation_ft": 2165
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "CRW",
+    "Airport_Name": "Yeager Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Charleston",
+      "State": "West Virginia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.3731,
+      "Longitude": -81.5932,
+      "Elevation_ft": 981
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "ACV",
+    "Airport_Name": "California Redwood Coast-Humboldt County Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Arcata",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.9781,
+      "Longitude": -124.1086,
+      "Elevation_ft": 218
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "GTF",
+    "Airport_Name": "Great Falls International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Great Falls",
+      "State": "Montana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 47.482,
+      "Longitude": -111.3707,
+      "Elevation_ft": 3680
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "BJI",
+    "Airport_Name": "Bemidji Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Bemidji",
+      "State": "Minnesota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 47.5094,
+      "Longitude": -94.9337,
+      "Elevation_ft": 1391
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "PDX",
+    "Airport_Name": "Portland International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Portland",
+      "State": "Oregon",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 45.5887,
+      "Longitude": -122.5975,
+      "Elevation_ft": 30
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "PNS",
+    "Airport_Name": "Pensacola International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Pensacola",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.4734,
+      "Longitude": -87.1866,
+      "Elevation_ft": 121
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ROC",
+    "Airport_Name": "Frederick Douglass Greater Rochester International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Rochester",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.1189,
+      "Longitude": -77.6724,
+      "Elevation_ft": 559
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "GJT",
+    "Airport_Name": "Grand Junction Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Grand Junction",
+      "State": "Colorado",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.1224,
+      "Longitude": -108.5267,
+      "Elevation_ft": 4858
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "HLN",
+    "Airport_Name": "Helena Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Helena",
+      "State": "Montana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.6068,
+      "Longitude": -111.9833,
+      "Elevation_ft": 3877
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "GRK",
+    "Airport_Name": "Killeen-Fort Hood Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Killeen",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.7214,
+      "Longitude": -97.8291,
+      "Elevation_ft": 1015
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "GFK",
+    "Airport_Name": "Grand Forks International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Grand Forks",
+      "State": "North Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 47.9493,
+      "Longitude": -97.1761,
+      "Elevation_ft": 845
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "EWN",
+    "Airport_Name": "Coastal Carolina Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "New Bern",
+      "State": "North Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.073,
+      "Longitude": -77.0429,
+      "Elevation_ft": 18
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "DHN",
+    "Airport_Name": "Dothan Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Dothan",
+      "State": "Alabama",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 31.3213,
+      "Longitude": -85.4496,
+      "Elevation_ft": 401
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BMI",
+    "Airport_Name": "Central Illinois Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Bloomington",
+      "State": "Illinois",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.4771,
+      "Longitude": -88.9159,
+      "Elevation_ft": 871
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "GCC",
+    "Airport_Name": "Gillette-Campbell County Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Gillette",
+      "State": "Wyoming",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.3489,
+      "Longitude": -105.5397,
+      "Elevation_ft": 4365
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "GUF",
+    "Airport_Name": "Jack Edwards National Airport",
+    "Airport_Type": "small_airport",
+    "Location": {
+      "City": "Gulf Shores",
+      "State": "Alabama",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.2904,
+      "Longitude": -87.6719,
+      "Elevation_ft": 17
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BGM",
+    "Airport_Name": "Greater Binghamton Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Binghamton",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.2087,
+      "Longitude": -75.9798,
+      "Elevation_ft": 1636
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "MIA",
+    "Airport_Name": "Miami International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Miami",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 25.7959,
+      "Longitude": -80.287,
+      "Elevation_ft": 9
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "SIT",
+    "Airport_Name": "Sitka Rocky Gutierrez Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Sitka",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 57.0471,
+      "Longitude": -135.3616,
+      "Elevation_ft": 21
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "MDT",
+    "Airport_Name": "Harrisburg International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Harrisburg",
+      "State": "Pennsylvania",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.1935,
+      "Longitude": -76.7634,
+      "Elevation_ft": 310
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "TRI",
+    "Airport_Name": "Tri-Cities Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Blountville",
+      "State": "Tennessee",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 36.4752,
+      "Longitude": -82.4074,
+      "Elevation_ft": 1519
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "DVL",
+    "Airport_Name": "Devils Lake Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Devils Lake",
+      "State": "North Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 48.1142,
+      "Longitude": -98.9079,
+      "Elevation_ft": 1456
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "LWS",
+    "Airport_Name": "Lewiston-Nez Perce County Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Lewiston",
+      "State": "Idaho",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.3745,
+      "Longitude": -117.0153,
+      "Elevation_ft": 1442
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "BFF",
+    "Airport_Name": "Western Nebraska Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Scottsbluff",
+      "State": "Nebraska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.874,
+      "Longitude": -103.5963,
+      "Elevation_ft": 3967
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "ALW",
+    "Airport_Name": "Walla Walla Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Walla Walla",
+      "State": "Washington",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.0949,
+      "Longitude": -118.2886,
+      "Elevation_ft": 1194
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "BFL",
+    "Airport_Name": "Meadows Field Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Bakersfield",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.4336,
+      "Longitude": -119.0568,
+      "Elevation_ft": 510
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "MKE",
+    "Airport_Name": "Milwaukee Mitchell International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Milwaukee",
+      "State": "Wisconsin",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.9472,
+      "Longitude": -87.8966,
+      "Elevation_ft": 723
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "RIC",
+    "Airport_Name": "Richmond International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Richmond",
+      "State": "Virginia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.5052,
+      "Longitude": -77.3197,
+      "Elevation_ft": 167
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "RST",
+    "Airport_Name": "Rochester International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Rochester",
+      "State": "Minnesota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.9083,
+      "Longitude": -92.5,
+      "Elevation_ft": 1317
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "XNA",
+    "Airport_Name": "Northwest Arkansas National Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Bentonville",
+      "State": "Arkansas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 36.2819,
+      "Longitude": -94.3068,
+      "Elevation_ft": 1287
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "GSP",
+    "Airport_Name": "Greenville-Spartanburg International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Greer",
+      "State": "South Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 34.8957,
+      "Longitude": -82.2189,
+      "Elevation_ft": 964
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "JAX",
+    "Airport_Name": "Jacksonville International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Jacksonville",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.4941,
+      "Longitude": -81.6879,
+      "Elevation_ft": 30
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "STT",
+    "Airport_Name": "Cyril E. King Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Charlotte Amalie",
+      "State": "US Virgin Islands",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 18.3373,
+      "Longitude": -64.9733,
+      "Elevation_ft": 23
+    },
+    "Timezone": "America/St_Thomas"
+  },
+  {
+    "Airport_Code": "TUL",
+    "Airport_Name": "Tulsa International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Tulsa",
+      "State": "Oklahoma",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 36.1984,
+      "Longitude": -95.8881,
+      "Elevation_ft": 677
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "LAX",
+    "Airport_Name": "Los Angeles International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Los Angeles",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.9425,
+      "Longitude": -118.4081,
+      "Elevation_ft": 125
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "AVP",
+    "Airport_Name": "Wilkes-Barre/Scranton International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Scranton",
+      "State": "Pennsylvania",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.3385,
+      "Longitude": -75.7234,
+      "Elevation_ft": 962
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "SJC",
+    "Airport_Name": "Norman Y. Mineta San Jose International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "San Jose",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.3626,
+      "Longitude": -121.929,
+      "Elevation_ft": 62
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "CDV",
+    "Airport_Name": "Merle K. (Mudhole) Smith Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Cordova",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 60.4918,
+      "Longitude": -145.4778,
+      "Elevation_ft": 54
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "WRG",
+    "Airport_Name": "Wrangell Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Wrangell",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 56.4843,
+      "Longitude": -132.3699,
+      "Elevation_ft": 49
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "FAI",
+    "Airport_Name": "Fairbanks International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Fairbanks",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 64.8151,
+      "Longitude": -147.8561,
+      "Elevation_ft": 434
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "BLI",
+    "Airport_Name": "Bellingham International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Bellingham",
+      "State": "Washington",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 48.7928,
+      "Longitude": -122.5376,
+      "Elevation_ft": 170
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "AZA",
+    "Airport_Name": "Phoenix-Mesa Gateway Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Mesa",
+      "State": "Arizona",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.3078,
+      "Longitude": -111.6548,
+      "Elevation_ft": 1382
+    },
+    "Timezone": "America/Phoenix"
+  },
+  {
+    "Airport_Code": "PIE",
+    "Airport_Name": "St. Pete-Clearwater International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Clearwater",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 27.9102,
+      "Longitude": -82.6874,
+      "Elevation_ft": 11
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "TOL",
+    "Airport_Name": "Toledo Express Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Swanton",
+      "State": "Ohio",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.5868,
+      "Longitude": -83.8078,
+      "Elevation_ft": 683
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "ABR",
+    "Airport_Name": "Aberdeen Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Aberdeen",
+      "State": "South Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 45.4491,
+      "Longitude": -98.4218,
+      "Elevation_ft": 1302
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "GTR",
+    "Airport_Name": "Golden Triangle Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Columbus",
+      "State": "Mississippi",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.4503,
+      "Longitude": -88.5914,
+      "Elevation_ft": 264
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "IAD",
+    "Airport_Name": "Washington Dulles International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Dulles",
+      "State": "Virginia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.9531,
+      "Longitude": -77.4565,
+      "Elevation_ft": 312
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "GSO",
+    "Airport_Name": "Piedmont Triad International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Greensboro",
+      "State": "North Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 36.0978,
+      "Longitude": -79.9373,
+      "Elevation_ft": 925
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "PHX",
+    "Airport_Name": "Phoenix Sky Harbor International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Phoenix",
+      "State": "Arizona",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.4373,
+      "Longitude": -112.0078,
+      "Elevation_ft": 1135
+    },
+    "Timezone": "America/Phoenix"
+  },
+  {
+    "Airport_Code": "SAN",
+    "Airport_Name": "San Diego International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "San Diego",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.7336,
+      "Longitude": -117.1897,
+      "Elevation_ft": 17
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "RDM",
+    "Airport_Name": "Redmond Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Redmond",
+      "State": "Oregon",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.2541,
+      "Longitude": -121.15,
+      "Elevation_ft": 3080
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "YUM",
+    "Airport_Name": "Yuma International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Yuma",
+      "State": "Arizona",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.6566,
+      "Longitude": -114.606,
+      "Elevation_ft": 213
+    },
+    "Timezone": "America/Phoenix"
+  },
+  {
+    "Airport_Code": "ABY",
+    "Airport_Name": "Southwest Georgia Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Albany",
+      "State": "Georgia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 31.5355,
+      "Longitude": -84.1945,
+      "Elevation_ft": 197
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "HIB",
+    "Airport_Name": "Range Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Hibbing",
+      "State": "Minnesota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 47.3866,
+      "Longitude": -92.8389,
+      "Elevation_ft": 1354
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "CIU",
+    "Airport_Name": "Chippewa County International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Sault Sainte Marie",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.2508,
+      "Longitude": -84.4724,
+      "Elevation_ft": 800
+    },
+    "Timezone": "America/Detroit"
+  },
+  {
+    "Airport_Code": "SLN",
+    "Airport_Name": "Salina Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Salina",
+      "State": "Kansas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.791,
+      "Longitude": -97.6522,
+      "Elevation_ft": 1272
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "MFE",
+    "Airport_Name": "McAllen Miller International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "McAllen",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 26.1758,
+      "Longitude": -98.2386,
+      "Elevation_ft": 107
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "DIK",
+    "Airport_Name": "Dickinson Theodore Roosevelt Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Dickinson",
+      "State": "North Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.7975,
+      "Longitude": -102.802,
+      "Elevation_ft": 2592
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BTM",
+    "Airport_Name": "Bert Mooney Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Butte",
+      "State": "Montana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 45.9548,
+      "Longitude": -112.4972,
+      "Elevation_ft": 5550
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "SYR",
+    "Airport_Name": "Syracuse Hancock International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Syracuse",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.1112,
+      "Longitude": -76.1063,
+      "Elevation_ft": 421
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "MOT",
+    "Airport_Name": "Minot International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Minot",
+      "State": "North Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 48.2594,
+      "Longitude": -101.2796,
+      "Elevation_ft": 1716
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "LBB",
+    "Airport_Name": "Lubbock Preston Smith International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Lubbock",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.6636,
+      "Longitude": -101.8228,
+      "Elevation_ft": 3282
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "SBP",
+    "Airport_Name": "San Luis Obispo County Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "San Luis Obispo",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.2368,
+      "Longitude": -120.6417,
+      "Elevation_ft": 212
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "SJT",
+    "Airport_Name": "San Angelo Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "San Angelo",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 31.3577,
+      "Longitude": -100.4963,
+      "Elevation_ft": 1919
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "SAF",
+    "Airport_Name": "Santa Fe Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Santa Fe",
+      "State": "New Mexico",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.6171,
+      "Longitude": -106.0882,
+      "Elevation_ft": 6348
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "CMX",
+    "Airport_Name": "Houghton County Memorial Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Calumet",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 47.1684,
+      "Longitude": -88.4889,
+      "Elevation_ft": 1095
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "PIB",
+    "Airport_Name": "Hattiesburg-Laurel Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Hattiesburg",
+      "State": "Mississippi",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 31.4671,
+      "Longitude": -89.3371,
+      "Elevation_ft": 298
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BLV",
+    "Airport_Name": "MidAmerica St. Louis Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Belleville",
+      "State": "Illinois",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.5452,
+      "Longitude": -89.8352,
+      "Elevation_ft": 459
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ATY",
+    "Airport_Name": "Watertown Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Watertown",
+      "State": "South Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.914,
+      "Longitude": -97.1547,
+      "Elevation_ft": 1749
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ATW",
+    "Airport_Name": "Appleton International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Appleton",
+      "State": "Wisconsin",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.2581,
+      "Longitude": -88.5191,
+      "Elevation_ft": 918
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "IND",
+    "Airport_Name": "Indianapolis International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Indianapolis",
+      "State": "Indiana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.7173,
+      "Longitude": -86.2944,
+      "Elevation_ft": 797
+    },
+    "Timezone": "America/Indiana/Indianapolis"
+  },
+  {
+    "Airport_Code": "FWA",
+    "Airport_Name": "Fort Wayne International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Fort Wayne",
+      "State": "Indiana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.9785,
+      "Longitude": -85.1952,
+      "Elevation_ft": 814
+    },
+    "Timezone": "America/Indiana/Indianapolis"
+  },
+  {
+    "Airport_Code": "DTW",
+    "Airport_Name": "Detroit Metropolitan Wayne County Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Detroit",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.2162,
+      "Longitude": -83.3554,
+      "Elevation_ft": 645
+    },
+    "Timezone": "America/Detroit"
+  },
+  {
+    "Airport_Code": "FAR",
+    "Airport_Name": "Hector International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Fargo",
+      "State": "North Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.9207,
+      "Longitude": -96.8158,
+      "Elevation_ft": 902
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ATL",
+    "Airport_Name": "Hartsfield-Jackson Atlanta International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Atlanta",
+      "State": "Georgia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.6407,
+      "Longitude": -84.4277,
+      "Elevation_ft": 1026
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "SGF",
+    "Airport_Name": "Springfield-Branson National Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Springfield",
+      "State": "Missouri",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.2457,
+      "Longitude": -93.3886,
+      "Elevation_ft": 1268
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "HSV",
+    "Airport_Name": "Huntsville International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Huntsville",
+      "State": "Alabama",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 34.6372,
+      "Longitude": -86.7751,
+      "Elevation_ft": 629
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "CSG",
+    "Airport_Name": "Columbus Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Columbus",
+      "State": "Georgia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.5163,
+      "Longitude": -84.9389,
+      "Elevation_ft": 397
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "TVC",
+    "Airport_Name": "Cherry Capital Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Traverse City",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.7414,
+      "Longitude": -85.5822,
+      "Elevation_ft": 624
+    },
+    "Timezone": "America/Detroit"
+  },
+  {
+    "Airport_Code": "KOA",
+    "Airport_Name": "Ellison Onizuka Kona International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Kailua-Kona",
+      "State": "Hawaii",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 19.7388,
+      "Longitude": -156.0456,
+      "Elevation_ft": 47
+    },
+    "Timezone": "Pacific/Honolulu"
+  },
+  {
+    "Airport_Code": "GEG",
+    "Airport_Name": "Spokane International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Spokane",
+      "State": "Washington",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 47.6199,
+      "Longitude": -117.5338,
+      "Elevation_ft": 2376
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "AKN",
+    "Airport_Name": "King Salmon Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "King Salmon",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 58.6768,
+      "Longitude": -156.6493,
+      "Elevation_ft": 73
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "AMA",
+    "Airport_Name": "Rick Husband Amarillo International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Amarillo",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.2194,
+      "Longitude": -101.7059,
+      "Elevation_ft": 3607
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "SFB",
+    "Airport_Name": "Orlando Sanford International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Sanford",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 28.7776,
+      "Longitude": -81.2375,
+      "Elevation_ft": 55
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "GRI",
+    "Airport_Name": "Central Nebraska Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Grand Island",
+      "State": "Nebraska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.9675,
+      "Longitude": -98.3096,
+      "Elevation_ft": 1847
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "LBL",
+    "Airport_Name": "Liberal Mid-America Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Liberal",
+      "State": "Kansas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.0442,
+      "Longitude": -100.9596,
+      "Elevation_ft": 2885
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BOS",
+    "Airport_Name": "Boston Logan International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Boston",
+      "State": "Massachusetts",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.3643,
+      "Longitude": -71.0052,
+      "Elevation_ft": 20
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "MHT",
+    "Airport_Name": "Manchester-Boston Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Manchester",
+      "State": "New Hampshire",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.9326,
+      "Longitude": -71.4357,
+      "Elevation_ft": 266
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "BUR",
+    "Airport_Name": "Hollywood Burbank Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Burbank",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 34.2007,
+      "Longitude": -118.3585,
+      "Elevation_ft": 778
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "SCC",
+    "Airport_Name": "Deadhorse Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Deadhorse",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 70.1948,
+      "Longitude": -148.4653,
+      "Elevation_ft": 65
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "GUM",
+    "Airport_Name": "Antonio B. Won Pat International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Hagatna",
+      "State": "Guam",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 13.4834,
+      "Longitude": 144.796,
+      "Elevation_ft": 298
+    },
+    "Timezone": "Pacific/Guam"
+  },
+  {
+    "Airport_Code": "ACY",
+    "Airport_Name": "Atlantic City International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Atlantic City",
+      "State": "New Jersey",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.4576,
+      "Longitude": -74.5772,
+      "Elevation_ft": 75
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "LGB",
+    "Airport_Name": "Long Beach Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Long Beach",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.8177,
+      "Longitude": -118.1516,
+      "Elevation_ft": 60
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "GCK",
+    "Airport_Name": "Garden City Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Garden City",
+      "State": "Kansas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.9275,
+      "Longitude": -100.7237,
+      "Elevation_ft": 2891
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "LCH",
+    "Airport_Name": "Lake Charles Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Lake Charles",
+      "State": "Louisiana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.1261,
+      "Longitude": -93.2233,
+      "Elevation_ft": 15
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "RDD",
+    "Airport_Name": "Redding Municipal Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Redding",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.509,
+      "Longitude": -122.293,
+      "Elevation_ft": 505
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "FOD",
+    "Airport_Name": "Fort Dodge Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Fort Dodge",
+      "State": "Iowa",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.5514,
+      "Longitude": -94.1926,
+      "Elevation_ft": 1156
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "MBS",
+    "Airport_Name": "MBS International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Saginaw",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.5329,
+      "Longitude": -84.0796,
+      "Elevation_ft": 668
+    },
+    "Timezone": "America/Detroit"
+  },
+  {
+    "Airport_Code": "FLL",
+    "Airport_Name": "Fort Lauderdale-Hollywood International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Fort Lauderdale",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 26.0726,
+      "Longitude": -80.1527,
+      "Elevation_ft": 9
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "CRP",
+    "Airport_Name": "Corpus Christi International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Corpus Christi",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 27.7704,
+      "Longitude": -97.5012,
+      "Elevation_ft": 44
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "HGR",
+    "Airport_Name": "Hagerstown Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Hagerstown",
+      "State": "Maryland",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.7079,
+      "Longitude": -77.7295,
+      "Elevation_ft": 703
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "ESC",
+    "Airport_Name": "Delta County Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Escanaba",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 45.7227,
+      "Longitude": -87.0937,
+      "Elevation_ft": 609
+    },
+    "Timezone": "America/Detroit"
+  },
+  {
+    "Airport_Code": "DDC",
+    "Airport_Name": "Dodge City Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Dodge City",
+      "State": "Kansas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.7634,
+      "Longitude": -99.9656,
+      "Elevation_ft": 2594
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "LEX",
+    "Airport_Name": "Blue Grass Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Lexington",
+      "State": "Kentucky",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.0365,
+      "Longitude": -84.6059,
+      "Elevation_ft": 979
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "SBA",
+    "Airport_Name": "Santa Barbara Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Santa Barbara",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 34.4262,
+      "Longitude": -119.8404,
+      "Elevation_ft": 13
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "GST",
+    "Airport_Name": "Gustavus Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Gustavus",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 58.4253,
+      "Longitude": -135.7074,
+      "Elevation_ft": 35
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "STC",
+    "Airport_Name": "St. Cloud Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "St. Cloud",
+      "State": "Minnesota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 45.5466,
+      "Longitude": -94.0598,
+      "Elevation_ft": 1031
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "FSM",
+    "Airport_Name": "Fort Smith Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Fort Smith",
+      "State": "Arkansas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.3366,
+      "Longitude": -94.3674,
+      "Elevation_ft": 469
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ROW",
+    "Airport_Name": "Roswell Air Center Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Roswell",
+      "State": "New Mexico",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.3016,
+      "Longitude": -104.5306,
+      "Elevation_ft": 3671
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "ASE",
+    "Airport_Name": "Aspen-Pitkin County Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Aspen",
+      "State": "Colorado",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.2232,
+      "Longitude": -106.8688,
+      "Elevation_ft": 7820
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "LBF",
+    "Airport_Name": "North Platte Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "North Platte",
+      "State": "Nebraska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.1262,
+      "Longitude": -100.6861,
+      "Elevation_ft": 2779
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "SPI",
+    "Airport_Name": "Abraham Lincoln Capital Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Springfield",
+      "State": "Illinois",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.8441,
+      "Longitude": -89.6779,
+      "Elevation_ft": 598
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "HYS",
+    "Airport_Name": "Hays Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Hays",
+      "State": "Kansas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.8422,
+      "Longitude": -99.273,
+      "Elevation_ft": 1999
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "FMN",
+    "Airport_Name": "Four Corners Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Farmington",
+      "State": "New Mexico",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 36.7412,
+      "Longitude": -108.2299,
+      "Elevation_ft": 5506
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "JAC",
+    "Airport_Name": "Jackson Hole Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Jackson",
+      "State": "Wyoming",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.6073,
+      "Longitude": -110.7377,
+      "Elevation_ft": 6451
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "PBI",
+    "Airport_Name": "Palm Beach International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "West Palm Beach",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 26.6832,
+      "Longitude": -80.0956,
+      "Elevation_ft": 19
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "JAN",
+    "Airport_Name": "Jackson-Medgar Wiley Evers International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Jackson",
+      "State": "Mississippi",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.3112,
+      "Longitude": -90.0759,
+      "Elevation_ft": 346
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "TTN",
+    "Airport_Name": "Trenton Mercer Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Trenton",
+      "State": "New Jersey",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.2767,
+      "Longitude": -74.8135,
+      "Elevation_ft": 213
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "PHF",
+    "Airport_Name": "Newport News/Williamsburg International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Newport News",
+      "State": "Virginia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.1319,
+      "Longitude": -76.493,
+      "Elevation_ft": 43
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "CNY",
+    "Airport_Name": "Canyonlands Field Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Moab",
+      "State": "Utah",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.755,
+      "Longitude": -109.7553,
+      "Elevation_ft": 4557
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "CID",
+    "Airport_Name": "The Eastern Iowa Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Cedar Rapids",
+      "State": "Iowa",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.8847,
+      "Longitude": -91.7108,
+      "Elevation_ft": 869
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "GRB",
+    "Airport_Name": "Austin Straubel International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Green Bay",
+      "State": "Wisconsin",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.4851,
+      "Longitude": -88.1297,
+      "Elevation_ft": 695
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "CHS",
+    "Airport_Name": "Charleston International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Charleston",
+      "State": "South Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.8986,
+      "Longitude": -80.0405,
+      "Elevation_ft": 46
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "TLH",
+    "Airport_Name": "Tallahassee International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Tallahassee",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.3965,
+      "Longitude": -84.3503,
+      "Elevation_ft": 81
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "GNV",
+    "Airport_Name": "Gainesville Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Gainesville",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 29.69,
+      "Longitude": -82.2717,
+      "Elevation_ft": 152
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "ABQ",
+    "Airport_Name": "Albuquerque International Sunport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Albuquerque",
+      "State": "New Mexico",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.0402,
+      "Longitude": -106.609,
+      "Elevation_ft": 5355
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "BOI",
+    "Airport_Name": "Boise Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Boise",
+      "State": "Idaho",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.5644,
+      "Longitude": -116.2228,
+      "Elevation_ft": 2871
+    },
+    "Timezone": "America/Boise"
+  },
+  {
+    "Airport_Code": "ALB",
+    "Airport_Name": "Albany International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Albany",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.7483,
+      "Longitude": -73.8017,
+      "Elevation_ft": 285
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "PVD",
+    "Airport_Name": "Rhode Island T.F. Green International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Providence",
+      "State": "Rhode Island",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.7243,
+      "Longitude": -71.4281,
+      "Elevation_ft": 55
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "CAE",
+    "Airport_Name": "Columbia Metropolitan Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Columbia",
+      "State": "South Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.9388,
+      "Longitude": -81.1195,
+      "Elevation_ft": 236
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "MRY",
+    "Airport_Name": "Monterey Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Monterey",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 36.587,
+      "Longitude": -121.8428,
+      "Elevation_ft": 257
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "OTZ",
+    "Airport_Name": "Ralph Wien Memorial Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Kotzebue",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 66.8847,
+      "Longitude": -162.5985,
+      "Elevation_ft": 14
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "DAL",
+    "Airport_Name": "Dallas Love Field",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Dallas",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.8471,
+      "Longitude": -96.8518,
+      "Elevation_ft": 487
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BRD",
+    "Airport_Name": "Brainerd Lakes Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Brainerd",
+      "State": "Minnesota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.3983,
+      "Longitude": -94.1381,
+      "Elevation_ft": 1232
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "FLG",
+    "Airport_Name": "Flagstaff Pulliam Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Flagstaff",
+      "State": "Arizona",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.1385,
+      "Longitude": -111.6699,
+      "Elevation_ft": 7014
+    },
+    "Timezone": "America/Phoenix"
+  },
+  {
+    "Airport_Code": "SFO",
+    "Airport_Name": "San Francisco International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "San Francisco",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.6213,
+      "Longitude": -122.379,
+      "Elevation_ft": 13
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "MCO",
+    "Airport_Name": "Orlando International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Orlando",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 28.4294,
+      "Longitude": -81.3089,
+      "Elevation_ft": 96
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "OME",
+    "Airport_Name": "Nome Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Nome",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 64.5122,
+      "Longitude": -165.4453,
+      "Elevation_ft": 37
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "SMX",
+    "Airport_Name": "Santa Maria Public Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Santa Maria",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 34.8996,
+      "Longitude": -120.4575,
+      "Elevation_ft": 261
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "GGG",
+    "Airport_Name": "East Texas Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Longview",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.384,
+      "Longitude": -94.7115,
+      "Elevation_ft": 365
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "CMI",
+    "Airport_Name": "University of Illinois Willard Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Champaign",
+      "State": "Illinois",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.0399,
+      "Longitude": -88.2782,
+      "Elevation_ft": 755
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "RHI",
+    "Airport_Name": "Rhinelander-Oneida County Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Rhinelander",
+      "State": "Wisconsin",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 45.6312,
+      "Longitude": -89.4675,
+      "Elevation_ft": 1624
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "CPR",
+    "Airport_Name": "Casper/Natrona County International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Casper",
+      "State": "Wyoming",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.908,
+      "Longitude": -106.4644,
+      "Elevation_ft": 5350
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "JST",
+    "Airport_Name": "John Murtha Johnstown-Cambria County Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Johnstown",
+      "State": "Pennsylvania",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.3161,
+      "Longitude": -78.8339,
+      "Elevation_ft": 2284
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "SPS",
+    "Airport_Name": "Wichita Falls Municipal Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Wichita Falls",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.9888,
+      "Longitude": -98.4919,
+      "Elevation_ft": 1019
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BQN",
+    "Airport_Name": "Rafael Hernandez Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Aguadilla",
+      "State": "Puerto Rico",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 18.4949,
+      "Longitude": -67.1294,
+      "Elevation_ft": 237
+    },
+    "Timezone": "America/Puerto_Rico"
+  },
+  {
+    "Airport_Code": "PIH",
+    "Airport_Name": "Pocatello Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Pocatello",
+      "State": "Idaho",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.9098,
+      "Longitude": -112.596,
+      "Elevation_ft": 4452
+    },
+    "Timezone": "America/Boise"
+  },
+  {
+    "Airport_Code": "ROA",
+    "Airport_Name": "Roanoke-Blacksburg Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Roanoke",
+      "State": "Virginia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.3255,
+      "Longitude": -79.9754,
+      "Elevation_ft": 1176
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "STX",
+    "Airport_Name": "Henry E. Rohlsen Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Christiansted",
+      "State": "US Virgin Islands",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 17.7019,
+      "Longitude": -64.7985,
+      "Elevation_ft": 74
+    },
+    "Timezone": "America/St_Thomas"
+  },
+  {
+    "Airport_Code": "GUC",
+    "Airport_Name": "Gunnison-Crested Butte Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Gunnison",
+      "State": "Colorado",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.5339,
+      "Longitude": -106.933,
+      "Elevation_ft": 7678
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "PSM",
+    "Airport_Name": "Portsmouth International Airport at Pease",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Portsmouth",
+      "State": "New Hampshire",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.0779,
+      "Longitude": -70.8233,
+      "Elevation_ft": 100
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "HYA",
+    "Airport_Name": "Barnstable Municipal Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Hyannis",
+      "State": "Massachusetts",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.6693,
+      "Longitude": -70.2804,
+      "Elevation_ft": 54
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "IMT",
+    "Airport_Name": "Ford Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Iron Mountain",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 45.8183,
+      "Longitude": -88.1146,
+      "Elevation_ft": 1182
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "COU",
+    "Airport_Name": "Columbia Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Columbia",
+      "State": "Missouri",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.8181,
+      "Longitude": -92.2196,
+      "Elevation_ft": 889
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "XWA",
+    "Airport_Name": "Williston Basin International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Williston",
+      "State": "North Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 48.2578,
+      "Longitude": -103.751,
+      "Elevation_ft": 2167
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "VEL",
+    "Airport_Name": "Vernal Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Vernal",
+      "State": "Utah",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.4409,
+      "Longitude": -109.51,
+      "Elevation_ft": 5278
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "ABE",
+    "Airport_Name": "Lehigh Valley International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Allentown",
+      "State": "Pennsylvania",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.6521,
+      "Longitude": -75.4408,
+      "Elevation_ft": 394
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "CHO",
+    "Airport_Name": "Charlottesville-Albemarle Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Charlottesville",
+      "State": "Virginia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.1386,
+      "Longitude": -78.4529,
+      "Elevation_ft": 640
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "ILM",
+    "Airport_Name": "Wilmington International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Wilmington",
+      "State": "North Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 34.2706,
+      "Longitude": -77.9026,
+      "Elevation_ft": 32
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "STL",
+    "Airport_Name": "St. Louis Lambert International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "St. Louis",
+      "State": "Missouri",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.7487,
+      "Longitude": -90.37,
+      "Elevation_ft": 618
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "SAV",
+    "Airport_Name": "Savannah/Hilton Head International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Savannah",
+      "State": "Georgia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.1276,
+      "Longitude": -81.2021,
+      "Elevation_ft": 50
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "SHV",
+    "Airport_Name": "Shreveport Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Shreveport",
+      "State": "Louisiana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.4466,
+      "Longitude": -93.8256,
+      "Elevation_ft": 258
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ORD",
+    "Airport_Name": "O Hare International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Chicago",
+      "State": "Illinois",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.9742,
+      "Longitude": -87.9073,
+      "Elevation_ft": 672
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ITO",
+    "Airport_Name": "Hilo International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Hilo",
+      "State": "Hawaii",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 19.7214,
+      "Longitude": -155.0485,
+      "Elevation_ft": 38
+    },
+    "Timezone": "Pacific/Honolulu"
+  },
+  {
+    "Airport_Code": "SBN",
+    "Airport_Name": "South Bend International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "South Bend",
+      "State": "Indiana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.7087,
+      "Longitude": -86.3173,
+      "Elevation_ft": 799
+    },
+    "Timezone": "America/Indiana/Indianapolis"
+  },
+  {
+    "Airport_Code": "MLU",
+    "Airport_Name": "Monroe Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Monroe",
+      "State": "Louisiana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.5109,
+      "Longitude": -92.0377,
+      "Elevation_ft": 79
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "MGM",
+    "Airport_Name": "Montgomery Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Montgomery",
+      "State": "Alabama",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.3006,
+      "Longitude": -86.394,
+      "Elevation_ft": 221
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "DLH",
+    "Airport_Name": "Duluth International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Duluth",
+      "State": "Minnesota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.8421,
+      "Longitude": -92.1936,
+      "Elevation_ft": 1428
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BGR",
+    "Airport_Name": "Bangor International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Bangor",
+      "State": "Maine",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.8074,
+      "Longitude": -68.8281,
+      "Elevation_ft": 192
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "DCA",
+    "Airport_Name": "Ronald Reagan Washington National Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Arlington",
+      "State": "Virginia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.8521,
+      "Longitude": -77.0377,
+      "Elevation_ft": 15
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "ITH",
+    "Airport_Name": "Ithaca Tompkins International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Ithaca",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.491,
+      "Longitude": -76.4584,
+      "Elevation_ft": 1099
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "OAJ",
+    "Airport_Name": "Albert J. Ellis Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Jacksonville",
+      "State": "North Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 34.8292,
+      "Longitude": -77.6121,
+      "Elevation_ft": 94
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "ORH",
+    "Airport_Name": "Worcester Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Worcester",
+      "State": "Massachusetts",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.2673,
+      "Longitude": -71.8757,
+      "Elevation_ft": 1009
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "SEA",
+    "Airport_Name": "Seattle-Tacoma International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Seattle",
+      "State": "Washington",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 47.4502,
+      "Longitude": -122.3088,
+      "Elevation_ft": 433
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "CMH",
+    "Airport_Name": "John Glenn Columbus International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Columbus",
+      "State": "Ohio",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.998,
+      "Longitude": -82.8919,
+      "Elevation_ft": 815
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "BET",
+    "Airport_Name": "Bethel Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Bethel",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 60.7798,
+      "Longitude": -161.838,
+      "Elevation_ft": 126
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "IDA",
+    "Airport_Name": "Idaho Falls Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Idaho Falls",
+      "State": "Idaho",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.5146,
+      "Longitude": -112.0708,
+      "Elevation_ft": 4744
+    },
+    "Timezone": "America/Boise"
+  },
+  {
+    "Airport_Code": "GPT",
+    "Airport_Name": "Gulfport-Biloxi International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Gulfport",
+      "State": "Mississippi",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.4073,
+      "Longitude": -89.0701,
+      "Elevation_ft": 28
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "PSE",
+    "Airport_Name": "Mercedita Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Ponce",
+      "State": "Puerto Rico",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 18.0083,
+      "Longitude": -66.563,
+      "Elevation_ft": 29
+    },
+    "Timezone": "America/Puerto_Rico"
+  },
+  {
+    "Airport_Code": "SJU",
+    "Airport_Name": "Luis Munoz Marin International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "San Juan",
+      "State": "Puerto Rico",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 18.4394,
+      "Longitude": -66.0018,
+      "Elevation_ft": 9
+    },
+    "Timezone": "America/Puerto_Rico"
+  },
+  {
+    "Airport_Code": "EYW",
+    "Airport_Name": "Key West International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Key West",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 24.5561,
+      "Longitude": -81.7596,
+      "Elevation_ft": 3
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "DRO",
+    "Airport_Name": "Durango-La Plata County Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Durango",
+      "State": "Colorado",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.1515,
+      "Longitude": -107.754,
+      "Elevation_ft": 6685
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "ADQ",
+    "Airport_Name": "Kodiak Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Kodiak",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 57.75,
+      "Longitude": -152.4938,
+      "Elevation_ft": 78
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "VCT",
+    "Airport_Name": "Victoria Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Victoria",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 28.8526,
+      "Longitude": -96.9185,
+      "Elevation_ft": 115
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "CAK",
+    "Airport_Name": "Akron-Canton Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Akron",
+      "State": "Ohio",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.9161,
+      "Longitude": -81.4422,
+      "Elevation_ft": 1228
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "EKO",
+    "Airport_Name": "Elko Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Elko",
+      "State": "Nevada",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.8249,
+      "Longitude": -115.7918,
+      "Elevation_ft": 5140
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "LBE",
+    "Airport_Name": "Arnold Palmer Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Latrobe",
+      "State": "Pennsylvania",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.2759,
+      "Longitude": -79.4048,
+      "Elevation_ft": 1199
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "PBG",
+    "Airport_Name": "Plattsburgh International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Plattsburgh",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.6509,
+      "Longitude": -73.4681,
+      "Elevation_ft": 234
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "RFD",
+    "Airport_Name": "Chicago Rockford International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Rockford",
+      "State": "Illinois",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.1954,
+      "Longitude": -89.0972,
+      "Elevation_ft": 742
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "LCK",
+    "Airport_Name": "Rickenbacker International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Columbus",
+      "State": "Ohio",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.8138,
+      "Longitude": -82.9278,
+      "Elevation_ft": 744
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "SLC",
+    "Airport_Name": "Salt Lake City International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Salt Lake City",
+      "State": "Utah",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.7884,
+      "Longitude": -111.9778,
+      "Elevation_ft": 4227
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "BIS",
+    "Airport_Name": "Bismarck Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Bismarck",
+      "State": "North Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.7727,
+      "Longitude": -100.7464,
+      "Elevation_ft": 1661
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "FCA",
+    "Airport_Name": "Glacier Park International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Kalispell",
+      "State": "Montana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 48.3105,
+      "Longitude": -114.2556,
+      "Elevation_ft": 2977
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "MQT",
+    "Airport_Name": "Sawyer International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Gwinn",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.3536,
+      "Longitude": -87.3954,
+      "Elevation_ft": 1221
+    },
+    "Timezone": "America/Detroit"
+  },
+  {
+    "Airport_Code": "DAB",
+    "Airport_Name": "Daytona Beach International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Daytona Beach",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 29.1799,
+      "Longitude": -81.0581,
+      "Elevation_ft": 34
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "PIA",
+    "Airport_Name": "General Wayne A. Downing Peoria International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Peoria",
+      "State": "Illinois",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.6642,
+      "Longitude": -89.6933,
+      "Elevation_ft": 660
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "HOB",
+    "Airport_Name": "Lea County Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Hobbs",
+      "State": "New Mexico",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.6875,
+      "Longitude": -103.217,
+      "Elevation_ft": 3661
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "INL",
+    "Airport_Name": "Falls International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "International Falls",
+      "State": "Minnesota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 48.5662,
+      "Longitude": -93.4031,
+      "Elevation_ft": 1185
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "SCE",
+    "Airport_Name": "University Park Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "State College",
+      "State": "Pennsylvania",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.8493,
+      "Longitude": -77.8487,
+      "Elevation_ft": 1239
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "TXK",
+    "Airport_Name": "Texarkana Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Texarkana",
+      "State": "Arkansas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.4537,
+      "Longitude": -93.991,
+      "Elevation_ft": 390
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ELM",
+    "Airport_Name": "Elmira/Corning Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Elmira",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.1599,
+      "Longitude": -76.8916,
+      "Elevation_ft": 954
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "IAG",
+    "Airport_Name": "Niagara Falls International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Niagara Falls",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.1073,
+      "Longitude": -78.9462,
+      "Elevation_ft": 589
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "CLD",
+    "Airport_Name": "McClellan-Palomar Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Carlsbad",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.1283,
+      "Longitude": -117.279,
+      "Elevation_ft": 331
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "ALO",
+    "Airport_Name": "Waterloo Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Waterloo",
+      "State": "Iowa",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.5571,
+      "Longitude": -92.4003,
+      "Elevation_ft": 873
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "DLG",
+    "Airport_Name": "Dillingham Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Dillingham",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 59.0447,
+      "Longitude": -158.5052,
+      "Elevation_ft": 81
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "FSD",
+    "Airport_Name": "Sioux Falls Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Sioux Falls",
+      "State": "South Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.582,
+      "Longitude": -96.7419,
+      "Elevation_ft": 1429
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "CVG",
+    "Airport_Name": "Cincinnati/Northern Kentucky International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Covington",
+      "State": "Kentucky",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.0488,
+      "Longitude": -84.6678,
+      "Elevation_ft": 896
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "MOB",
+    "Airport_Name": "Mobile Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Mobile",
+      "State": "Alabama",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.6913,
+      "Longitude": -88.2428,
+      "Elevation_ft": 219
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "MEM",
+    "Airport_Name": "Memphis International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Memphis",
+      "State": "Tennessee",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.0424,
+      "Longitude": -89.9767,
+      "Elevation_ft": 341
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "LAN",
+    "Airport_Name": "Capital Region International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Lansing",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.7787,
+      "Longitude": -84.5874,
+      "Elevation_ft": 861
+    },
+    "Timezone": "America/Detroit"
+  },
+  {
+    "Airport_Code": "CLE",
+    "Airport_Name": "Cleveland Hopkins International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Cleveland",
+      "State": "Ohio",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.4117,
+      "Longitude": -81.8498,
+      "Elevation_ft": 791
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "BUF",
+    "Airport_Name": "Buffalo Niagara International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Buffalo",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.9405,
+      "Longitude": -78.7322,
+      "Elevation_ft": 728
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "LIT",
+    "Airport_Name": "Bill and Hillary Clinton National Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Little Rock",
+      "State": "Arkansas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 34.7294,
+      "Longitude": -92.2243,
+      "Elevation_ft": 262
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "SHR",
+    "Airport_Name": "Sheridan County Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Sheridan",
+      "State": "Wyoming",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.7692,
+      "Longitude": -106.9803,
+      "Elevation_ft": 4021
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "BHM",
+    "Airport_Name": "Birmingham-Shuttlesworth International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Birmingham",
+      "State": "Alabama",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.5629,
+      "Longitude": -86.7535,
+      "Elevation_ft": 644
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "MYR",
+    "Airport_Name": "Myrtle Beach International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Myrtle Beach",
+      "State": "South Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.6797,
+      "Longitude": -78.9284,
+      "Elevation_ft": 25
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "SMF",
+    "Airport_Name": "Sacramento International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Sacramento",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.6954,
+      "Longitude": -121.5908,
+      "Elevation_ft": 27
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "DEN",
+    "Airport_Name": "Denver International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Denver",
+      "State": "Colorado",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.8561,
+      "Longitude": -104.6737,
+      "Elevation_ft": 5431
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "RSW",
+    "Airport_Name": "Southwest Florida International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Fort Myers",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 26.5362,
+      "Longitude": -81.7552,
+      "Elevation_ft": 30
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "HRL",
+    "Airport_Name": "Valley International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Harlingen",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 26.2285,
+      "Longitude": -97.6544,
+      "Elevation_ft": 36
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BRO",
+    "Airport_Name": "Brownsville/South Padre Island International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Brownsville",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 25.9068,
+      "Longitude": -97.4259,
+      "Elevation_ft": 22
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "JMS",
+    "Airport_Name": "Jamestown Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Jamestown",
+      "State": "North Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.9297,
+      "Longitude": -98.6782,
+      "Elevation_ft": 1500
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ANC",
+    "Airport_Name": "Ted Stevens Anchorage International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Anchorage",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 61.1744,
+      "Longitude": -149.9964,
+      "Elevation_ft": 152
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "PSP",
+    "Airport_Name": "Palm Springs International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Palm Springs",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.8297,
+      "Longitude": -116.5067,
+      "Elevation_ft": 477
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "PSG",
+    "Airport_Name": "Petersburg James A. Johnson Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Petersburg",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 56.8017,
+      "Longitude": -132.9453,
+      "Elevation_ft": 111
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "CYS",
+    "Airport_Name": "Cheyenne Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Cheyenne",
+      "State": "Wyoming",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.1557,
+      "Longitude": -104.8119,
+      "Elevation_ft": 6159
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "RIW",
+    "Airport_Name": "Riverton Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Riverton",
+      "State": "Wyoming",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.0642,
+      "Longitude": -108.4596,
+      "Elevation_ft": 5525
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "CDC",
+    "Airport_Name": "Cedar City Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Cedar City",
+      "State": "Utah",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.701,
+      "Longitude": -113.0988,
+      "Elevation_ft": 5622
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "TYR",
+    "Airport_Name": "Tyler Pounds Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Tyler",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.3541,
+      "Longitude": -95.4024,
+      "Elevation_ft": 544
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "PVU",
+    "Airport_Name": "Provo Municipal Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Provo",
+      "State": "Utah",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.2192,
+      "Longitude": -111.7229,
+      "Elevation_ft": 4497
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "PLN",
+    "Airport_Name": "Pellston Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Pellston",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 45.5709,
+      "Longitude": -84.7966,
+      "Elevation_ft": 721
+    },
+    "Timezone": "America/Detroit"
+  },
+  {
+    "Airport_Code": "SCK",
+    "Airport_Name": "Stockton Metropolitan Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Stockton",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.8942,
+      "Longitude": -121.2383,
+      "Elevation_ft": 33
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "CKB",
+    "Airport_Name": "North Central West Virginia Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Clarksburg",
+      "State": "West Virginia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.2966,
+      "Longitude": -80.2281,
+      "Elevation_ft": 1217
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "MTJ",
+    "Airport_Name": "Montrose Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Montrose",
+      "State": "Colorado",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.5098,
+      "Longitude": -107.8938,
+      "Elevation_ft": 5759
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "MSN",
+    "Airport_Name": "Dane County Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Madison",
+      "State": "Wisconsin",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.1399,
+      "Longitude": -89.3375,
+      "Elevation_ft": 887
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ADK",
+    "Airport_Name": "Adak Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Adak",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 51.878,
+      "Longitude": -176.646,
+      "Elevation_ft": 18
+    },
+    "Timezone": "America/Adak"
+  },
+  {
+    "Airport_Code": "SPN",
+    "Airport_Name": "Saipan International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Saipan",
+      "State": "Northern Mariana Islands",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 15.119,
+      "Longitude": 145.729,
+      "Elevation_ft": 215
+    },
+    "Timezone": "Pacific/Saipan"
+  },
+  {
+    "Airport_Code": "SUN",
+    "Airport_Name": "Friedman Memorial Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Hailey",
+      "State": "Idaho",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.5044,
+      "Longitude": -114.2963,
+      "Elevation_ft": 5315
+    },
+    "Timezone": "America/Boise"
+  },
+  {
+    "Airport_Code": "ACT",
+    "Airport_Name": "Waco Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Waco",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 31.6113,
+      "Longitude": -97.2305,
+      "Elevation_ft": 516
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "COD",
+    "Airport_Name": "Yellowstone Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Cody",
+      "State": "Wyoming",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.5202,
+      "Longitude": -109.0238,
+      "Elevation_ft": 5102
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "MEI",
+    "Airport_Name": "Meridian Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Meridian",
+      "State": "Mississippi",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.3326,
+      "Longitude": -88.7515,
+      "Elevation_ft": 297
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "MGW",
+    "Airport_Name": "Morgantown Municipal Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Morgantown",
+      "State": "West Virginia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.6429,
+      "Longitude": -79.9163,
+      "Elevation_ft": 1248
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "USA",
+    "Airport_Name": "Concord Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Concord",
+      "State": "North Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.3878,
+      "Longitude": -80.709,
+      "Elevation_ft": 705
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "HHH",
+    "Airport_Name": "Hilton Head Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Hilton Head Island",
+      "State": "South Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.2244,
+      "Longitude": -80.6975,
+      "Elevation_ft": 20
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "EAR",
+    "Airport_Name": "Kearney Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Kearney",
+      "State": "Nebraska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.727,
+      "Longitude": -99.0068,
+      "Elevation_ft": 2131
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "VRB",
+    "Airport_Name": "Vero Beach Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Vero Beach",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 27.6556,
+      "Longitude": -80.4179,
+      "Elevation_ft": 24
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "DAY",
+    "Airport_Name": "Dayton International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Dayton",
+      "State": "Ohio",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.9024,
+      "Longitude": -84.2194,
+      "Elevation_ft": 1009
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "TYS",
+    "Airport_Name": "McGhee Tyson Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Knoxville",
+      "State": "Tennessee",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.811,
+      "Longitude": -83.994,
+      "Elevation_ft": 981
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "DSM",
+    "Airport_Name": "Des Moines International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Des Moines",
+      "State": "Iowa",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.534,
+      "Longitude": -93.6631,
+      "Elevation_ft": 958
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "RDU",
+    "Airport_Name": "Raleigh-Durham International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Raleigh",
+      "State": "North Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.8776,
+      "Longitude": -78.7875,
+      "Elevation_ft": 435
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "MLI",
+    "Airport_Name": "Quad City International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Moline",
+      "State": "Illinois",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.4485,
+      "Longitude": -90.5075,
+      "Elevation_ft": 590
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "AEX",
+    "Airport_Name": "Alexandria International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Alexandria",
+      "State": "Louisiana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 31.3274,
+      "Longitude": -92.5488,
+      "Elevation_ft": 89
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "EWR",
+    "Airport_Name": "Newark Liberty International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Newark",
+      "State": "New Jersey",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.6925,
+      "Longitude": -74.1687,
+      "Elevation_ft": 18
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "MSY",
+    "Airport_Name": "Louis Armstrong New Orleans International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "New Orleans",
+      "State": "Louisiana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 29.9934,
+      "Longitude": -90.258,
+      "Elevation_ft": 4
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "COS",
+    "Airport_Name": "Colorado Springs Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Colorado Springs",
+      "State": "Colorado",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.8058,
+      "Longitude": -104.7008,
+      "Elevation_ft": 6187
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "MSP",
+    "Airport_Name": "Minneapolis-Saint Paul International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Minneapolis",
+      "State": "Minnesota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.882,
+      "Longitude": -93.2218,
+      "Elevation_ft": 841
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BNA",
+    "Airport_Name": "Nashville International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Nashville",
+      "State": "Tennessee",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 36.1245,
+      "Longitude": -86.6782,
+      "Elevation_ft": 599
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BQK",
+    "Airport_Name": "Brunswick Golden Isles Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Brunswick",
+      "State": "Georgia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 31.2588,
+      "Longitude": -81.4665,
+      "Elevation_ft": 26
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "SAT",
+    "Airport_Name": "San Antonio International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "San Antonio",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 29.5337,
+      "Longitude": -98.4698,
+      "Elevation_ft": 809
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "SNA",
+    "Airport_Name": "John Wayne Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Santa Ana",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.6757,
+      "Longitude": -117.8682,
+      "Elevation_ft": 56
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "RNO",
+    "Airport_Name": "Reno-Tahoe International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Reno",
+      "State": "Nevada",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.4991,
+      "Longitude": -119.7681,
+      "Elevation_ft": 4415
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "ELP",
+    "Airport_Name": "El Paso International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "El Paso",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 31.8072,
+      "Longitude": -106.3779,
+      "Elevation_ft": 3959
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "MSO",
+    "Airport_Name": "Missoula Montana Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Missoula",
+      "State": "Montana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.9163,
+      "Longitude": -114.0906,
+      "Elevation_ft": 3205
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "BIL",
+    "Airport_Name": "Billings Logan International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Billings",
+      "State": "Montana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 45.8077,
+      "Longitude": -108.5428,
+      "Elevation_ft": 3652
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "SGU",
+    "Airport_Name": "St. George Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "St. George",
+      "State": "Utah",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.0363,
+      "Longitude": -113.5103,
+      "Elevation_ft": 2941
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "BIH",
+    "Airport_Name": "Eastern Sierra Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Bishop",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.3731,
+      "Longitude": -118.3637,
+      "Elevation_ft": 4121
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "DEC",
+    "Airport_Name": "Decatur Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Decatur",
+      "State": "Illinois",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.8346,
+      "Longitude": -88.8657,
+      "Elevation_ft": 682
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "TPA",
+    "Airport_Name": "Tampa International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Tampa",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 27.9755,
+      "Longitude": -82.5332,
+      "Elevation_ft": 26
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "FAT",
+    "Airport_Name": "Fresno Yosemite International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Fresno",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 36.7762,
+      "Longitude": -119.7181,
+      "Elevation_ft": 336
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "FAY",
+    "Airport_Name": "Fayetteville Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Fayetteville",
+      "State": "North Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 34.9912,
+      "Longitude": -78.8803,
+      "Elevation_ft": 189
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "JNU",
+    "Airport_Name": "Juneau International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Juneau",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 58.355,
+      "Longitude": -134.5763,
+      "Elevation_ft": 21
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "PSC",
+    "Airport_Name": "Tri-Cities Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Pasco",
+      "State": "Washington",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.2647,
+      "Longitude": -119.119,
+      "Elevation_ft": 410
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "HOU",
+    "Airport_Name": "William P. Hobby Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Houston",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 29.6454,
+      "Longitude": -95.2789,
+      "Elevation_ft": 46
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ISP",
+    "Airport_Name": "Long Island MacArthur Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Ronkonkoma",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.7952,
+      "Longitude": -73.1002,
+      "Elevation_ft": 99
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "BPT",
+    "Airport_Name": "Jack Brooks Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Beaumont",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 29.9508,
+      "Longitude": -94.0207,
+      "Elevation_ft": 15
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "APN",
+    "Airport_Name": "Alpena County Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Alpena",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 45.0781,
+      "Longitude": -83.5603,
+      "Elevation_ft": 690
+    },
+    "Timezone": "America/Detroit"
+  },
+  {
+    "Airport_Code": "TUS",
+    "Airport_Name": "Tucson International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Tucson",
+      "State": "Arizona",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.1161,
+      "Longitude": -110.941,
+      "Elevation_ft": 2643
+    },
+    "Timezone": "America/Phoenix"
+  },
+  {
+    "Airport_Code": "MHK",
+    "Airport_Name": "Manhattan Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Manhattan",
+      "State": "Kansas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.1409,
+      "Longitude": -96.6708,
+      "Elevation_ft": 1057
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "EAU",
+    "Airport_Name": "Chippewa Valley Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Eau Claire",
+      "State": "Wisconsin",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.8658,
+      "Longitude": -91.4843,
+      "Elevation_ft": 913
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "PGD",
+    "Airport_Name": "Punta Gorda Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Punta Gorda",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 26.9202,
+      "Longitude": -81.9905,
+      "Elevation_ft": 26
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "HTS",
+    "Airport_Name": "Tri-State Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Huntington",
+      "State": "West Virginia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.3669,
+      "Longitude": -82.558,
+      "Elevation_ft": 828
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "SUX",
+    "Airport_Name": "Sioux Gateway Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Sioux City",
+      "State": "Iowa",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.4026,
+      "Longitude": -96.3844,
+      "Elevation_ft": 1098
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "LAR",
+    "Airport_Name": "Laramie Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Laramie",
+      "State": "Wyoming",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.3121,
+      "Longitude": -105.675,
+      "Elevation_ft": 7284
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "CWA",
+    "Airport_Name": "Central Wisconsin Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Mosinee",
+      "State": "Wisconsin",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.7776,
+      "Longitude": -89.6668,
+      "Elevation_ft": 1277
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "ECP",
+    "Airport_Name": "Northwest Florida Beaches International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Panama City",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.3571,
+      "Longitude": -85.7995,
+      "Elevation_ft": 69
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "SWO",
+    "Airport_Name": "Stillwater Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Stillwater",
+      "State": "Oklahoma",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 36.1612,
+      "Longitude": -97.0857,
+      "Elevation_ft": 1000
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "FNT",
+    "Airport_Name": "Bishop International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Flint",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.9654,
+      "Longitude": -83.7436,
+      "Elevation_ft": 782
+    },
+    "Timezone": "America/Detroit"
+  },
+  {
+    "Airport_Code": "LFT",
+    "Airport_Name": "Lafayette Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Lafayette",
+      "State": "Louisiana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.2053,
+      "Longitude": -91.9876,
+      "Elevation_ft": 42
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "CLL",
+    "Airport_Name": "Easterwood Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "College Station",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.5886,
+      "Longitude": -96.3638,
+      "Elevation_ft": 320
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "LAF",
+    "Airport_Name": "Purdue University Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "West Lafayette",
+      "State": "Indiana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.4123,
+      "Longitude": -86.9369,
+      "Elevation_ft": 606
+    },
+    "Timezone": "America/Indiana/Indianapolis"
+  },
+  {
+    "Airport_Code": "PIR",
+    "Airport_Name": "Pierre Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Pierre",
+      "State": "South Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.3827,
+      "Longitude": -100.286,
+      "Elevation_ft": 1742
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "SWF",
+    "Airport_Name": "New York Stewart International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Newburgh",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.5041,
+      "Longitude": -74.1048,
+      "Elevation_ft": 491
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "PPG",
+    "Airport_Name": "Pago Pago International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Pago Pago",
+      "State": "American Samoa",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": -14.331,
+      "Longitude": -170.7133,
+      "Elevation_ft": 32
+    },
+    "Timezone": "Pacific/Pago_Pago"
+  },
+  {
+    "Airport_Code": "ABI",
+    "Airport_Name": "Abilene Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Abilene",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.4113,
+      "Longitude": -99.6819,
+      "Elevation_ft": 1791
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "VLD",
+    "Airport_Name": "Valdosta Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Valdosta",
+      "State": "Georgia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.7825,
+      "Longitude": -83.2767,
+      "Elevation_ft": 203
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "ERI",
+    "Airport_Name": "Erie International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Erie",
+      "State": "Pennsylvania",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.0831,
+      "Longitude": -80.1739,
+      "Elevation_ft": 732
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "HPN",
+    "Airport_Name": "Westchester County Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "White Plains",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.067,
+      "Longitude": -73.7076,
+      "Elevation_ft": 439
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "CLT",
+    "Airport_Name": "Charlotte Douglas International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Charlotte",
+      "State": "North Carolina",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.214,
+      "Longitude": -80.9431,
+      "Elevation_ft": 748
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "PWM",
+    "Airport_Name": "Portland International Jetport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Portland",
+      "State": "Maine",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.6462,
+      "Longitude": -70.3093,
+      "Elevation_ft": 76
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "LGA",
+    "Airport_Name": "LaGuardia Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "New York",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.7772,
+      "Longitude": -73.8726,
+      "Elevation_ft": 22
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "PIT",
+    "Airport_Name": "Pittsburgh International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Pittsburgh",
+      "State": "Pennsylvania",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.4915,
+      "Longitude": -80.2329,
+      "Elevation_ft": 1203
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "RAP",
+    "Airport_Name": "Rapid City Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Rapid City",
+      "State": "South Dakota",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.0453,
+      "Longitude": -103.0574,
+      "Elevation_ft": 3204
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "EVV",
+    "Airport_Name": "Evansville Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Evansville",
+      "State": "Indiana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.0369,
+      "Longitude": -87.5325,
+      "Elevation_ft": 418
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "DFW",
+    "Airport_Name": "Dallas/Fort Worth International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Dallas",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 32.8998,
+      "Longitude": -97.0403,
+      "Elevation_ft": 607
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "BRW",
+    "Airport_Name": "Wiley Post-Will Rogers Memorial Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Utqiagvik",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 71.2854,
+      "Longitude": -156.766,
+      "Elevation_ft": 44
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "JFK",
+    "Airport_Name": "John F. Kennedy International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "New York",
+      "State": "New York",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.6413,
+      "Longitude": -73.7781,
+      "Elevation_ft": 13
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "CHA",
+    "Airport_Name": "Chattanooga Metropolitan Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Chattanooga",
+      "State": "Tennessee",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.0353,
+      "Longitude": -85.2038,
+      "Elevation_ft": 682
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "BDL",
+    "Airport_Name": "Bradley International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Windsor Locks",
+      "State": "Connecticut",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.9388,
+      "Longitude": -72.6832,
+      "Elevation_ft": 173
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "AGS",
+    "Airport_Name": "Augusta Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Augusta",
+      "State": "Georgia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 33.3699,
+      "Longitude": -81.9645,
+      "Elevation_ft": 144
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "PHL",
+    "Airport_Name": "Philadelphia International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Philadelphia",
+      "State": "Pennsylvania",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.8719,
+      "Longitude": -75.2411,
+      "Elevation_ft": 36
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "EGE",
+    "Airport_Name": "Eagle County Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Gypsum",
+      "State": "Colorado",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.6426,
+      "Longitude": -106.9177,
+      "Elevation_ft": 6548
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "OKC",
+    "Airport_Name": "Will Rogers World Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Oklahoma City",
+      "State": "Oklahoma",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 35.3931,
+      "Longitude": -97.6007,
+      "Elevation_ft": 1295
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "KTN",
+    "Airport_Name": "Ketchikan International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Ketchikan",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 55.3556,
+      "Longitude": -131.7137,
+      "Elevation_ft": 88
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "OAK",
+    "Airport_Name": "Oakland International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Oakland",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.7213,
+      "Longitude": -122.2208,
+      "Elevation_ft": 9
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "LAW",
+    "Airport_Name": "Lawton-Fort Sill Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Lawton",
+      "State": "Oklahoma",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 34.5677,
+      "Longitude": -98.4166,
+      "Elevation_ft": 1110
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "OTH",
+    "Airport_Name": "Southwest Oregon Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "North Bend",
+      "State": "Oregon",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.4175,
+      "Longitude": -124.246,
+      "Elevation_ft": 17
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "ORF",
+    "Airport_Name": "Norfolk International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Norfolk",
+      "State": "Virginia",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 36.8976,
+      "Longitude": -76.0183,
+      "Elevation_ft": 26
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "BTV",
+    "Airport_Name": "Burlington International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Burlington",
+      "State": "Vermont",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.472,
+      "Longitude": -73.1533,
+      "Elevation_ft": 335
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "HDN",
+    "Airport_Name": "Yampa Valley Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Hayden",
+      "State": "Colorado",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.4812,
+      "Longitude": -107.2178,
+      "Elevation_ft": 6606
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "PAE",
+    "Airport_Name": "Paine Field Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Everett",
+      "State": "Washington",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 47.9063,
+      "Longitude": -122.2817,
+      "Elevation_ft": 606
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "MFR",
+    "Airport_Name": "Rogue Valley International-Medford Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Medford",
+      "State": "Oregon",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.3742,
+      "Longitude": -122.8735,
+      "Elevation_ft": 1335
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "LNK",
+    "Airport_Name": "Lincoln Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Lincoln",
+      "State": "Nebraska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 40.851,
+      "Longitude": -96.7592,
+      "Elevation_ft": 1219
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "JLN",
+    "Airport_Name": "Joplin Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Joplin",
+      "State": "Missouri",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 37.1518,
+      "Longitude": -94.4983,
+      "Elevation_ft": 981
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "MCW",
+    "Airport_Name": "Mason City Municipal Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Mason City",
+      "State": "Iowa",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.1578,
+      "Longitude": -93.3313,
+      "Elevation_ft": 1214
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "WYS",
+    "Airport_Name": "Yellowstone Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "West Yellowstone",
+      "State": "Montana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 44.6884,
+      "Longitude": -111.1178,
+      "Elevation_ft": 6649
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "PRC",
+    "Airport_Name": "Prescott Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Prescott",
+      "State": "Arizona",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 34.6549,
+      "Longitude": -112.4198,
+      "Elevation_ft": 5045
+    },
+    "Timezone": "America/Phoenix"
+  },
+  {
+    "Airport_Code": "SDF",
+    "Airport_Name": "Louisville Muhammad Ali International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Louisville",
+      "State": "Kentucky",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.1744,
+      "Longitude": -85.736,
+      "Elevation_ft": 501
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "BTR",
+    "Airport_Name": "Baton Rouge Metropolitan Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Baton Rouge",
+      "State": "Louisiana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 30.5332,
+      "Longitude": -91.1495,
+      "Elevation_ft": 70
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "STS",
+    "Airport_Name": "Charles M. Schulz-Sonoma County Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Santa Rosa",
+      "State": "California",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 38.509,
+      "Longitude": -122.8127,
+      "Elevation_ft": 128
+    },
+    "Timezone": "America/Los_Angeles"
+  },
+  {
+    "Airport_Code": "LRD",
+    "Airport_Name": "Laredo International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Laredo",
+      "State": "Texas",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 27.5438,
+      "Longitude": -99.4615,
+      "Elevation_ft": 508
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "YAK",
+    "Airport_Name": "Yakutat Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Yakutat",
+      "State": "Alaska",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 59.5033,
+      "Longitude": -139.6603,
+      "Elevation_ft": 33
+    },
+    "Timezone": "America/Anchorage"
+  },
+  {
+    "Airport_Code": "TWF",
+    "Airport_Name": "Magic Valley Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Twin Falls",
+      "State": "Idaho",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.4818,
+      "Longitude": -114.4877,
+      "Elevation_ft": 4151
+    },
+    "Timezone": "America/Boise"
+  },
+  {
+    "Airport_Code": "MLB",
+    "Airport_Name": "Melbourne Orlando International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Melbourne",
+      "State": "Florida",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 28.1028,
+      "Longitude": -80.6453,
+      "Elevation_ft": 33
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "PQI",
+    "Airport_Name": "Northern Maine Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Presque Isle",
+      "State": "Maine",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 46.689,
+      "Longitude": -68.0448,
+      "Elevation_ft": 534
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "MVY",
+    "Airport_Name": "Martha s Vineyard Airport",
+    "Airport_Type": "small_airport",
+    "Location": {
+      "City": "Vineyard Haven",
+      "State": "Massachusetts",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.3931,
+      "Longitude": -70.6143,
+      "Elevation_ft": 67
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "LSE",
+    "Airport_Name": "La Crosse Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "La Crosse",
+      "State": "Wisconsin",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 43.879,
+      "Longitude": -91.2567,
+      "Elevation_ft": 655
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "MCI",
+    "Airport_Name": "Kansas City International Airport",
+    "Airport_Type": "large_airport",
+    "Location": {
+      "City": "Kansas City",
+      "State": "Missouri",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 39.2976,
+      "Longitude": -94.7139,
+      "Elevation_ft": 1026
+    },
+    "Timezone": "America/Chicago"
+  },
+  {
+    "Airport_Code": "AZO",
+    "Airport_Name": "Kalamazoo/Battle Creek International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Kalamazoo",
+      "State": "Michigan",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 42.2349,
+      "Longitude": -85.5521,
+      "Elevation_ft": 874
+    },
+    "Timezone": "America/Detroit"
+  },
+  {
+    "Airport_Code": "RKS",
+    "Airport_Name": "Southwest Wyoming Regional Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Rock Springs",
+      "State": "Wyoming",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.5942,
+      "Longitude": -109.0651,
+      "Elevation_ft": 6764
+    },
+    "Timezone": "America/Denver"
+  },
+  {
+    "Airport_Code": "ACK",
+    "Airport_Name": "Nantucket Memorial Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Nantucket",
+      "State": "Massachusetts",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 41.2531,
+      "Longitude": -70.0602,
+      "Elevation_ft": 48
+    },
+    "Timezone": "America/New_York"
+  },
+  {
+    "Airport_Code": "BZN",
+    "Airport_Name": "Bozeman Yellowstone International Airport",
+    "Airport_Type": "medium_airport",
+    "Location": {
+      "City": "Bozeman",
+      "State": "Montana",
+      "Country": "United States"
+    },
+    "Coordinates": {
+      "Latitude": 45.7777,
+      "Longitude": -111.1528,
+      "Elevation_ft": 4473
+    },
+    "Timezone": "America/Denver"
+  }
+]

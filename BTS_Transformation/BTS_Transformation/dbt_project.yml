@@ -1,0 +1,28 @@
+name: 'BTS_Transformation'
+version: '1.0.0'
+
+profile: 'BTS_Transformation'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+asset-paths: ["assets"] 
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  BTS_Transformation:
+    source:
+      +materialized: ephemeral
+    stage:
+      +materialized: view
+    mart:
+      dim:
+        +materialized: table
+      fact:
+        +materialized: table

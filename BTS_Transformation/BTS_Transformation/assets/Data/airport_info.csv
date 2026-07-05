@@ -1,0 +1,359 @@
+Airport_Code,Airport_Name,Country,Airport_Type
+AUS,Austin-Bergstrom International Airport,United States,large_airport
+BWI,Baltimore/Washington International Thurgood Marshall Airport,United States,large_airport
+EUG,Eugene Airport,United States,medium_airport
+LIH,Lihue Airport,United States,large_airport
+MAF,Midland International Air and Space Port,United States,medium_airport
+MDW,Chicago Midway International Airport,United States,large_airport
+OGG,Kahului Airport,United States,large_airport
+VPS,Destin-Fort Walton Beach Airport,United States,medium_airport
+GRR,Gerald R. Ford International Airport,United States,large_airport
+HNL,Daniel K. Inouye International Airport,United States,large_airport
+IAH,George Bush Intercontinental Airport,United States,large_airport
+ICT,Wichita Dwight D. Eisenhower National Airport,United States,medium_airport
+LAS,Harry Reid International Airport,United States,large_airport
+OMA,Eppley Airfield,United States,large_airport
+SRQ,Sarasota-Bradenton International Airport,United States,large_airport
+ONT,Ontario International Airport,United States,large_airport
+AVL,Asheville Regional Airport,United States,medium_airport
+CRW,Yeager Airport,United States,medium_airport
+ACV,California Redwood Coast-Humboldt County Airport,United States,medium_airport
+GTF,Great Falls International Airport,United States,medium_airport
+BJI,Bemidji Regional Airport,United States,medium_airport
+PDX,Portland International Airport,United States,large_airport
+PNS,Pensacola International Airport,United States,large_airport
+ROC,Frederick Douglass Greater Rochester International Airport,United States,large_airport
+GJT,Grand Junction Regional Airport,United States,medium_airport
+HLN,Helena Regional Airport,United States,medium_airport
+GRK,Killeen-Fort Hood Regional Airport,United States,medium_airport
+GFK,Grand Forks International Airport,United States,medium_airport
+EWN,Coastal Carolina Regional Airport,United States,medium_airport
+DHN,Dothan Regional Airport,United States,medium_airport
+BMI,Central Illinois Regional Airport,United States,medium_airport
+GCC,Gillette-Campbell County Airport,United States,medium_airport
+GUF,Jack Edwards National Airport,United States,small_airport
+BGM,Greater Binghamton Airport,United States,medium_airport
+MIA,Miami International Airport,United States,large_airport
+SIT,Sitka Rocky Gutierrez Airport,United States,medium_airport
+MDT,Harrisburg International Airport,United States,medium_airport
+TRI,Tri-Cities Regional Airport,United States,medium_airport
+DVL,Devils Lake Regional Airport,United States,medium_airport
+LWS,Lewiston-Nez Perce County Airport,United States,medium_airport
+BFF,Western Nebraska Regional Airport,United States,medium_airport
+ALW,Walla Walla Regional Airport,United States,medium_airport
+BFL,Meadows Field Airport,United States,medium_airport
+MKE,Milwaukee Mitchell International Airport,United States,large_airport
+RIC,Richmond International Airport,United States,large_airport
+RST,Rochester International Airport,United States,medium_airport
+XNA,Northwest Arkansas National Airport,United States,medium_airport
+GSP,Greenville-Spartanburg International Airport,United States,medium_airport
+JAX,Jacksonville International Airport,United States,large_airport
+STT,Cyril E. King Airport,United States,large_airport
+TUL,Tulsa International Airport,United States,large_airport
+LAX,Los Angeles International Airport,United States,large_airport
+AVP,Wilkes-Barre/Scranton International Airport,United States,medium_airport
+SJC,Norman Y. Mineta San Jose International Airport,United States,large_airport
+CDV,Merle K. (Mudhole) Smith Airport,United States,medium_airport
+WRG,Wrangell Airport,United States,medium_airport
+FAI,Fairbanks International Airport,United States,medium_airport
+BLI,Bellingham International Airport,United States,medium_airport
+AZA,Phoenix-Mesa Gateway Airport,United States,medium_airport
+PIE,St. Pete-Clearwater International Airport,United States,large_airport
+TOL,Toledo Express Airport,United States,medium_airport
+ABR,Aberdeen Regional Airport,United States,medium_airport
+GTR,Golden Triangle Regional Airport,United States,medium_airport
+IAD,Washington Dulles International Airport,United States,large_airport
+GSO,Piedmont Triad International Airport,United States,large_airport
+PHX,Phoenix Sky Harbor International Airport,United States,large_airport
+SAN,San Diego International Airport,United States,large_airport
+RDM,Redmond Airport,United States,medium_airport
+YUM,Yuma International Airport,United States,medium_airport
+ABY,Southwest Georgia Regional Airport,United States,medium_airport
+HIB,Range Regional Airport,United States,medium_airport
+CIU,Chippewa County International Airport,United States,medium_airport
+SLN,Salina Regional Airport,United States,medium_airport
+MFE,McAllen Miller International Airport,United States,medium_airport
+DIK,Dickinson Theodore Roosevelt Regional Airport,United States,medium_airport
+BTM,Bert Mooney Airport,United States,medium_airport
+SYR,Syracuse Hancock International Airport,United States,large_airport
+MOT,Minot International Airport,United States,medium_airport
+LBB,Lubbock Preston Smith International Airport,United States,medium_airport
+SBP,San Luis Obispo County Regional Airport,United States,medium_airport
+SJT,San Angelo Regional Airport,United States,medium_airport
+SAF,Santa Fe Regional Airport,United States,medium_airport
+CMX,Houghton County Memorial Airport,United States,medium_airport
+PIB,Hattiesburg-Laurel Regional Airport,United States,medium_airport
+BLV,MidAmerica St. Louis Airport,United States,medium_airport
+ATY,Watertown Regional Airport,United States,medium_airport
+ATW,Appleton International Airport,United States,medium_airport
+IND,Indianapolis International Airport,United States,large_airport
+FWA,Fort Wayne International Airport,United States,medium_airport
+DTW,Detroit Metropolitan Wayne County Airport,United States,large_airport
+FAR,Hector International Airport,United States,medium_airport
+ATL,Hartsfield-Jackson Atlanta International Airport,United States,large_airport
+SGF,Springfield-Branson National Airport,United States,medium_airport
+HSV,Huntsville International Airport,United States,medium_airport
+CSG,Columbus Airport,United States,medium_airport
+TVC,Cherry Capital Airport,United States,medium_airport
+KOA,Ellison Onizuka Kona International Airport,United States,large_airport
+GEG,Spokane International Airport,United States,large_airport
+AKN,King Salmon Airport,United States,medium_airport
+AMA,Rick Husband Amarillo International Airport,United States,medium_airport
+SFB,Orlando Sanford International Airport,United States,large_airport
+GRI,Central Nebraska Regional Airport,United States,medium_airport
+LBL,Liberal Mid-America Regional Airport,United States,medium_airport
+BOS,Boston Logan International Airport,United States,large_airport
+MHT,Manchester-Boston Regional Airport,United States,medium_airport
+BUR,Hollywood Burbank Airport,United States,large_airport
+SCC,Deadhorse Airport,United States,medium_airport
+GUM,Antonio B. Won Pat International Airport,United States,large_airport
+ACY,Atlantic City International Airport,United States,medium_airport
+LGB,Long Beach Airport,United States,large_airport
+GCK,Garden City Regional Airport,United States,medium_airport
+LCH,Lake Charles Regional Airport,United States,medium_airport
+RDD,Redding Municipal Airport,United States,medium_airport
+FOD,Fort Dodge Regional Airport,United States,medium_airport
+MBS,MBS International Airport,United States,medium_airport
+FLL,Fort Lauderdale-Hollywood International Airport,United States,large_airport
+CRP,Corpus Christi International Airport,United States,medium_airport
+HGR,Hagerstown Regional Airport,United States,medium_airport
+ESC,Delta County Airport,United States,medium_airport
+DDC,Dodge City Regional Airport,United States,medium_airport
+LEX,Blue Grass Airport,United States,medium_airport
+SBA,Santa Barbara Airport,United States,medium_airport
+GST,Gustavus Airport,United States,medium_airport
+STC,St. Cloud Regional Airport,United States,medium_airport
+FSM,Fort Smith Regional Airport,United States,medium_airport
+ROW,Roswell Air Center Airport,United States,medium_airport
+ASE,Aspen-Pitkin County Airport,United States,medium_airport
+LBF,North Platte Regional Airport,United States,medium_airport
+SPI,Abraham Lincoln Capital Airport,United States,medium_airport
+HYS,Hays Regional Airport,United States,medium_airport
+FMN,Four Corners Regional Airport,United States,medium_airport
+JAC,Jackson Hole Airport,United States,medium_airport
+PBI,Palm Beach International Airport,United States,large_airport
+JAN,Jackson-Medgar Wiley Evers International Airport,United States,medium_airport
+TTN,Trenton Mercer Airport,United States,medium_airport
+PHF,Newport News/Williamsburg International Airport,United States,medium_airport
+CNY,Canyonlands Field Airport,United States,medium_airport
+CID,The Eastern Iowa Airport,United States,medium_airport
+GRB,Austin Straubel International Airport,United States,medium_airport
+CHS,Charleston International Airport,United States,large_airport
+TLH,Tallahassee International Airport,United States,medium_airport
+GNV,Gainesville Regional Airport,United States,medium_airport
+ABQ,Albuquerque International Sunport,United States,large_airport
+BOI,Boise Airport,United States,large_airport
+ALB,Albany International Airport,United States,large_airport
+PVD,Rhode Island T.F. Green International Airport,United States,large_airport
+CAE,Columbia Metropolitan Airport,United States,medium_airport
+MRY,Monterey Regional Airport,United States,medium_airport
+OTZ,Ralph Wien Memorial Airport,United States,medium_airport
+DAL,Dallas Love Field,United States,large_airport
+BRD,Brainerd Lakes Regional Airport,United States,medium_airport
+FLG,Flagstaff Pulliam Airport,United States,medium_airport
+SFO,San Francisco International Airport,United States,large_airport
+MCO,Orlando International Airport,United States,large_airport
+OME,Nome Airport,United States,medium_airport
+SMX,Santa Maria Public Airport,United States,medium_airport
+GGG,East Texas Regional Airport,United States,medium_airport
+CMI,University of Illinois Willard Airport,United States,medium_airport
+RHI,Rhinelander-Oneida County Airport,United States,medium_airport
+CPR,Casper/Natrona County International Airport,United States,medium_airport
+JST,John Murtha Johnstown-Cambria County Airport,United States,medium_airport
+SPS,Wichita Falls Municipal Airport,United States,medium_airport
+BQN,Rafael Hernández Airport,United States,medium_airport
+PIH,Pocatello Regional Airport,United States,medium_airport
+ROA,Roanoke-Blacksburg Regional Airport,United States,medium_airport
+STX,Henry E. Rohlsen Airport,United States,medium_airport
+GUC,Gunnison-Crested Butte Regional Airport,United States,medium_airport
+PSM,Portsmouth International Airport at Pease,United States,medium_airport
+HYA,Barnstable Municipal Airport,United States,medium_airport
+IMT,Ford Airport,United States,medium_airport
+COU,Columbia Regional Airport,United States,medium_airport
+XWA,Williston Basin International Airport,United States,medium_airport
+VEL,Vernal Regional Airport,United States,medium_airport
+ABE,Lehigh Valley International Airport,United States,medium_airport
+CHO,Charlottesville-Albemarle Airport,United States,medium_airport
+ILM,Wilmington International Airport,United States,medium_airport
+STL,St. Louis Lambert International Airport,United States,large_airport
+SAV,Savannah/Hilton Head International Airport,United States,large_airport
+SHV,Shreveport Regional Airport,United States,medium_airport
+ORD,O Hare International Airport,United States,large_airport
+ITO,Hilo International Airport,United States,medium_airport
+SBN,South Bend International Airport,United States,medium_airport
+MLU,Monroe Regional Airport,United States,medium_airport
+MGM,Montgomery Regional Airport,United States,medium_airport
+DLH,Duluth International Airport,United States,medium_airport
+BGR,Bangor International Airport,United States,medium_airport
+DCA,Ronald Reagan Washington National Airport,United States,large_airport
+ITH,Ithaca Tompkins International Airport,United States,medium_airport
+OAJ,Albert J. Ellis Airport,United States,medium_airport
+ORH,Worcester Regional Airport,United States,medium_airport
+SEA,Seattle-Tacoma International Airport,United States,large_airport
+CMH,John Glenn Columbus International Airport,United States,large_airport
+BET,Bethel Airport,United States,medium_airport
+IDA,Idaho Falls Regional Airport,United States,medium_airport
+GPT,Gulfport-Biloxi International Airport,United States,medium_airport
+PSE,Mercedita Airport,United States,medium_airport
+SJU,Luis Munoz Marin International Airport,United States,large_airport
+EYW,Key West International Airport,United States,medium_airport
+DRO,Durango-La Plata County Airport,United States,medium_airport
+ADQ,Kodiak Airport,United States,medium_airport
+VCT,Victoria Regional Airport,United States,medium_airport
+CAK,Akron-Canton Airport,United States,medium_airport
+EKO,Elko Regional Airport,United States,medium_airport
+LBE,Arnold Palmer Regional Airport,United States,medium_airport
+PBG,Plattsburgh International Airport,United States,medium_airport
+RFD,Chicago Rockford International Airport,United States,medium_airport
+LCK,Rickenbacker International Airport,United States,medium_airport
+SLC,Salt Lake City International Airport,United States,large_airport
+BIS,Bismarck Airport,United States,medium_airport
+FCA,Glacier Park International Airport,United States,medium_airport
+MQT,Sawyer International Airport,United States,medium_airport
+DAB,Daytona Beach International Airport,United States,medium_airport
+PIA,General Wayne A. Downing Peoria International Airport,United States,medium_airport
+HOB,Lea County Regional Airport,United States,medium_airport
+INL,Falls International Airport,United States,medium_airport
+SCE,University Park Airport,United States,medium_airport
+TXK,Texarkana Regional Airport,United States,medium_airport
+ELM,Elmira/Corning Regional Airport,United States,medium_airport
+IAG,Niagara Falls International Airport,United States,medium_airport
+CLD,McClellan-Palomar Airport,United States,medium_airport
+ALO,Waterloo Regional Airport,United States,medium_airport
+DLG,Dillingham Airport,United States,medium_airport
+FSD,Sioux Falls Regional Airport,United States,medium_airport
+CVG,Cincinnati/Northern Kentucky International Airport,United States,large_airport
+MOB,Mobile Regional Airport,United States,medium_airport
+MEM,Memphis International Airport,United States,large_airport
+LAN,Capital Region International Airport,United States,medium_airport
+CLE,Cleveland Hopkins International Airport,United States,large_airport
+BUF,Buffalo Niagara International Airport,United States,large_airport
+LIT,Bill and Hillary Clinton National Airport,United States,medium_airport
+SHR,Sheridan County Airport,United States,medium_airport
+BHM,Birmingham-Shuttlesworth International Airport,United States,large_airport
+MYR,Myrtle Beach International Airport,United States,large_airport
+SMF,Sacramento International Airport,United States,large_airport
+DEN,Denver International Airport,United States,large_airport
+RSW,Southwest Florida International Airport,United States,large_airport
+HRL,Valley International Airport,United States,medium_airport
+BRO,Brownsville/South Padre Island International Airport,United States,medium_airport
+JMS,Jamestown Regional Airport,United States,medium_airport
+ANC,Ted Stevens Anchorage International Airport,United States,large_airport
+PSP,Palm Springs International Airport,United States,large_airport
+PSG,Petersburg James A. Johnson Airport,United States,medium_airport
+CYS,Cheyenne Regional Airport,United States,medium_airport
+RIW,Riverton Regional Airport,United States,medium_airport
+CDC,Cedar City Regional Airport,United States,medium_airport
+TYR,Tyler Pounds Regional Airport,United States,medium_airport
+PVU,Provo Municipal Airport,United States,medium_airport
+PLN,Pellston Regional Airport,United States,medium_airport
+SCK,Stockton Metropolitan Airport,United States,medium_airport
+CKB,North Central West Virginia Airport,United States,medium_airport
+MTJ,Montrose Regional Airport,United States,medium_airport
+MSN,Dane County Regional Airport,United States,medium_airport
+ADK,Adak Airport,United States,medium_airport
+SPN,Saipan International Airport,United States,medium_airport
+SUN,Friedman Memorial Airport,United States,medium_airport
+ACT,Waco Regional Airport,United States,medium_airport
+COD,Yellowstone Regional Airport,United States,medium_airport
+MEI,Meridian Regional Airport,United States,medium_airport
+MGW,Morgantown Municipal Airport,United States,medium_airport
+USA,Concord Regional Airport,United States,medium_airport
+HHH,Hilton Head Airport,United States,medium_airport
+EAR,Kearney Regional Airport,United States,medium_airport
+VRB,Vero Beach Regional Airport,United States,medium_airport
+DAY,Dayton International Airport,United States,medium_airport
+TYS,McGhee Tyson Airport,United States,large_airport
+DSM,Des Moines International Airport,United States,large_airport
+RDU,Raleigh-Durham International Airport,United States,large_airport
+MLI,Quad City International Airport,United States,medium_airport
+AEX,Alexandria International Airport,United States,medium_airport
+EWR,Newark Liberty International Airport,United States,large_airport
+MSY,Louis Armstrong New Orleans International Airport,United States,large_airport
+COS,Colorado Springs Airport,United States,large_airport
+MSP,Minneapolis-Saint Paul International Airport,United States,large_airport
+BNA,Nashville International Airport,United States,large_airport
+BQK,Brunswick Golden Isles Airport,United States,medium_airport
+SAT,San Antonio International Airport,United States,large_airport
+SNA,John Wayne Airport,United States,large_airport
+RNO,Reno-Tahoe International Airport,United States,large_airport
+ELP,El Paso International Airport,United States,large_airport
+MSO,Missoula Montana Airport,United States,medium_airport
+BIL,Billings Logan International Airport,United States,medium_airport
+SGU,St. George Regional Airport,United States,medium_airport
+BIH,Eastern Sierra Regional Airport,United States,medium_airport
+DEC,Decatur Airport,United States,medium_airport
+TPA,Tampa International Airport,United States,large_airport
+FAT,Fresno Yosemite International Airport,United States,large_airport
+FAY,Fayetteville Regional Airport,United States,medium_airport
+JNU,Juneau International Airport,United States,medium_airport
+PSC,Tri-Cities Airport,United States,medium_airport
+HOU,William P. Hobby Airport,United States,large_airport
+ISP,Long Island MacArthur Airport,United States,medium_airport
+BPT,Jack Brooks Regional Airport,United States,medium_airport
+APN,Alpena County Regional Airport,United States,medium_airport
+TUS,Tucson International Airport,United States,large_airport
+MHK,Manhattan Regional Airport,United States,medium_airport
+EAU,Chippewa Valley Regional Airport,United States,medium_airport
+PGD,Punta Gorda Airport,United States,medium_airport
+HTS,Tri-State Airport,United States,medium_airport
+SUX,Sioux Gateway Airport,United States,medium_airport
+LAR,Laramie Regional Airport,United States,medium_airport
+CWA,Central Wisconsin Airport,United States,medium_airport
+ECP,Northwest Florida Beaches International Airport,United States,medium_airport
+SWO,Stillwater Regional Airport,United States,medium_airport
+FNT,Bishop International Airport,United States,medium_airport
+LFT,Lafayette Regional Airport,United States,medium_airport
+CLL,Easterwood Airport,United States,medium_airport
+LAF,Purdue University Airport,United States,medium_airport
+PIR,Pierre Regional Airport,United States,medium_airport
+SWF,New York Stewart International Airport,United States,medium_airport
+PPG,Pago Pago International Airport,United States,large_airport
+ABI,Abilene Regional Airport,United States,medium_airport
+VLD,Valdosta Regional Airport,United States,medium_airport
+ERI,Erie International Airport,United States,medium_airport
+HPN,Westchester County Airport,United States,medium_airport
+CLT,Charlotte Douglas International Airport,United States,large_airport
+PWM,Portland International Jetport,United States,large_airport
+LGA,LaGuardia Airport,United States,large_airport
+PIT,Pittsburgh International Airport,United States,large_airport
+RAP,Rapid City Regional Airport,United States,medium_airport
+EVV,Evansville Regional Airport,United States,medium_airport
+DFW,Dallas/Fort Worth International Airport,United States,large_airport
+BRW,Wiley Post-Will Rogers Memorial Airport,United States,medium_airport
+JFK,John F. Kennedy International Airport,United States,large_airport
+CHA,Chattanooga Metropolitan Airport,United States,medium_airport
+BDL,Bradley International Airport,United States,large_airport
+AGS,Augusta Regional Airport,United States,medium_airport
+PHL,Philadelphia International Airport,United States,large_airport
+EGE,Eagle County Regional Airport,United States,medium_airport
+OKC,Will Rogers World Airport,United States,large_airport
+KTN,Ketchikan International Airport,United States,medium_airport
+OAK,Oakland International Airport,United States,large_airport
+LAW,Lawton-Fort Sill Regional Airport,United States,medium_airport
+OTH,Southwest Oregon Regional Airport,United States,medium_airport
+ORF,Norfolk International Airport,United States,large_airport
+BTV,Burlington International Airport,United States,medium_airport
+HDN,Yampa Valley Airport,United States,medium_airport
+PAE,Paine Field Airport,United States,medium_airport
+MFR,Rogue Valley International-Medford Airport,United States,medium_airport
+LNK,Lincoln Airport,United States,medium_airport
+JLN,Joplin Regional Airport,United States,medium_airport
+MCW,Mason City Municipal Airport,United States,medium_airport
+WYS,Yellowstone Airport,United States,medium_airport
+PRC,Prescott Regional Airport,United States,medium_airport
+SDF,Louisville Muhammad Ali International Airport,United States,large_airport
+BTR,Baton Rouge Metropolitan Airport,United States,medium_airport
+STS,Charles M. Schulz-Sonoma County Airport,United States,medium_airport
+LRD,Laredo International Airport,United States,medium_airport
+YAK,Yakutat Airport,United States,medium_airport
+TWF,Magic Valley Regional Airport,United States,medium_airport
+MLB,Melbourne Orlando International Airport,United States,medium_airport
+PQI,Northern Maine Regional Airport,United States,medium_airport
+MVY,Martha s Vineyard Airport,United States,small_airport
+LSE,La Crosse Regional Airport,United States,medium_airport
+MCI,Kansas City International Airport,United States,large_airport
+AZO,Kalamazoo/Battle Creek International Airport,United States,medium_airport
+RKS,Southwest Wyoming Regional Airport,United States,medium_airport
+ACK,Nantucket Memorial Airport,United States,medium_airport
+BZN,Bozeman Yellowstone International Airport,United States,medium_airport

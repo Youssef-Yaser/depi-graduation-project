@@ -1,0 +1,333 @@
+unit_tests:
+
+  # Test cases for dim_date model
+  - name: test_dim_date_calendar_attributes
+    description: "Verify Date_Key generation and calendar attributes"
+    model: dim_date
+    given:
+      - input: ref('stg_flights')
+        rows:
+          - {FlightDate: "2024-06-17", Year: 2024, Quarter: 2, Month: 6, DayOfMonth: 17, DayOfWeek: 1}
+      - input: ref('US_federal_holidays')
+        rows: []
+    expect:
+      rows:
+        - {Date_Key: 20240617, FlightDate: "2024-06-17", Year: 2024, Quarter: 2, Month: 6, DayOfMonth: 17, DayOfWeek: 1, Day_Name: "Mon", Is_Holiday: false, Holiday_Name: "No Holiday"}
+
+  - name: test_dim_date_holiday_classification
+    description: "Verify holiday and weekend classification"
+    model: dim_date
+    given:
+      - input: ref('stg_flights')
+        rows:
+          - {FlightDate: "2024-01-01", Year: 2024, Quarter: 1, Month: 1, DayOfMonth: 1, DayOfWeek: 1}
+          - {FlightDate: "2024-01-06", Year: 2024, Quarter: 1, Month: 1, DayOfMonth: 6, DayOfWeek: 6}
+          - {FlightDate: "2024-01-03", Year: 2024, Quarter: 1, Month: 1, DayOfMonth: 3, DayOfWeek: 3}
+      - input: ref('US_federal_holidays')
+        rows:
+          - {holiday_date: "2024-01-01", holiday_name: "New Year's Day"}
+    expect:
+      rows:
+        - {FlightDate: "2024-01-01", Year: 2024, Quarter: 1, Month: 1, DayOfMonth: 1, DayOfWeek: 1, Day_Name: "Mon", Is_Holiday: true, Holiday_Name: "New Year's Day"}
+        - {FlightDate: "2024-01-06", Year: 2024, Quarter: 1, Month: 1, DayOfMonth: 6, DayOfWeek: 6, Day_Name: "Sat", Is_Holiday: true, Holiday_Name: "Weekend"}
+        - {FlightDate: "2024-01-03", Year: 2024, Quarter: 1, Month: 1, DayOfMonth: 3, DayOfWeek: 3, Day_Name: "Wed", Is_Holiday: false, Holiday_Name: "No Holiday"}
+
+  - name: test_dim_date_removes_duplicate_dates
+    description: "Verify duplicate dates are removed"
+    model: dim_date
+    given:
+      - input: ref('stg_flights')
+        rows:
+          - {FlightDate: "2024-06-17", Year: 2024, Quarter: 2, Month: 6, DayOfMonth: 17, DayOfWeek: 1}
+          - {FlightDate: "2024-06-17", Year: 2024, Quarter: 2, Month: 6, DayOfMonth: 17, DayOfWeek: 1}
+          - {FlightDate: "2024-06-17", Year: 2024, Quarter: 2, Month: 6, DayOfMonth: 17, DayOfWeek: 1}
+      - input: ref('US_federal_holidays')
+        rows: []
+    expect:
+      rows:
+        - {FlightDate: "2024-06-17",Year: 2024, Quarter: 2, Month: 6, DayOfMonth: 17, DayOfWeek: 1, Day_Name: "Mon", Is_Holiday: false, Holiday_Name: "No Holiday"}
+
+  - name: test_dim_date_holiday_priority
+    description: "Verify federal holidays take precedence over weekends"
+    model: dim_date
+    given:
+      - input: ref('stg_flights')
+        rows:
+          - {FlightDate: "2027-07-04", Year: 2027, Quarter: 3, Month: 7, DayOfMonth: 4, DayOfWeek: 7}
+      - input: ref('US_federal_holidays')
+        rows:
+          - {holiday_date: "2027-07-04", holiday_name: "Independence Day"}
+    expect:
+      rows:
+        - {FlightDate: "2027-07-04", Year: 2027, Quarter: 3, Month: 7, DayOfMonth: 4, DayOfWeek: 7, Day_Name: "Sun", Is_Holiday: true, Holiday_Name: "Independence Day"}
+
+
+    # Test cases for dim_airline model
+
+  - name: test_dim_airline_lookup
+    description: "Verify airline information is joined correctly"
+    model: dim_airline
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Airline_Code: "AA"}
+            - {Airline_Code: "DL"}
+        - input: ref('stg_airline_info')
+          rows:
+            - {Airline_Code: "AA", Airline_Name: "American Airlines", Airline_Type: "Mainline", Airline_Rating: 4.8}
+            - {Airline_Code: "DL", Airline_Name: "Delta Air Lines", Airline_Type: "Mainline", Airline_Rating: 4.9}
+    expect:
+        rows:
+        - {Airline_Code: "AA", Airline_Name: "American Airlines", Airline_Type: "Mainline", Airline_Rating: 4.8}
+        - {Airline_Code: "DL", Airline_Name: "Delta Air Lines", Airline_Type: "Mainline", Airline_Rating: 4.9}
+
+  - name: test_dim_airline_missing_lookup
+    description: "Verify airlines without lookup information are preserved"
+    model: dim_airline
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Airline_Code: "AA"}
+            - {Airline_Code: "ZZ"} # This airline code does not exist in the lookup table
+        - input: ref('stg_airline_info')
+          rows:
+            - {Airline_Code: "AA", Airline_Name: "American Airlines", Airline_Type: "Mainline", Airline_Rating: 4.8}
+    expect:
+        rows:
+        - {Airline_Code: "AA", Airline_Name: "American Airlines", Airline_Type: "Mainline", Airline_Rating: 4.8}
+        - {Airline_Code: "ZZ", Airline_Name: null, Airline_Type: null, Airline_Rating: null}
+
+  - name: test_dim_airline_removes_duplicates
+    description: "Verify duplicate airline codes are removed"
+    model: dim_airline
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Airline_Code: "AA"}
+            - {Airline_Code: "AA"}
+            - {Airline_Code: "AA"}
+        - input: ref('stg_airline_info')
+          rows:
+            - {Airline_Code: "AA", Airline_Name: "American Airlines", Airline_Type: "Mainline", Airline_Rating: 4.8}
+    expect:
+        rows:
+        - {Airline_Code: "AA", Airline_Name: "American Airlines", Airline_Type: "Mainline", Airline_Rating: 4.8}
+
+    # Test cases for dim_airport model
+
+  - name: test_dim_airport_lookup
+    description: "Verify airport information is joined correctly"
+    model: dim_airport
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Origin_Airport_Code: "JFK", Origin_City_Name: "New York", Origin_State_Name: "New York", Dest_Airport_Code: "LAX", Dest_City_Name: "Los Angeles", Dest_State_Name: "California"}
+        - input: ref('stg_airport_info')
+          rows:
+            - {Airport_Code: "JFK", Airport_Name: "John F. Kennedy International", Airport_Type: "Large Airport", Country: "United States"}
+            - {Airport_Code: "LAX", Airport_Name: "Los Angeles International", Airport_Type: "Large Airport", Country: "United States"}
+    expect:
+        rows:
+        - {Airport_Code: "JFK", Airport_Name: "John F. Kennedy International", City_Name: "New York", State_Name: "New York", Country: "United States", Airport_Type: "Large Airport"}
+        - {Airport_Code: "LAX", Airport_Name: "Los Angeles International", City_Name: "Los Angeles", State_Name: "California", Country: "United States", Airport_Type: "Large Airport"}
+
+  - name: test_dim_airport_union_origin_destination
+    description: "Verify origin and destination airports are combined"
+    model: dim_airport
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Origin_Airport_Code: "JFK", Origin_City_Name: "New York", Origin_State_Name: "New York", Dest_Airport_Code: "ATL", Dest_City_Name: "Atlanta", Dest_State_Name: "Georgia"}
+        - input: ref('stg_airport_info')
+          rows:
+            - {Airport_Code: "JFK", Airport_Name: "John F. Kennedy International", Airport_Type: "Large Airport", Country: "United States"}
+            - {Airport_Code: "ATL", Airport_Name: "Hartsfield-Jackson Atlanta International", Airport_Type: "Large Airport", Country: "United States"}
+    expect:
+        rows:
+        - {Airport_Code: "JFK"}
+        - {Airport_Code: "ATL"}
+
+  - name: test_dim_airport_missing_lookup
+    description: "Verify default values are used when airport lookup is missing"
+    model: dim_airport
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Origin_Airport_Code: "XYZ", Origin_City_Name: "Unknown City", Origin_State_Name: "Unknown State", Dest_Airport_Code: "LAX", Dest_City_Name: "Los Angeles", Dest_State_Name: "California"}
+        - input: ref('stg_airport_info')
+          rows:
+            - {Airport_Code: "LAX", Airport_Name: "Los Angeles International", Airport_Type: "Large Airport", Country: "United States"}
+    expect:
+        rows:
+        - {Airport_Code: "XYZ", Airport_Name: "Unknown Airport", City_Name: "Unknown City", State_Name: "Unknown State", Country: "United States", Airport_Type: "Unknown Airport Type"}
+        - {Airport_Code: "LAX", Airport_Name: "Los Angeles International", City_Name: "Los Angeles", State_Name: "California", Country: "United States", Airport_Type: "Large Airport"}
+
+  - name: test_dim_airport_removes_duplicates
+    description: "Verify duplicate airports are removed"
+    model: dim_airport
+
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Origin_Airport_Code: "JFK", Origin_City_Name: "New York", Origin_State_Name: "New York", Dest_Airport_Code: "LAX", Dest_City_Name: "Los Angeles", Dest_State_Name: "California"}
+            - {Origin_Airport_Code: "LAX", Origin_City_Name: "Los Angeles", Origin_State_Name: "California", Dest_Airport_Code: "JFK", Dest_City_Name: "New York", Dest_State_Name: "New York"}
+
+        - input: ref('stg_airport_info')
+          rows:
+            - {Airport_Code: "JFK", Airport_Name: "John F. Kennedy International", Airport_Type: "Large Airport", Country: "United States"}
+            - {Airport_Code: "LAX", Airport_Name: "Los Angeles International", Airport_Type: "Large Airport", Country: "United States"}
+
+    expect:
+        rows:
+        - {Airport_Code: "JFK", Airport_Name: "John F. Kennedy International", City_Name: "New York", State_Name: "New York", Country: "United States", Airport_Type: "Large Airport"}
+        - {Airport_Code: "LAX", Airport_Name: "Los Angeles International", City_Name: "Los Angeles", State_Name: "California", Country: "United States", Airport_Type: "Large Airport"}
+
+
+    # Test cases for fact_flight model
+
+  - name: test_fact_flight_dimension_lookups
+    description: "Verify date, airport and airline lookups are resolved correctly"
+    model: fact_flight
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Flight_Key: "F001", FlightDate: "2024-06-15", Origin_Airport_Code: "JFK", Dest_Airport_Code: "LAX", Airline_Code: "AA", Flight_Number: "100", Tail_Number: "N123AA", Scheduled_Departure_HHMM: "0800", Scheduled_Arrival_HHMM: "1100", Flight_Distance_Miles: 2475, Actual_Air_Time_Minutes: 330}
+
+        - input: ref('dim_date')
+          rows:
+            - {Date_Key: 20240615, FlightDate: "2024-06-15"}
+
+        - input: ref('dim_airport')
+          rows:
+            - {Airport_Code: "JFK"}
+            - {Airport_Code: "LAX"}
+
+        - input: ref('dim_airline')
+          rows:
+            - {Airline_Code: "AA"}
+
+    expect:
+        rows:
+        - {Flight_Key: "F001", Date_Key: 20240615, Origin_Airport_Code: "JFK", Dest_Airport_Code: "LAX", Airline_Code: "AA"}
+
+  - name: test_fact_flight_missing_dimension_lookup
+    description: "Verify missing dimension records return NULL while preserving the flight"
+    model: fact_flight
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Flight_Key: "F002", FlightDate: "2024-06-15", Origin_Airport_Code: "XXX", Dest_Airport_Code: "LAX", Airline_Code: "ZZ", Flight_Number: "200", Tail_Number: "N999ZZ", Scheduled_Departure_HHMM: "0900", Scheduled_Arrival_HHMM: "1200", Flight_Distance_Miles: 2100, Actual_Air_Time_Minutes: 290}
+
+        - input: ref('dim_date')
+          rows:
+            - {Date_Key: 20240615, FlightDate: "2024-06-15"}
+
+        - input: ref('dim_airport')
+          rows:
+            - {Airport_Code: "LAX"}
+
+        - input: ref('dim_airline')
+          rows: []
+
+    expect:
+        rows:
+        - {Flight_Key: "F002", Date_Key: 20240615, Origin_Airport_Code: null, Dest_Airport_Code: "LAX", Airline_Code: null}
+
+  - name: test_fact_flight_preserves_flight_attributes
+    description: "Verify flight attributes are preserved after dimension joins"
+    model: fact_flight
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Flight_Key: "F003", FlightDate: "2024-07-20", Origin_Airport_Code: "ATL", Dest_Airport_Code: "ORD", Airline_Code: "DL", Flight_Number: "315", Tail_Number: "N315DL", Scheduled_Departure_HHMM: "1030", Scheduled_Arrival_HHMM: "1235", Flight_Distance_Miles: 606, Actual_Air_Time_Minutes: 95}
+
+        - input: ref('dim_date')
+          rows:
+            - {Date_Key: 20240720, FlightDate: "2024-07-20"}
+
+        - input: ref('dim_airport')
+          rows:
+            - {Airport_Code: "ATL"}
+            - {Airport_Code: "ORD"}
+
+        - input: ref('dim_airline')
+          rows:
+            - {Airline_Code: "DL"}
+
+    expect:
+        rows:
+        - {Flight_Key: "F003", Flight_Number: "315", Tail_Number: "N315DL", Scheduled_Departure_HHMM: "1030", Scheduled_Arrival_HHMM: "1235", Flight_Distance_Miles: 606, Actual_Air_Time_Minutes: 95}
+
+
+    # Test cases for fact_flight_operation model
+
+  - name: test_fact_flight_operation_join
+    description: "Verify only flights existing in fact_flight are returned"
+    model: fact_flight_operation
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Flight_Key: "F001", Actual_Departure_HHMM: "0830", Actual_Arrival_HHMM: "1130", Taxi_Out_Minutes: 15, Taxi_In_Minutes: 10, Is_Cancelled: false, Cancellation_Reason: null, Is_Diverted: false}
+            - {Flight_Key: "F002", Actual_Departure_HHMM: "0915", Actual_Arrival_HHMM: "1210", Taxi_Out_Minutes: 18, Taxi_In_Minutes: 12, Is_Cancelled: false, Cancellation_Reason: null, Is_Diverted: false}
+
+        - input: ref('fact_flight')
+          rows:
+            - {Flight_Key: "F001"}
+
+    expect:
+        rows:
+        - {Flight_Key: "F001", Actual_Departure_HHMM: "0830", Actual_Arrival_HHMM: "1130", Taxi_Out_Minutes: 15, Taxi_In_Minutes: 10, Is_Cancelled: false, Cancellation_Reason: null, Is_Diverted: false}
+
+  - name: test_fact_flight_operation_cancelled_and_diverted
+    description: "Verify cancelled and diverted flight attributes are preserved"
+    model: fact_flight_operation
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Flight_Key: "F003", Actual_Departure_HHMM: null, Actual_Arrival_HHMM: null, Taxi_Out_Minutes: null, Taxi_In_Minutes: null, Is_Cancelled: true, Cancellation_Reason: "Weather", Is_Diverted: false}
+            - {Flight_Key: "F004", Actual_Departure_HHMM: "1015", Actual_Arrival_HHMM: "1405", Taxi_Out_Minutes: 20, Taxi_In_Minutes: 8, Is_Cancelled: false, Cancellation_Reason: null, Is_Diverted: true}
+
+        - input: ref('fact_flight')
+          rows:
+            - {Flight_Key: "F003"}
+            - {Flight_Key: "F004"}
+
+    expect:
+        rows:
+        - {Flight_Key: "F003", Is_Cancelled: true, Cancellation_Reason: "Weather", Is_Diverted: false}
+        - {Flight_Key: "F004", Is_Cancelled: false, Cancellation_Reason: null, Is_Diverted: true}
+
+    # Test cases for fact_flight_delay model
+
+  - name: test_fact_flight_delay_join
+    description: "Verify only flights existing in fact_flight are returned"
+    model: fact_flight_delay
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Flight_Key: "F001", Departure_Delay_Minutes: 20, Arrival_Delay_Minutes: 15, Is_Departure_Delayed: true, Is_Arrival_Delayed: true, Carrier_Delay_Minutes: 15, Weather_Delay_Minutes: 5, Air_System_Delay_Minutes: null, Security_Delay_Minutes: null, Late_Aircraft_Delay_Minutes: null}
+            - {Flight_Key: "F002", Departure_Delay_Minutes: 0, Arrival_Delay_Minutes: 0, Is_Departure_Delayed: false, Is_Arrival_Delayed: false, Carrier_Delay_Minutes: null, Weather_Delay_Minutes: null, Air_System_Delay_Minutes: null, Security_Delay_Minutes: null, Late_Aircraft_Delay_Minutes: null}
+
+        - input: ref('fact_flight')
+          rows:
+            - {Flight_Key: "F001"}
+
+    expect:
+        rows:
+        - {Flight_Key: "F001", Departure_Delay_Minutes: 20, Arrival_Delay_Minutes: 15, Is_Departure_Delayed: true, Is_Arrival_Delayed: true}
+
+  - name: test_fact_flight_delay_metrics
+    description: "Verify delay metrics and causes are preserved"
+    model: fact_flight_delay
+    given:
+        - input: ref('stg_flights')
+          rows:
+            - {Flight_Key: "F003", Departure_Delay_Minutes: 45, Arrival_Delay_Minutes: 30, Is_Departure_Delayed: true, Is_Arrival_Delayed: true, Carrier_Delay_Minutes: 20, Weather_Delay_Minutes: 10, Air_System_Delay_Minutes: 5, Security_Delay_Minutes: 0, Late_Aircraft_Delay_Minutes: 10}
+
+        - input: ref('fact_flight')
+          rows:
+            - {Flight_Key: "F003"}
+
+    expect:
+        rows:
+        - {Flight_Key: "F003", Departure_Delay_Minutes: 45, Arrival_Delay_Minutes: 30, Is_Departure_Delayed: true, Is_Arrival_Delayed: true, Carrier_Delay_Minutes: 20, Weather_Delay_Minutes: 10, Air_System_Delay_Minutes: 5, Security_Delay_Minutes: 0, Late_Aircraft_Delay_Minutes: 10}
