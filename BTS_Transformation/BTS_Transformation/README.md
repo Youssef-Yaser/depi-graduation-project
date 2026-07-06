@@ -8,7 +8,7 @@
 
 The diagram illustrates the complete end-to-end data pipeline, from raw data ingestion through transformation and testing to the final analytical dashboards.
 
-![Work_Flow](/assets/Work_Flow.png)
+![Work_Flow](/BTS_Transformation/BTS_Transformation/assets/Work_Flow.png)
 
 The pipeline follows a layered ELT architecture:
 
@@ -167,11 +167,11 @@ Flight operational metrics naturally separate into different analytical domains 
 
 ## 🔄 Transformtion Pipeline
 
-![ELT Pipeline](/assets/ELT_Pipeline.svg)
+![ELT Pipeline](/BTS_Transformation/BTS_Transformation/assets/ELT_Pipeline.svg)
 
 ## 🗺️ Data Model
 
-![Data Model](/assets/Schema.svg)
+![Data Model](/BTS_Transformation/BTS_Transformation/assets/Schema.svg)
 
 `dim_airport` is a **role-playing dimension** referenced twice from `fact_flight` using `Origin_Airport_Code` and `Dest_Airport_Code`.
 
