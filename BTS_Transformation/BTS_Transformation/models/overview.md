@@ -1,49 +1,86 @@
 {% docs __overview__ %}
 
-# BTS Airline Analytics DWH
+<h1 align="center">✈️ BTS Airline Analytics DWH</h1>
 
-## Project Overview
+## 📌 Project Overview
 
-### This project implements a BTS Transformtion using dbt and Snowflake. Raw flight, airline, and airport data from the Bureau of Transportation Statistics (BTS), along with semi-structured metadata, are transformed through a modern ELT pipeline into a Galaxy Schema consisting of three fact tables and shared Three dimensions. The warehouse is designed to support analytical reporting on flight operations, delays, cancellations, airport , and airline , while ensuring data quality through Data Testing and Unit Testing.
+### This project implements a BTS Transformation using dbt and Snowflake. Raw flight, airline, and airport data from the Bureau of Transportation Statistics (BTS), along with semi-structured metadata, are transformed through a modern ELT pipeline into a Galaxy Schema consisting of three fact tables and three shared dimensions. The warehouse is designed to support analytical reporting on flight operations, delays, cancellations, airports, and airlines while ensuring data quality through comprehensive data and unit testing.
 
----
+## 📝 Work Flow Overview
 
-## ELT Pipeline Overview
+The diagram illustrates the complete end-to-end data pipeline, from raw data ingestion through transformation and testing to the final analytical dashboards.
 
-The following diagram illustrates the complete end-to-end data pipeline, from raw data ingestion through transformation and testing to the final analytical dashboards.
-
-![ELT Pipeline](assets/Work_Flow.png)
+![Work_Flow](/assets/Work_Flow.png)
 
 The pipeline follows a layered ELT architecture:
 
-- **Backblaze B2** stores the raw CSV and JSON source files.
-- **Snowflake Raw Layer** ingests source data without applying transformations.
-- **dbt Staging Layer** performs data cleaning, type casting, filtering, and standardization.
-- **Data Mart Layer** builds a Galaxy Schema composed of shared dimensions and satellite fact tables.
-- **Testing Layer** validates data quality using dbt generic tests, singular tests, and unit tests.
-- **Power BI** connects directly to the curated warehouse to deliver interactive analytical dashboards.
+- 📦 **Backblaze B2** stores the raw CSV and JSON source files.
+- ❄️ **Snowflake Raw Layer** ingests source data without applying transformations.
+- 🔄 **dbt Staging Layer** performs data cleaning, type casting, filtering, and standardization.
+- 🏗️ **Data Mart Layer** builds a Galaxy Schema composed of shared dimensions and satellite fact tables.
+- ✅ **Testing Layer** validates data quality using dbt generic tests, singular tests, and unit tests.
+- 📊 **Power BI** connects directly to the curated warehouse to deliver interactive analytical dashboards.
 
----
+## 📁 Project Structure
 
-## Data Sources
-
-| Source | Type | Purpose |
-|---|---|---|
-| BTS TranStats | CSV | Flight data (2024,2025) |
-| OurAirports | JSON | Airport info |
-| Skytrax | JSON | Airline info |
-
-## Warehouse Architecture
-
+```text
+📦 BTS_Transformation
+│
+├── 📂 models
+│   ├── 📂 source
+│   ├── 📂 stage
+│   ├── 📂 mart
+│   ├── schema.yml
+│   ├── sources.yml
+│   ├── unit_tests.yml
+│   └── overview.md
+│
+├── 📂 seeds
+├── 📂 tests
+├── 📂 analyses
+├── 📂 macros
+├── 📂 assets
+├── 📂 snapshots
+├── ⚙️ dbt_project.yml
+├── 📄 README.md
+└── 📄 packages.yml
 ```
+
+## 📂 Directory Overview
+
+| Directory          | Purpose                                                                                  |
+| ------------------ | ----------------------------------------------------------------------------------------- |
+| `models/source`    | Defines raw source models from Snowflake tables.                                          |
+| `models/stage`     | Cleans, standardizes, casts data types, filters invalid records, and parses JSON fields.   |
+| `models/mart/dim`  | Builds conformed dimension tables for the Galaxy Schema.                                  |
+| `models/mart/fact` | Builds the central fact table and satellite fact tables.                                  |
+| `tests/generic`    | Custom generic tests implementing reusable business rules and data quality checks.        |
+| `tests`            | Singular SQL tests validating business logic and warehouse consistency.                   |
+| `seeds`            | Static reference datasets such as US Federal Holidays.                                    |
+| `analyses`         | Reusable analytical SQL queries for ad-hoc exploration and validation.                     |
+| `assets`           | Architecture diagrams, schema diagrams, workflow images, and source data samples.          |
+| `macros`           | Shared Jinja macros for reusable SQL logic.                                               |
+| `snapshots`        | Reserved for future Slowly Changing Dimension (SCD) implementations.                       |
+
+## 🗂️ Data Sources
+
+| Source           | Type | Purpose                 |
+| ---------------- | ---- | ------------------------ |
+| 🛫 BTS TranStats | CSV  | Flight data (2024–2025) |
+| 🌍 OurAirports   | JSON | Airport metadata         |
+| ✈️ Skytrax       | JSON | Airline metadata         |
+
+## 🏗️ Warehouse Architecture
+
+```text
 Warehouse Architecture
     │
-    ├── Dimensions
+    ├── 📚 Dimensions
     │      ├── dim_date
     │      ├── dim_airline
     │      └── dim_airport
     │
-    └── Facts
+    └── 📊 Facts
            ├── fact_flight
            ├── fact_flight_operation
            └── fact_flight_delay
@@ -51,138 +88,190 @@ Warehouse Architecture
 
 The warehouse is modeled as a **Fact Constellation (Galaxy Schema)** centered around flight operations. A shared set of conformed dimensions supports multiple analytical perspectives while avoiding data duplication.
 
-### Fact Tables
-| Table | Grain |
-|---|---|
-| `fact_flight` | Flight Data |
-| `fact_flight_operation` | Operation Flight Data |
-| `fact_flight_delay` | Deley of Flight Data|
+### 📊 Fact Tables
 
-### Dimension Tables
-| Table | Description |
-|---|---|
-| `dim_date` | Calendar dates, includes US federal holiday flag |
-| `dim_airport` | Airport metadata; role-played as origin/destination |
-| `dim_airline` | Airline metadata|
+| Table                   | Grain                   |
+| ----------------------- | ------------------------ |
+| `fact_flight`           | Flight Data              |
+| `fact_flight_operation` | Operational Flight Data  |
+| `fact_flight_delay`     | Flight Delay Data        |
 
-### Join Keys
-- `Flight_Key` — links all fact tables (PK+FK in satellite facts)
-- `Airline_Code` — links to `dim_airline`
-- `Date_Key` — links to `dim_date`
-- `Origin_Airport_Code` / `Dest_Airport_Code` — role-playing links to `dim_airport`
+### 📚 Dimension Tables
 
+| Table         | Description                                     |
+| ------------- | ------------------------------------------------ |
+| `dim_date`    | Calendar dates with US Federal Holiday flag       |
+| `dim_airport` | Airport metadata used as origin and destination   |
+| `dim_airline` | Airline metadata                                  |
 
-### Semi-Structured Processing
-- Airport metadata parsed directly from a Snowflake `VARIANT` column (`RAW_AIRPORT_INFO`) using colon-notation — no `LATERAL FLATTEN` needed, source is already one row per airport
-- Airline corporate information extracted from a nested `Corporate_Info` object in `airline_metadata.json` (`Parent_Company`, `Headquarters_City`, `Headquarters_State`)
+### 🔑 Join Keys
 
-## Design Decisions
+- 🔗 `Flight_Key` — links all fact tables (PK + FK in satellite facts)
+- ✈️ `Airline_Code` — links to `dim_airline`
+- 📅 `Date_Key` — links to `dim_date`
+- 🛫 `Origin_Airport_Code`
+- 🛬 `Dest_Airport_Code`
 
-### Why Galaxy Schema ( Fact Table Extension ) ?
-Flight operational metrics naturally separate into different analytical domains (core flight info, operational status, delay breakdown) while sharing the same business entities — airline, airport, and date.
+## 📦 Semi-Structured Data Processing
 
-### Why Role-Playing dim_airport?
-`dim_airport` is joined twice from `fact_flight` — once as the origin airport, once as the destination airport. A single dimension table is reused in two roles instead of maintaining two separate airport tables, since both roles share the exact same attributes (code, name, type, location).
+### 🛫 Airport Metadata (`airport_info.json`)
 
-## ELT Pipeline
+```text
+🛫 Airport
+├── Airport_Code
+├── Airport_Name
+├── Airport_Type
+├── Timezone
+├── Location
+│   ├── City
+│   ├── State
+│   └── Country
+└── Coordinates
+    ├── Latitude
+    ├── Longitude
+    └── Elevation_ft
+```
 
-![ELT Pipeline](assets/ELT_Pipeline.svg)
+### ✈️ Airline Metadata (`airline_info.json`)
 
-## Data Model
+```text
+✈️ Airline
+├── Airline_Code
+├── Airline_Name
+├── Founded_Year
+├── Airline_Type
+├── Hub_Airport
+├── Airline_Rating
+└── Corporate_Info
+    ├── Parent_Company
+    ├── Headquarters_City
+    └── Headquarters_State
+```
 
-![Data Model](assets/Schema.svg)
+### ⚙️ Processing Highlights
 
-`dim_airport` is a **role-playing dimension** referenced twice from `fact_flight` using `Origin_Airport_Code` and `Dest_Airport_Code`, enabling independent analysis of departure and arrival airports without duplicating dimension data.
+- 📥 Ingested airport and airline metadata into Snowflake `VARIANT` columns.
+- 🏗️ Implemented a layered dbt architecture (`Raw → Source → Stage`).
+- 🔍 Parsed nested JSON objects using native Snowflake JSON path expressions.
+- 🧩 Flattened hierarchical attributes into relational columns.
+- 📝 Applied explicit type casting.
+- 📊 Produced analytics-ready staging models.
 
-`fact_flight_operation` and `fact_flight_delay` are satellite fact tables that maintain a strict 1:1 relationship with `fact_flight` through `Flight_Key`.
+## 🧩 Design Decisions
 
-`dim_airport` is joined twice from `fact_flight` (role-playing dimension) — once for origin, once for destination. `fact_flight_operation` and `fact_flight_delay` are satellite facts in a strict 1:1 relationship with `fact_flight` via `Flight_Key`.
+### 🌌 Why Galaxy Schema (Fact Table Extension)?
 
-## Materialization
+Flight operational metrics naturally separate into different analytical domains while sharing the same business entities (airline, airport, and date), reducing redundancy and improving analytical flexibility.
 
-All models are materialized into `BTS_AIRLINE_DB.FLIGHT_CORE`. The schema contains every layer required for the analytical warehouse:
+### 🛫 Why Role-Playing `dim_airport`?
 
-- Seeds
-- Staging models
-- Dimensions
-- Fact tables
+`dim_airport` is joined twice from `fact_flight`—once as the origin airport and once as the destination airport. A single dimension table is reused instead of maintaining duplicate airport dimensions.
 
-## Testing & Data Quality
+## 🔄 Transformtion Pipeline
 
+![ELT Pipeline]( /assets/ELT_Pipeline.svg)
 
-### Framework
+## 🗺️ Data Model
 
-dbt generic + singular data tests, `dbt_utils` package, and dbt unit tests (`unit_tests:` yml spec).
+![Data Model](/assets/Schema.svg)
 
-### Testing Strategy
+`dim_airport` is a **role-playing dimension** referenced twice from `fact_flight` using `Origin_Airport_Code` and `Dest_Airport_Code`.
 
-- **Model-level expressions:** `dbt_utils.expression_is_true` applied at the model level (not column level) to avoid the auto-prepended column name breaking custom expressions
-- **Singular tests:** Custom SQL tests return "bad" rows on failure
+`fact_flight_operation` and `fact_flight_delay` maintain a strict **1:1 relationship** with`fact_flight` through `Flight_Key`.
 
-### Referential Integrity
+## 💾 Materialization
 
-`Flight_Key` enforced as PK+FK across satellite fact tables (`fact_flight_operation`, `fact_flight_delay`) to guarantee a 1:1 relationship with `fact_flight`.
+All models are materialized into `BTS_AIRLINE_DB.FLIGHT_CORE`.
 
-### Severity Configuration
+The schema contains:
 
-`severity` (e.g. `warn`/`error`) configured inside `config` blocks on each test. Singular tests don't natively support inline severity, so it's set via `config()` inside the test SQL itself.
+- 🌱 Seeds
+- 🔄 Staging Models
+- 📚 Dimension Tables
+- 📊 Fact Tables
 
-## Unit Tests
+## ✅ Testing & Data Quality
 
-Unit tests verify model logic using mocked input fixtures before execution against production data.
+### 🧪 Framework
 
-| Model | Unit Tests |
-|---|---|
-| `dim_airline` | Lookup match, missing lookup fallback, duplicate removal |
-| `dim_airport` | Origin/destination union logic, lookup match, missing lookup fallback, duplicate removal |
-| `dim_date` | Holiday priority logic, calendar attribute derivation, duplicate date removal, holiday classification |
-| `fact_flight` | Dimension lookup joins, missing dimension lookup handling, preservation of flight attributes |
-| `fact_flight_operation` | Join correctness, cancelled + diverted flight combination |
-| `fact_flight_delay` | Delay metric calculation, join correctness |
+- dbt Generic Tests
+- dbt Singular Tests
+- dbt Unit Tests
+- `dbt_utils`
 
-### Total: 18 unit tests
+### 🎯 Testing Strategy
 
-## Custom Singular Tests
+- Model-level expressions using `dbt_utils.expression_is_true`
+- Custom SQL singular tests returning failed rows only
 
-**Data Quality**
+### 🔗 Referential Integrity
+
+`Flight_Key` is enforced as both a Primary Key and Foreign Key across all satellite fact tables.
+
+### ⚠️ Severity Configuration
+
+Each test defines its own `warn` or `error` severity using `config()`.
+
+## 🧪 Unit Tests
+
+Unit tests validate transformation logic using mocked input fixtures.
+
+| Model                   | Unit Tests |
+| ----------------------- | ---------- |
+| `dim_airline`           | 3          |
+| `dim_airport`           | 4          |
+| `dim_date`              | 4          |
+| `fact_flight`           | 3          |
+| `fact_flight_operation` | 2          |
+| `fact_flight_delay`     | 2          |
+
+**Total:** ✅ **18 Unit Tests**
+
+## 📋 Custom Singular Tests
+
+### 📈 Data Quality
+
 - `flight_distance_positive`
 - `origin_destination_different`
 - `no_future_flight_dates`
-- `is_valid_hhmm_*` (scheduled/actual arrival & departure)
+- `is_valid_hhmm_*`
 
-**Business Rules**
+### 📐 Business Rules
+
 - `cancelled_flight_not_diverted`
 - `cancelled_flight_no_delay`
 - `cancellation_have_reason`
-- `delay_Arrival_requires_minutes`
+- `delay_arrival_requires_minutes`
 
-**Referential Consistency**
+### 🔄 Referential Consistency
+
 - `row_count_three_tables_equal`
 
-**Calendar Integrity**
+### 📅 Calendar Integrity
+
 - `assert_dayofweek_matches_day_name`
 - `assert_weekends_are_holidays`
 - `assert_federal_holidays_exists`
 
-## Project Layers
+## 🏛️ Project Layers
 
-| Layer | Responsibility |
-|---|---|
-| Source | Raw source definitions |
-| Stage | Cleaning, typing, JSON parsing |
-| Marts | Star/Galaxy warehouse models |
+| Layer     | Responsibility                 |
+| --------- | -------------------------------- |
+| 📥 Source | Raw source definitions           |
+| 🧹 Stage  | Cleaning, typing, JSON parsing   |
+| 🏗️ Mart  | Galaxy warehouse models          |
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-| Component | Technology |
-|---|---|
-| Data Warehouse | Snowflake |
-| Transformation | dbt Core  |
-| Package | dbt_utils |
-| Cloud Storage | Backblaze B2 |
-| Data Modeling | Galaxy Schema |
-| Documentation | dbt Docs |
-| Testing | dbt Generic, Unit & Singular Tests |
+| Component         | Technology                     |
+| ------------------ | -------------------------------- |
+| ❄️ Data Warehouse | Snowflake                        |
+| 🔄 Transformation | dbt Core                         |
+| 📦 Package        | dbt_utils                        |
+| ☁️ Cloud Storage  | Backblaze B2                     |
+| 🏗️ Data Modeling | Galaxy Schema                    |
+| 📚 Documentation  | dbt Docs                         |
+| ✅ Testing         | Generic, Singular & Unit Tests   |
 
 
 {% enddocs %}

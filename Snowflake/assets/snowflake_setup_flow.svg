@@ -1,0 +1,151 @@
+<svg viewBox="0 0 960 640" xmlns="http://www.w3.org/2000/svg" font-family="'Inter', 'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <!-- Soft Drop Shadow for Boxes -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.06" flood-color="#0f172a"/>
+    </filter>
+
+    <!-- Arrowhead Marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="960" height="640" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a" letter-spacing="0.5">Snowflake Setup — Execution Flow</text>
+
+  <!-- ==========================================
+       ARROWS & PATHS (Drawn first so they are behind boxes)
+       ========================================== -->
+  <g fill="none" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="round">
+    <!-- Top Row (Infrastructure) Flow -->
+    <path d="M 240 117.5 L 274 117.5" />
+    <path d="M 460 117.5 L 494 117.5" />
+    <path d="M 680 117.5 L 714 117.5" />
+
+    <!-- Branching Down from 03 to 04 -->
+    <path d="M 590 155 L 590 214" />
+
+    <!-- Ingestion Row Flow (04 to 05) -->
+    <path d="M 680 257.5 L 714 257.5" />
+
+    <!-- 
+      PARALLEL WATERFALL ROUTING TO DBT 
+      These paths merge down elegantly without overlapping.
+    -->
+    <!-- Path from 04 -->
+    <path d="M 590 295 L 590 300 Q 590 310 580 310 L 470 310 Q 460 310 460 320 L 460 344" />
+    
+    <!-- Path from 05 -->
+    <path d="M 810 295 L 810 310 Q 810 320 800 320 L 490 320 Q 480 320 480 330 L 480 344" />
+    
+    <!-- Path from 06 (Loops around 05) -->
+    <path d="M 810 155 L 810 175 Q 810 185 820 185 L 920 185 Q 930 185 930 195 L 930 320 Q 930 330 920 330 L 510 330 Q 500 330 500 340 L 500 344" />
+
+    <!-- Path from dbt build to Staging Models -->
+    <path d="M 480 415 L 480 435 Q 480 445 470 445 L 250 445 Q 240 445 240 455 L 240 486" />
+
+    <!-- Internal Model Flow -->
+    <path d="M 320 519.5 L 394 519.5" />
+    <path d="M 560 519.5 L 634 519.5" />
+  </g>
+
+  <!-- ==========================================
+       NODES
+       ========================================== -->
+
+  <!-- ROW 1: Infrastructure & Setup -->
+  <g transform="translate(60, 80)">
+    <rect width="180" height="75" rx="8" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="24" text-anchor="middle" font-size="13" font-weight="800" fill="#0284c7" letter-spacing="1">01</text>
+    <text x="90" y="46" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Database / Schema /</text>
+    <text x="90" y="64" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Warehouse Setup</text>
+  </g>
+
+  <g transform="translate(280, 80)">
+    <rect width="180" height="75" rx="8" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="24" text-anchor="middle" font-size="13" font-weight="800" fill="#0284c7" letter-spacing="1">02</text>
+    <text x="90" y="46" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Storage Integration</text>
+    <text x="90" y="64" text-anchor="middle" font-size="12" font-weight="500" fill="#475569">(Backblaze B2 Stage)</text>
+  </g>
+
+  <g transform="translate(500, 80)">
+    <rect width="180" height="75" rx="8" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="24" text-anchor="middle" font-size="13" font-weight="800" fill="#0284c7" letter-spacing="1">03</text>
+    <text x="90" y="46" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">ZIP Loader</text>
+    <text x="90" y="64" text-anchor="middle" font-size="12" font-weight="500" fill="#475569">Stored Procedure</text>
+  </g>
+
+  <g transform="translate(720, 80)">
+    <rect width="180" height="75" rx="8" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="24" text-anchor="middle" font-size="13" font-weight="800" fill="#0284c7" letter-spacing="1">06</text>
+    <text x="90" y="46" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Load Raw JSON</text>
+    <text x="90" y="64" text-anchor="middle" font-size="12" font-weight="500" fill="#475569">(Airline / Airport)</text>
+  </g>
+
+  <!-- ROW 2: Data Ingestion -->
+  <g transform="translate(500, 220)">
+    <rect width="180" height="75" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="24" text-anchor="middle" font-size="13" font-weight="800" fill="#16a34a" letter-spacing="1">04</text>
+    <text x="90" y="46" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Ingest Flights</text>
+    <text x="90" y="64" text-anchor="middle" font-size="12" font-weight="500" fill="#475569">(Backblaze Stage)</text>
+  </g>
+
+  <g transform="translate(720, 220)">
+    <rect width="180" height="75" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="24" text-anchor="middle" font-size="13" font-weight="800" fill="#16a34a" letter-spacing="1">05</text>
+    <text x="90" y="46" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">Ingest Flights</text>
+    <text x="90" y="64" text-anchor="middle" font-size="12" font-weight="500" fill="#475569">(Internal Stage, optional)</text>
+  </g>
+
+  <!-- ROW 3: dbt Engine -->
+  <g transform="translate(360, 350)">
+    <rect width="240" height="65" rx="8" fill="#ffedd5" stroke="#fdba74" stroke-width="2" filter="url(#shadow)"/>
+    <text x="120" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#9a3412">dbt build</text>
+    <text x="120" y="50" text-anchor="middle" font-size="12" font-weight="500" fill="#78350f">(runs after Snowflake setup)</text>
+  </g>
+
+  <!-- ROW 4: dbt Models Area -->
+  <g id="models-group">
+    <!-- Dotted container to signify grouped models -->
+    <rect x="120" y="470" width="720" height="100" rx="12" fill="#fafaf9" stroke="#d6d3d1" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="140" y="488" font-size="11" font-weight="700" fill="#78716c" text-transform="uppercase" letter-spacing="1.2">dbt Model Layers</text>
+
+    <g transform="translate(160, 492)">
+      <rect width="160" height="55" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="2" filter="url(#shadow)"/>
+      <text x="80" y="32" text-anchor="middle" font-size="14" font-weight="600" fill="#92400e">Staging Models</text>
+    </g>
+
+    <g transform="translate(400, 492)">
+      <rect width="160" height="55" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="2" filter="url(#shadow)"/>
+      <text x="80" y="32" text-anchor="middle" font-size="14" font-weight="600" fill="#92400e">Dimensions</text>
+    </g>
+
+    <g transform="translate(640, 492)">
+      <rect width="160" height="55" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="2" filter="url(#shadow)"/>
+      <text x="80" y="32" text-anchor="middle" font-size="14" font-weight="600" fill="#92400e">Fact Tables</text>
+    </g>
+  </g>
+
+  <!-- ==========================================
+       LEGEND
+       ========================================== -->
+  <g transform="translate(160, 600)">
+    <rect width="16" height="16" rx="4" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="2"/>
+    <text x="26" y="12.5" font-size="13" font-weight="500" fill="#475569">Infrastructure &amp; setup</text>
+  </g>
+  
+  <g transform="translate(380, 600)">
+    <rect width="16" height="16" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+    <text x="26" y="12.5" font-size="13" font-weight="500" fill="#475569">Data ingestion</text>
+  </g>
+  
+  <g transform="translate(560, 600)">
+    <rect width="16" height="16" rx="4" fill="#ffedd5" stroke="#fdba74" stroke-width="2"/>
+    <text x="26" y="12.5" font-size="13" font-weight="500" fill="#475569">dbt transformation layer</text>
+  </g>
+
+</svg>
