@@ -1,10 +1,9 @@
 -- =====================================================
 -- CONTEXT
 -- =====================================================
-
-USE ROLE ACCOUNTADMIN
-USE DATABASE BTS_AIRLINE_DB
-USE SCHEMA RAW
+USE ROLE ACCOUNTADMIN;
+USE DATABASE BTS_AIRLINE_DB;
+USE SCHEMA RAW;
 
 -- =====================================================
 -- EXTERNAL STAGE (BACKBLAZE B2)
@@ -20,9 +19,9 @@ CREATE OR REPLACE STAGE BTS_AIRLINE_DB.RAW.BACKBLAZE_DATA_LAKE
         AWS_KEY_ID = '<AWS_KEY_ID>'
         AWS_SECRET_KEY = '<AWS_SECRET_KEY>'
     )
+    DIRECTORY = (ENABLE = TRUE); -- 🌟 التعديل الإجباري: للحفاظ على تفعيل الفهرسة السحابية للملفات
 
 -- =====================================================
 -- VERIFY STAGE CONTENTS
 -- =====================================================
-
-LIST @BTS_AIRLINE_DB.RAW.BACKBLAZE_DATA_LAKE/raw
+LIST @BTS_AIRLINE_DB.RAW.BACKBLAZE_DATA_LAKE/raw;
