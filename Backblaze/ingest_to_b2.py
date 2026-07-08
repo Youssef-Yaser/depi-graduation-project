@@ -5,8 +5,8 @@ import boto3
 from botocore.exceptions import ClientError
 
 # 1. إعدادات الاتصال بـ Backblaze B2 (مستخرجة لايف من image_f6ccdf.png)
-B2_KEY_ID = "005a85caf7c53650000000001"
-B2_APPLICATION_KEY = "K005LneknvOsYAEYVdaac4LQKqmsviY"
+B2_KEY_ID = "key"
+B2_APPLICATION_KEY = "app_key"
 
 # ⚠️ تأكد من هذا الرابط من صفحة الـ Buckets (قد يكون west-005 بناءً على مفتاحك)
 
