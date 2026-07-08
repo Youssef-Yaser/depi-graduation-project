@@ -192,3 +192,37 @@ snowflake/
 │   └── snowflake_setup_flow.svg
 └── README.md
 ```
+
+
+
+
+
+
+
+
+# 🚀 Data Ingestion Engine (`ingestion_pipeline.py`)
+
+> **Architectural Component:** External Managed In-Memory ETL Pipeline
+> **Status:** 🟢 ACTIVE PRODUCTION ENGINE
+
+---
+
+### ⚠️ CRITICAL ARCHITECTURAL NOTICE (READ BEFORE RUNNING)
+> **NOTE ON REPOSITORY SQL ARTIFACTS:** > The neighboring `.sql` scripts located within this directory (such as legacy loop blocks and stored procedures) represent the **Initial Server-Side Architecture Phase** of this project. 
+> Due to native cloud security walls and authorization constraints regarding Scoped URL validation inside Snowflake Trial Accounts, processing was migrated away from server-side procedural SQL loops. 
+> 
+> **`ingestion_pipeline.py` is the official, active pipeline driver used to populate the warehouse.** The `.sql` files are preserved exclusively to document our technical iteration history and architectural design choices for the evaluation panel.
+
+---
+
+## 📝 Pipeline Overview
+
+This script serves as our high-throughput, automated data ingestion engine. It functions as an in-memory orchestration client that bridges our **Backblaze B2 Landing Zone** directly with our **Snowflake Raw Data Warehouse Layer**. It dynamically processes 29 compressed flight performance archives across a three-year timeline (2024–2026) with zero local storage overhead.
+
+## ⚙️ Core Technical Capabilities
+
+1. **Zero-Disk In-Memory Streaming:** Leveraging the `boto3` SDK, compressed `.zip` payloads are fetched over HTTPS directly into volatile memory (RAM). Files are extracted and transformed dynamically using `zipfile` and `pandas` streams, completely bypassing local disk read/write bottlenecks.
+2. **Deterministic File Filtering:** The script scans archive internals programmatically and isolates only the raw source `.csv` dataset. Metadata artifacts like `readme.html` are explicitly skipped and discarded during runtime.
+3. **Adaptive Schema Mapping:** To eliminate casing mismatches and layout mutations, the script queries Snowflake target table descriptors (`LIMIT 0`) at runtime. It performs an case-insensitive intersection map, dynamically dropping unmapped columns or structural anomalies like implicit pandas index strings.
+4. **Reserved Word Isolation (`quote_identifiers=True`):** Enforces explicit identifier quoting during bulk-copy operations. This prevents parsing failures caused by native database keywords present in the dataset schema, such as the `YEAR` column.
+5. **High-Performance Mass Insertion:** Utilizes Snowflake’s specialized `write_pandas` extension to chunk dataframes and push optimized parquet streams directly into target staging layers
