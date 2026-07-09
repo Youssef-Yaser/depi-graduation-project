@@ -1,0 +1,7 @@
+<svg viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1000" height="420" fill="#f8fafc"/>
+  <rect x="10" y="10" width="980" height="400" rx="14" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="10,6"/>
+  <text x="500" y="195" text-anchor="middle" font-size="22" font-weight="700" fill="#64748b">📋 Add screenshot here</text>
+  <text x="500" y="230" text-anchor="middle" font-size="14" fill="#94a3b8">Airflow UI → Dags list view (both DAGs, active/success state)</text>
+  <text x="500" y="255" text-anchor="middle" font-size="12" fill="#cbd5e1">Replace assets/airflow_dags_list.png with your screenshot</text>
+</svg>

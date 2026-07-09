@@ -1,3 +1,12 @@
+{{
+    config(
+        materialized='incremental',
+        unique_key='Flight_Key',
+        incremental_strategy='merge',
+        on_schema_change='fail'
+    )
+}}
+
 WITH stg_flights AS (
 
     -- Load cleansed flight data from the staging layer
@@ -10,6 +19,10 @@ fact_flight AS (
     -- Load flight keys from the flight fact table
     SELECT Flight_Key
     FROM {{ ref('fact_flight') }}
+
+    {% if is_incremental() %}
+    WHERE Flight_Key NOT IN (SELECT Flight_Key FROM {{ this }})
+    {% endif %}
 
 )
 

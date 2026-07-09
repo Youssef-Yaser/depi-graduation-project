@@ -1,0 +1,76 @@
+<svg viewBox="0 0 560 1180" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="560" height="1180" fill="#ffffff"/>
+
+  <!-- Docker Compose envelope -->
+  <rect x="15" y="15" width="530" height="990" rx="18" fill="none" stroke="#2496ED" stroke-width="2" stroke-dasharray="8,5"/>
+  <text x="280" y="42" text-anchor="middle" font-size="14" font-weight="700" fill="#2496ED">Docker Compose Environment</text>
+
+  <!-- Scheduler -->
+  <rect x="130" y="60" width="300" height="66" rx="12" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.5"/>
+  <text x="280" y="88" text-anchor="middle" font-size="14" font-weight="700" fill="#0c4a6e">Airflow Scheduler</text>
+  <text x="280" y="106" text-anchor="middle" font-size="11" fill="#0369a1">cron: 0 12 1 * *  (monthly)</text>
+
+  <line x1="280" y1="126" x2="280" y2="156" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- DAG 1 panel -->
+  <rect x="40" y="160" width="480" height="580" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="70" y="192" font-size="15" font-weight="700" fill="#0f172a">DAG: bts_ingestion_pipeline</text>
+
+  <rect x="90" y="212" width="380" height="78" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <text x="280" y="245" text-anchor="middle" font-size="14" font-weight="700" fill="#14532d">get_missing_months</text>
+  <text x="280" y="264" text-anchor="middle" font-size="11" fill="#166534">@task — checks dim_date high-water mark</text>
+
+  <line x1="280" y1="290" x2="280" y2="320" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="90" y="324" width="380" height="78" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <text x="280" y="357" text-anchor="middle" font-size="14" font-weight="700" fill="#14532d">download_upload_to_b2</text>
+  <text x="280" y="376" text-anchor="middle" font-size="11" fill="#166534">@task — fetch ZIP, upload to Backblaze B2</text>
+
+  <line x1="280" y1="402" x2="280" y2="432" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="90" y="436" width="380" height="78" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <text x="280" y="469" text-anchor="middle" font-size="14" font-weight="700" fill="#14532d">load_to_snowflake</text>
+  <text x="280" y="488" text-anchor="middle" font-size="11" fill="#166534">@task — write_pandas into RAW_FLIGHTS_&lt;year&gt;</text>
+
+  <line x1="280" y1="514" x2="280" y2="544" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="90" y="548" width="380" height="78" rx="10" fill="#ede9fe" stroke="#5b21b6" stroke-width="1.5"/>
+  <text x="280" y="581" text-anchor="middle" font-size="14" font-weight="700" fill="#4c1d95">trigger_dbt_build</text>
+  <text x="280" y="600" text-anchor="middle" font-size="11" fill="#5b21b6">TriggerDagRunOperator — async, no wait</text>
+
+  <line x1="280" y1="740" x2="280" y2="770" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- DAG 2 panel -->
+  <rect x="40" y="774" width="480" height="200" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="70" y="806" font-size="15" font-weight="700" fill="#0f172a">DAG: bts_dbt_build_pipeline</text>
+  <text x="70" y="824" font-size="11" fill="#64748b">schedule: None — triggered only</text>
+
+  <rect x="90" y="840" width="380" height="110" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+  <text x="280" y="875" text-anchor="middle" font-size="14" font-weight="700" fill="#7c2d12">dbt_build</text>
+  <text x="280" y="895" text-anchor="middle" font-size="11" fill="#9a3412">BashOperator</text>
+  <text x="280" y="913" text-anchor="middle" font-size="11" fill="#9a3412">dbt build --project-dir ... --profiles-dir ...</text>
+  <text x="280" y="931" text-anchor="middle" font-size="10" fill="#9a3412">runs models + tests + snapshots</text>
+
+  <!-- connector from trigger pill down into DAG2 -->
+  <path d="M 470,587 C 505,587 505,808 470,808" fill="none" stroke="#5b21b6" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="514" y="700" text-anchor="middle" font-size="10.5" fill="#5b21b6" transform="rotate(90,514,700)">fires bts_dbt_build_pipeline</text>
+
+  <line x1="280" y1="950" x2="280" y2="980" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Final result -->
+  <rect x="90" y="984" width="380" height="70" rx="12" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="280" y="1013" text-anchor="middle" font-size="14" font-weight="700" fill="#164e63">FLIGHT_CORE Warehouse Updated</text>
+  <text x="280" y="1032" text-anchor="middle" font-size="11" fill="#0e7490">tested Galaxy Schema, ready to query</text>
+
+  <!-- Outside Docker envelope: Power BI -->
+  <line x1="280" y1="1054" x2="280" y2="1090" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="130" y="1094" width="300" height="66" rx="12" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/>
+  <text x="280" y="1122" text-anchor="middle" font-size="14" font-weight="700" fill="#7c2d12">Power BI</text>
+  <text x="280" y="1140" text-anchor="middle" font-size="11" fill="#c2410c">dashboard reads the refreshed warehouse</text>
+</svg>

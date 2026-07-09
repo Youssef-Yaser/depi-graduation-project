@@ -1,6 +1,6 @@
-WITH flights_2025 AS (
+WITH flights_2026 AS (
     SELECT *
-    FROM {{ source('BTS_Airline_DB', 'flights_2025') }}
+    FROM {{ source('BTS_Airline_DB', 'flights_2026') }}
 )
 
 SELECT
@@ -178,4 +178,4 @@ SELECT
     "Div5WheelsOff" AS Div5_Wheels_Off,
     "Div5TailNum" AS Div5_Tail_Number,
 
-FROM flights_2025
+FROM flights_2026

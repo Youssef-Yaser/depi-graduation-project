@@ -1,7 +1,23 @@
+{{
+    config(
+        materialized='incremental',
+        unique_key='Flight_Key',
+        incremental_strategy='merge',
+        on_schema_change='fail'
+    )
+}}
+
 WITH stg_flights AS (
 
     -- Load cleansed flight data from the staging layer
     SELECT * FROM {{ ref('stg_flights') }}
+
+    {% if is_incremental() %}
+    WHERE FlightDate > (
+        SELECT TO_DATE(TO_VARCHAR(MAX(Date_Key)), 'YYYYMMDD')
+        FROM {{ this }}
+    )
+    {% endif %}
 
 ),
 

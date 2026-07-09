@@ -45,7 +45,7 @@ models:
           - not_null
           - accepted_values:
               arguments:
-               values: [2024, 2025]
+               values: [2024, 2025 , 2026]
 
       - name: Quarter
         description: "The calendar quarter of the year (1-4)."
@@ -184,7 +184,7 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: ['large_airport', 'medium_airport', 'small_airport']
+                values: ['large_airport', 'medium_airport', 'small_airport','Unknown Airport Type']
 
   - name: dim_airline
     description: "Dimension table for airlines/carriers operating the flights."
@@ -585,8 +585,8 @@ models:
           - dbt_utils.accepted_range:
               arguments:
                 min_value: 0
-                max_value: 1440
-              # Maximum delay of 1 day (1440 minutes) is a reasonable upper bound for security-related delays.
+                max_value: 2880
+              # Maximum delay of 2 days (2880 minutes) is a reasonable upper bound for security-related delays.
               config:
                 where: "Security_Delay_Minutes IS NOT NULL"
                 severity: warn

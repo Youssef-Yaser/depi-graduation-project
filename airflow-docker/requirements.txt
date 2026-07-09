@@ -1,0 +1,17 @@
+# dbt adapter for Snowflake.
+dbt-snowflake==1.11.5
+
+# Integrates dbt projects with Apache Airflow.
+astronomer-cosmos==1.9.3
+
+# AWS S3-compatible SDK used to interact with Backblaze B2.
+boto3
+
+# Data manipulation and transformation library.
+pandas
+
+# Snowflake Python connector with pandas support.
+snowflake-connector-python[pandas]
+
+# HTTP client used to download BTS datasets.
+requests

@@ -1,11 +1,15 @@
 WITH full_flights AS (
 
-    -- Combine 2024 and 2025 flight records into a single dataset
+    -- Combine 2024, 2025, and 2026 flight records into a single dataset
     SELECT * FROM {{ ref('src_flights_2024') }}
 
     UNION ALL
 
     SELECT * FROM {{ ref('src_flights_2025') }}
+
+    UNION ALL
+
+    SELECT * FROM {{ ref('src_flights_2026') }}
 
 )
 
@@ -17,6 +21,7 @@ SELECT
         'Flight_Number',
         'FlightDate',
         'Origin_Airport_ID',
+        'Dest_Airport_ID',
         'Scheduled_Departure_HHMM'
     ]) }} AS Flight_Key,
 

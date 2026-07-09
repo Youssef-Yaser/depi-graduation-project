@@ -1,0 +1,153 @@
+<svg viewBox="0 0 1450 700" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrowDash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1450" height="700" fill="#ffffff"/>
+
+  <!-- ================= TOP: DATA PIPELINE ================= -->
+  <text x="40" y="30" font-size="15" font-weight="700" fill="#0f172a" letter-spacing="0.5">DATA PIPELINE</text>
+
+  <rect x="40" y="45" width="210" height="90" rx="10" fill="#eef2ff" stroke="#4338ca" stroke-width="1.5"/>
+  <text x="145" y="80" text-anchor="middle" font-size="15" font-weight="700" fill="#312e81">BTS TranStats</text>
+  <text x="145" y="100" text-anchor="middle" font-size="11.5" fill="#4338ca">Monthly on-time</text>
+  <text x="145" y="115" text-anchor="middle" font-size="11.5" fill="#4338ca">performance ZIPs</text>
+
+  <line x1="250" y1="90" x2="304" y2="90" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="277" y="78" text-anchor="middle" font-size="10.5" fill="#475569">download</text>
+
+  <rect x="308" y="45" width="210" height="90" rx="10" fill="#eef2ff" stroke="#4338ca" stroke-width="1.5"/>
+  <text x="413" y="80" text-anchor="middle" font-size="15" font-weight="700" fill="#312e81">Backblaze B2</text>
+  <text x="413" y="100" text-anchor="middle" font-size="11.5" fill="#4338ca">raw/flights/year=YYYY/</text>
+  <text x="413" y="115" text-anchor="middle" font-size="11.5" fill="#4338ca">month=MM/*.zip</text>
+
+  <line x1="518" y1="90" x2="572" y2="90" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="545" y="78" text-anchor="middle" font-size="10.5" fill="#475569">write_pandas</text>
+
+  <rect x="576" y="45" width="210" height="90" rx="10" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="681" y="76" text-anchor="middle" font-size="15" font-weight="700" fill="#164e63">Snowflake RAW</text>
+  <text x="681" y="97" text-anchor="middle" font-size="11.5" fill="#0e7490">RAW_FLIGHTS_2024</text>
+  <text x="681" y="112" text-anchor="middle" font-size="11.5" fill="#0e7490">RAW_FLIGHTS_2025 / 2026</text>
+
+  <line x1="786" y1="90" x2="840" y2="90" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="813" y="78" text-anchor="middle" font-size="10.5" fill="#475569">dbt build</text>
+
+  <rect x="844" y="45" width="240" height="90" rx="10" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="964" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#164e63">Snowflake FLIGHT_CORE</text>
+  <text x="964" y="92" text-anchor="middle" font-size="11" fill="#0e7490">3 fact tables · dim_date</text>
+  <text x="964" y="107" text-anchor="middle" font-size="11" fill="#0e7490">dim_airline · dim_airport</text>
+  <text x="964" y="122" text-anchor="middle" font-size="11" fill="#0e7490">(Galaxy Schema)</text>
+
+  <line x1="1084" y1="90" x2="1138" y2="90" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="1111" y="78" text-anchor="middle" font-size="10.5" fill="#475569">reporting</text>
+
+  <rect x="1142" y="45" width="210" height="90" rx="10" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/>
+  <text x="1247" y="80" text-anchor="middle" font-size="15" font-weight="700" fill="#7c2d12">Power BI</text>
+  <text x="1247" y="100" text-anchor="middle" font-size="11.5" fill="#c2410c">Dashboard &amp;</text>
+  <text x="1247" y="115" text-anchor="middle" font-size="11.5" fill="#c2410c">analysis layer</text>
+
+  <!-- ================= DASHED ORCHESTRATION CONNECTORS ================= -->
+  <line x1="413" y1="255" x2="413" y2="175" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrowDash)"/>
+  <line x1="964" y1="255" x2="964" y2="175" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrowDash)"/>
+
+  <!-- ================= DOCKER COMPOSE ENVELOPE ================= -->
+  <rect x="10" y="192" width="1430" height="435" rx="16" fill="none" stroke="#2496ED" stroke-width="2" stroke-dasharray="8,5"/>
+  <text x="1420" y="213" text-anchor="end" font-size="13" font-weight="700" fill="#2496ED">Docker Compose environment</text>
+
+  <text x="40" y="215" font-size="15" font-weight="700" fill="#0f172a" letter-spacing="0.5">AIRFLOW ORCHESTRATION</text>
+
+  <!-- DAG 1 Panel -->
+  <rect x="20" y="255" width="800" height="290" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="44" y="288" font-size="16.5" font-weight="700" fill="#0f172a">bts_ingestion_pipeline</text>
+  <text x="44" y="308" font-size="12" fill="#64748b">schedule: 0 12 1 * *  (1st of month, 12:00) · catchup: false</text>
+
+  <rect x="44" y="330" width="168" height="72" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <text x="128" y="358" text-anchor="middle" font-size="12.5" font-weight="700" fill="#14532d">get_missing</text>
+  <text x="128" y="374" text-anchor="middle" font-size="12.5" font-weight="700" fill="#14532d">_months</text>
+  <text x="128" y="392" text-anchor="middle" font-size="10.5" fill="#166534">@task</text>
+
+  <line x1="212" y1="366" x2="240" y2="366" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="244" y="330" width="180" height="72" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <text x="334" y="358" text-anchor="middle" font-size="12" font-weight="700" fill="#14532d">download_upload</text>
+  <text x="334" y="374" text-anchor="middle" font-size="12" font-weight="700" fill="#14532d">_to_b2</text>
+  <text x="334" y="392" text-anchor="middle" font-size="10.5" fill="#166534">@task</text>
+
+  <line x1="424" y1="366" x2="452" y2="366" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="456" y="330" width="172" height="72" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <text x="542" y="358" text-anchor="middle" font-size="12.5" font-weight="700" fill="#14532d">load_to</text>
+  <text x="542" y="374" text-anchor="middle" font-size="12.5" font-weight="700" fill="#14532d">_snowflake</text>
+  <text x="542" y="392" text-anchor="middle" font-size="10.5" fill="#166534">@task</text>
+
+  <line x1="628" y1="366" x2="656" y2="366" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="660" y="330" width="140" height="72" rx="10" fill="#ede9fe" stroke="#5b21b6" stroke-width="1.5"/>
+  <text x="730" y="356" text-anchor="middle" font-size="12" font-weight="700" fill="#4c1d95">trigger_dbt</text>
+  <text x="730" y="372" text-anchor="middle" font-size="12" font-weight="700" fill="#4c1d95">_build</text>
+  <text x="730" y="390" text-anchor="middle" font-size="9.5" fill="#5b21b6">TriggerDagRunOperator</text>
+
+  <text x="44" y="440" font-size="11.5" fill="#475569">Resilience: tenacity retry w/ exponential backoff on Snowflake connect ·</text>
+  <text x="44" y="458" font-size="11.5" fill="#475569">Airflow-level retries=3 on all three @task steps · IPv4-only DNS patch for Docker</text>
+  <text x="44" y="486" font-size="11.5" fill="#475569">High-water mark: back-fills every gap between last loaded month and last</text>
+  <text x="44" y="504" font-size="11.5" fill="#475569">completed calendar month — a missed run self-heals on the next execution</text>
+
+  <path d="M 800,366 C 850,366 850,340 900,340" fill="none" stroke="#5b21b6" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="850" y="325" text-anchor="middle" font-size="10.5" fill="#5b21b6">fires (async)</text>
+
+  <!-- DAG 2 Panel -->
+  <rect x="900" y="255" width="330" height="290" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="924" y="288" font-size="16.5" font-weight="700" fill="#0f172a">bts_dbt_build_pipeline</text>
+  <text x="924" y="308" font-size="12" fill="#64748b">schedule: None (triggered only)</text>
+
+  <rect x="960" y="335" width="210" height="80" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+  <text x="1065" y="365" text-anchor="middle" font-size="13.5" font-weight="700" fill="#7c2d12">dbt_build</text>
+  <text x="1065" y="384" text-anchor="middle" font-size="10.5" fill="#9a3412">BashOperator</text>
+  <text x="1065" y="399" text-anchor="middle" font-size="10.5" fill="#9a3412">dbt build --project-dir ...</text>
+
+  <text x="924" y="448" font-size="11.5" fill="#475569">Runs the full dbt workflow — models, tests, and</text>
+  <text x="924" y="466" font-size="11.5" fill="#475569">snapshots — as a single task against FLIGHT_CORE</text>
+
+  <!-- Docker services strip -->
+  <text x="255" y="568" font-size="11.5" font-weight="700" fill="#0369a1">Services running under Docker Compose:</text>
+  <g font-size="11" fill="#0369a1">
+    <rect x="255" y="575" width="120" height="32" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.2"/>
+    <text x="315" y="595" text-anchor="middle">Webserver</text>
+
+    <rect x="385" y="575" width="120" height="32" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.2"/>
+    <text x="445" y="595" text-anchor="middle">Scheduler</text>
+
+    <rect x="515" y="575" width="120" height="32" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.2"/>
+    <text x="575" y="595" text-anchor="middle">Worker (Celery)</text>
+
+    <rect x="645" y="575" width="120" height="32" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.2"/>
+    <text x="705" y="595" text-anchor="middle">Triggerer</text>
+
+    <rect x="775" y="575" width="150" height="32" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.2"/>
+    <text x="850" y="595" text-anchor="middle">Postgres (metadata)</text>
+
+    <rect x="935" y="575" width="140" height="32" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.2"/>
+    <text x="1005" y="595" text-anchor="middle">Redis (broker)</text>
+  </g>
+
+  <!-- Legend -->
+  <rect x="20" y="650" width="16" height="16" rx="4" fill="#dcfce7" stroke="#15803d" stroke-width="1.2"/>
+  <text x="42" y="663" font-size="12" fill="#334155">@task (Python / TaskFlow)</text>
+
+  <rect x="230" y="650" width="16" height="16" rx="4" fill="#ede9fe" stroke="#5b21b6" stroke-width="1.2"/>
+  <text x="252" y="663" font-size="12" fill="#334155">TriggerDagRunOperator</text>
+
+  <rect x="440" y="650" width="16" height="16" rx="4" fill="#ffedd5" stroke="#c2410c" stroke-width="1.2"/>
+  <text x="462" y="663" font-size="12" fill="#334155">BashOperator (dbt)</text>
+
+  <rect x="620" y="650" width="16" height="16" rx="4" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.2"/>
+  <text x="642" y="663" font-size="12" fill="#334155">Docker Compose service</text>
+
+  <line x1="850" y1="658" x2="890" y2="658" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="898" y="663" font-size="12" fill="#334155">orchestrates</text>
+</svg>

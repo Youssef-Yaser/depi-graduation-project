@@ -188,6 +188,9 @@ unit_tests:
   - name: test_fact_flight_dimension_lookups
     description: "Verify date, airport and airline lookups are resolved correctly"
     model: fact_flight
+    overrides:
+      macros:
+        is_incremental: false
     given:
         - input: ref('stg_flights')
           rows:
@@ -213,6 +216,9 @@ unit_tests:
   - name: test_fact_flight_missing_dimension_lookup
     description: "Verify missing dimension records return NULL while preserving the flight"
     model: fact_flight
+    overrides:
+      macros:
+        is_incremental: false
     given:
         - input: ref('stg_flights')
           rows:
@@ -236,6 +242,9 @@ unit_tests:
   - name: test_fact_flight_preserves_flight_attributes
     description: "Verify flight attributes are preserved after dimension joins"
     model: fact_flight
+    overrides:
+      macros:
+        is_incremental: false
     given:
         - input: ref('stg_flights')
           rows:
@@ -264,6 +273,9 @@ unit_tests:
   - name: test_fact_flight_operation_join
     description: "Verify only flights existing in fact_flight are returned"
     model: fact_flight_operation
+    overrides:
+      macros:
+        is_incremental: false
     given:
         - input: ref('stg_flights')
           rows:
@@ -281,6 +293,9 @@ unit_tests:
   - name: test_fact_flight_operation_cancelled_and_diverted
     description: "Verify cancelled and diverted flight attributes are preserved"
     model: fact_flight_operation
+    overrides:
+      macros:
+        is_incremental: false
     given:
         - input: ref('stg_flights')
           rows:
@@ -302,6 +317,9 @@ unit_tests:
   - name: test_fact_flight_delay_join
     description: "Verify only flights existing in fact_flight are returned"
     model: fact_flight_delay
+    overrides:
+      macros:
+        is_incremental: false
     given:
         - input: ref('stg_flights')
           rows:
@@ -319,6 +337,9 @@ unit_tests:
   - name: test_fact_flight_delay_metrics
     description: "Verify delay metrics and causes are preserved"
     model: fact_flight_delay
+    overrides:
+      macros:
+        is_incremental: false
     given:
         - input: ref('stg_flights')
           rows:
