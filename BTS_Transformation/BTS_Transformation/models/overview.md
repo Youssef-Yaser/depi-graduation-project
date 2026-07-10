@@ -1,6 +1,6 @@
 {% docs __overview__ %}
 
-<h1 align="center">✈️ BTS Airline Analytics DWH</h1>
+# ✈️ BTS Airline Analytics DWH
 
 ## 📌 Project Overview
 
@@ -66,51 +66,99 @@ The pipeline follows a layered ELT architecture:
 
 | Source           | Type | Purpose                 |
 | ---------------- | ---- | ------------------------ |
-| 🛫 BTS TranStats | CSV  | Flight data (2024–2025) |
+| 🛫 BTS TranStats | CSV  | Flight data (2024,2025,2026) |
 | 🌍 OurAirports   | JSON | Airport metadata         |
 | ✈️ Skytrax       | JSON | Airline metadata         |
 
-## 🏗️ Warehouse Architecture
+
+## 🏛️ Project Layers
+
+| Layer     | Responsibility                 |
+| --------- | -------------------------------- |
+| 📥 Source | Raw source definitions           |
+| 🧹 Stage  | Cleaning, typing, JSON parsing   |
+| 🏗️ Mart  | Galaxy warehouse models          |
+
+## 📦 Raw Layer Structure
+
+### 🛫 Flight Data (`RAW_FLIGHTS_2024` / `RAW_FLIGHTS_2025` / `RAW_FLIGHTS_2026`)
+
+Raw flight tables are loaded as-is from BTS TranStats CSVs, preserving the native source schema with no transformation applied.
 
 ```text
-Warehouse Architecture
-    │
-    ├── 📚 Dimensions
-    │      ├── dim_date
-    │      ├── dim_airline
-    │      └── dim_airport
-    │
-    └── 📊 Facts
-           ├── fact_flight
-           ├── fact_flight_operation
-           └── fact_flight_delay
+🛫 Flight Record
+├── 🗓️ Time Period
+│   └── Year, Quarter, Month, DayofMonth, DayOfWeek, FlightDate
+├── 🏢 Carrier
+│   └── Reporting_Airline, DOT_ID_Reporting_Airline, IATA_CODE_Reporting_Airline,
+│       Tail_Number, Flight_Number_Reporting_Airline
+├── 🛫 Origin
+│   └── OriginAirportID, OriginAirportSeqID, OriginCityMarketID, Origin,
+│       OriginCityName, OriginState, OriginStateFips, OriginStateName, OriginWac
+├── 🛬 Destination
+│   └── DestAirportID, DestAirportSeqID, DestCityMarketID, Dest,
+│       DestCityName, DestState, DestStateFips, DestStateName, DestWac
+├── 🛫 Departure Performance
+│   └── CRSDepTime, DepTime, DepDelay, DepDelayMinutes, DepDel15,
+│       DepartureDelayGroups, DepTimeBlk, TaxiOut, WheelsOff
+├── 🛬 Arrival Performance
+│   └── WheelsOn, TaxiIn, CRSArrTime, ArrTime, ArrDelay, ArrDelayMinutes,
+│       ArrDel15, ArrivalDelayGroups, ArrTimeBlk
+├── ❌ Cancellation & Diversion
+│   └── Cancelled, CancellationCode, Diverted, DivAirportLandings, DivReachedDest,
+│       Div1Airport…Div5TailNum
+├── 📊 Flight Summary
+│   └── CRSElapsedTime, ActualElapsedTime, AirTime, Flights, Distance, DistanceGroup
+└── ⏱️ Delay Breakdown
+    └── CarrierDelay, WeatherDelay, NASDelay, SecurityDelay, LateAircraftDelay
 ```
 
-The warehouse is modeled as a **Fact Constellation (Galaxy Schema)** centered around flight operations. A shared set of conformed dimensions supports multiple analytical perspectives while avoiding data duplication.
+| Attribute       | Detail                                             |
+| --------------- | --------------------------------------------------- |
+| Column Count    | 109 columns (native BTS TranStats schema)            |
+| Storage Format  | Snowflake native table (one table per year)          |
+| Data Types      | All columns loaded as `VARCHAR` — empty strings instead of `NULL` for missing values |
+| Transformation  | None — cleaning, casting, and filtering happen in `stg_flights` |
 
-### 📊 Fact Tables
+### ⚙️ Why Load Raw and Untransformed?
 
-| Table                   | Grain                   |
-| ----------------------- | ------------------------ |
-| `fact_flight`           | Flight Data              |
-| `fact_flight_operation` | Operational Flight Data  |
-| `fact_flight_delay`     | Flight Delay Data        |
+Loading the raw layer without transformation preserves full traceability back to the original BTS source files and allows the staging layer to own all casting, cleaning, and standardization logic in one place.
 
-### 📚 Dimension Tables
+## 🌱 Seed Data Structure
 
-| Table         | Description                                     |
-| ------------- | ------------------------------------------------ |
-| `dim_date`    | Calendar dates with US Federal Holiday flag       |
-| `dim_airport` | Airport metadata used as origin and destination   |
-| `dim_airline` | Airline metadata                                  |
+### 📅 US Federal Holidays (`us_federal_holidays.csv`)
 
-### 🔑 Join Keys
+A static reference seed listing US Federal Holidays, used to flag holiday dates in `dim_date`.
 
-- 🔗 `Flight_Key` — links all fact tables (PK + FK in satellite facts)
-- ✈️ `Airline_Code` — links to `dim_airline`
-- 📅 `Date_Key` — links to `dim_date`
-- 🛫 `Origin_Airport_Code`
-- 🛬 `Dest_Airport_Code`
+```text
+📅 Holiday Record
+├── holiday_date
+├── holiday_name
+├── day_of_week
+├── is_weekend
+├── observed_date
+├── is_observed
+├── holiday_type
+└── region
+```
+
+| Column          | Description                                             |
+| --------------- | --------------------------------------------------------- |
+| `holiday_date`  | Official calendar date of the holiday                     |
+| `holiday_name`  | Name of the federal holiday                                |
+| `day_of_week`   | Day name the holiday falls on                              |
+| `is_weekend`    | Flags whether `holiday_date` falls on a weekend             |
+| `observed_date` | Date the holiday is officially observed                    |
+| `is_observed`   | Flags whether `observed_date` differs from `holiday_date`   |
+| `holiday_type`  | Classification of the holiday (e.g. `Federal`)             |
+| `region`        | Country/region the holiday applies to (`US`)               |
+
+| Attribute      | Detail                                             |
+| -------------- | --------------------------------------------------- |
+| File           | `seeds/us_federal_holidays.csv`                     |
+| Row Count      | 9 rows per year (US Federal Holidays)                |
+| Loaded Via     | `dbt seed`                                            |
+| Consumed By    | `dim_date` — matches on both `holiday_date` and `holiday_name` to set `Is_Federal_Holiday` flag |
 
 ## 📦 Semi-Structured Data Processing
 
@@ -157,6 +205,47 @@ The warehouse is modeled as a **Fact Constellation (Galaxy Schema)** centered ar
 - 📝 Applied explicit type casting.
 - 📊 Produced analytics-ready staging models.
 
+## 🏗️ Warehouse Architecture
+
+```text
+Warehouse Architecture
+    │
+    ├── 📚 Dimensions
+    │      ├── dim_date
+    │      ├── dim_airline
+    │      └── dim_airport
+    │
+    └── 📊 Facts
+           ├── fact_flight
+           ├── fact_flight_operation
+           └── fact_flight_delay
+```
+
+The warehouse is modeled as a **Fact Constellation (Galaxy Schema)** centered around flight operations. A shared set of conformed dimensions supports multiple analytical perspectives while avoiding data duplication.
+
+### 📊 Fact Tables
+
+| Table                   | Grain                   |
+| ----------------------- | ------------------------ |
+| `fact_flight`           | Flight Data              |
+| `fact_flight_operation` | Operational Flight Data  |
+| `fact_flight_delay`     | Flight Delay Data        |
+
+### 📚 Dimension Tables
+
+| Table         | Description                                     |
+| ------------- | ------------------------------------------------ |
+| `dim_date`    | Calendar dates with US Federal Holiday flag       |
+| `dim_airport` | Airport metadata used as origin and destination   |
+| `dim_airline` | Airline metadata                                  |
+
+### 🔑 Join Keys
+
+- 🔗 `Flight_Key` — links all fact tables (PK + FK in satellite facts)
+- ✈️ `Airline_Code` — links to `dim_airline`
+- 📅 `Date_Key` — links to `dim_date`
+- 🛫 `Origin_Airport_Code` and  `Dest_Airport_Code` links to `dim_airport` (Role-Playing)
+
 ## 🧩 Design Decisions
 
 ### 🌌 Why Galaxy Schema (Fact Table Extension)?
@@ -189,6 +278,28 @@ The schema contains:
 - 🔄 Staging Models
 - 📚 Dimension Tables
 - 📊 Fact Tables
+
+### 🔄 Incremental Fact Tables
+
+All three fact tables (`fact_flight`, `fact_flight_operation`, `fact_flight_delay`) are materialized as `incremental` models using a `merge` strategy on `Flight_Key`, so only new or changed flight records are processed on each run instead of a full table rebuild.
+
+```jinja-sql
+{{
+    config(
+        materialized='incremental',
+        unique_key='Flight_Key',
+        incremental_strategy='merge',
+        on_schema_change='fail'
+    )
+}}
+```
+
+| Config                 | Value          | Why?                                                              |
+| ------------------------ | -------------- | -------------------------------------------------------------------- |
+| `materialized`          | `incremental`  | Avoids reprocessing the full historical dataset on every run          |
+| `unique_key`            | `Flight_Key`   | Identifies a flight record for merge matching across runs             |
+| `incremental_strategy`  | `merge`        | Upserts matching rows and inserts new ones in a single operation      |
+| `on_schema_change`      | `fail`         | Surfaces upstream schema drift immediately instead of silently applying it |
 
 ## ✅ Testing & Data Quality
 
@@ -253,13 +364,22 @@ Unit tests validate transformation logic using mocked input fixtures.
 - `assert_weekends_are_holidays`
 - `assert_federal_holidays_exists`
 
-## 🏛️ Project Layers
+## 📊 Analyses
 
-| Layer     | Responsibility                 |
-| --------- | -------------------------------- |
-| 📥 Source | Raw source definitions           |
-| 🧹 Stage  | Cleaning, typing, JSON parsing   |
-| 🏗️ Mart  | Galaxy warehouse models          |
+Reusable analytical SQL queries under `analyses/` for ad-hoc business exploration and validation, run directly against the mart layer.
+
+| Analysis                              | Business Question Answered                                              |
+| -------------------------------------- | -------------------------------------------------------------------------- |
+| `airport_traffic_ranking`              | Which airports handle the most traffic (departures + arrivals combined)?    |
+| `cancellation_summary`                 | Which airlines have the highest cancellation rates, and what causes them?   |
+| `flight_duration_per_airline_analysis` | How do airlines compare on flight duration, distance, and average speed?    |
+| `flight_delay_summary`                 | Which airlines have the worst arrival delays, and what's driving them?      |
+| `holiday_vs_regular_day_performance`   | Do cancellation and delay rates differ between holidays and regular days?   |
+
+### ⚙️ Why Keep Analyses Separate from Models?
+
+Analyses are exploratory and business-facing rather than part of the transformation DAG, so they live under `analyses/` and are compiled via `dbt compile` without being materialized as warehouse objects.
+
 
 ## 🛠️ Tech Stack
 
@@ -272,6 +392,3 @@ Unit tests validate transformation logic using mocked input fixtures.
 | 🏗️ Data Modeling | Galaxy Schema                    |
 | 📚 Documentation  | dbt Docs                         |
 | ✅ Testing         | Generic, Singular & Unit Tests   |
-
-
-{% enddocs %}
