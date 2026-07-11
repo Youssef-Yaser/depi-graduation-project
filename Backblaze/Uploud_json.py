@@ -2,8 +2,8 @@ import boto3
 import os
 
 # 1. بيانات الربط الخاصة بـ Backblaze B2 (هاتهم من صفحة Application Keys في الموقع)
-KEY_ID = "005a85caf7c53650000000001"
-APPLICATION_KEY = "K005LneknvOsYAEYVdaac4LQKqmsviY"
+KEY_ID = "KEY_ID"
+APPLICATION_KEY = "APPLICATION_KEY"
 BUCKET_NAME = "airline-on-time-data-ahmed"
 
 # ضيف https:// في أول الـ URL
