@@ -295,3 +295,4 @@ to enable proactive operational decision-making instead of reactive responses.
 This reporting layer transforms millions of raw BTS flight records into actionable business intelligence by combining a dimensional warehouse, optimized semantic model, and interactive Power BI dashboards.
 
 Together with Snowflake, dbt, Airflow, and Backblaze B2, it completes an end-to-end modern data engineering pipeline capable of supporting operational monitoring and data-driven decision-making for airline executives.
+[View Power BI Report](https://your-powerbi-link-here.com)
