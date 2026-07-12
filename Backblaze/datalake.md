@@ -1,55 +1,199 @@
 # 💾 Backblaze B2 Landing Zone & Data Lake Architecture
 
-**Architectural Component:** Centralized Cloud Object Storage (Data Lake Landing Zone)  
-**Data Scope:** Historical Aviation Flight Performance (Years 2024, 2025, 2026) + Metadata Dimensions  
+![Storage](https://img.shields.io/badge/Storage-Backblaze%20B2-E31C79?style=flat-square)
+![Format](https://img.shields.io/badge/Format-CSV%20%7C%20JSON-blue?style=flat-square)
+![Partitioning](https://img.shields.io/badge/Partitioning-Year%20%2F%20Month-informational?style=flat-square)
+![Stage](https://img.shields.io/badge/Consumed%20By-Snowflake-29B5E8?style=flat-square)
 
 ---
 
-## 📝 Layer Overview
-This directory documents the Landing Zone / Data Lake layer of our enterprise data architecture. We utilize **Backblaze B2** as an immutable, highly durable cloud object storage repository. This layer isolates the extraction phase from downstream transformations, protecting our raw source assets and ensuring our pipeline remains completely decoupled.
+## 📌 Overview
 
-All raw ingestion files are pushed directly from external web endpoints and local configurations into our target bucket (`airline-on-time-data-ahmed`) via automated python extraction scripts.
+| Property | Value |
+|----------|-------|
+| 🏗️ **Architectural Component** | Centralized Cloud Object Storage (Landing Zone / Data Lake) |
+| 📊 **Data Scope** | Historical BTS Flight Performance (2024–2026) + Metadata Dimensions |
+| 🪣 **Bucket** | `airline-on-time-data-ahmed` |
+| 📂 **Stored Formats** | CSV (.zip) & JSON |
+| ❄️ **Downstream Consumer** | Snowflake External Stage |
 
 ---
 
-## 🗂️ Data Lake Storage Structure & Partitioning
-The storage architecture inside Backblaze B2 is divided into two distinct processing paths: **Structured Partitioned Analytics Data** and **Semi-Structured Metadata Dimensions**.
+# 📝 Layer Overview
+
+This directory documents the **Landing Zone / Data Lake** layer of the BTS Airline Analytics DWH architecture.
+
+**Backblaze B2** acts as an immutable, highly durable cloud object storage layer positioned between the extraction process and the Snowflake warehouse.
+
+All raw source files are automatically downloaded from external data providers using Python (`requests` + `tenacity`) and uploaded via `boto3` (S3-compatible API). Snowflake later consumes these files through an External Stage before dbt performs the transformation layer.
+
+---
+
+# 🖼️ Architecture at a Glance
+
+![architecture](/Backblaze/assets/b2_landing_zone_architecture.svg)
+
+---
+
+# 🤔 Why Use a Landing Zone?
+
+| 🎯 Challenge | ✅ Solution |
+|--------------|------------|
+| 🔄 **Decoupling** | Extraction and transformation remain completely independent. A Snowflake or dbt outage never blocks ingestion. |
+| 🔒 **Immutability** | Raw files are never modified, allowing the warehouse to be rebuilt from the original source at any time. |
+| 💰 **Lower Cost** | Backblaze B2 provides significantly cheaper long-term storage than keeping raw data inside the warehouse. |
+| 📝 **Auditability** | Every monthly BTS file is preserved exactly as downloaded for historical reproducibility. |
+| ♻️ **Replayability** | Historical months can be reloaded directly from B2 without downloading them again from BTS. |
+
+---
+
+# 🗂️ Storage Structure
+
+The bucket is organized into **two independent data paths**:
+
+- ✈️ **Structured Flight Data** (partitioned by Year/Month)
+- 📑 **Semi-Structured Metadata** (JSON dimension files)
 
 ```text
-airline-on-time-data-ahmed/ (Bucket Root)
+airline-on-time-data-ahmed/
 └── raw/
-    ├── file1.json                   # Skytrax Airline Metadata Dimension
-    ├── file2.json                   # OurAirports Airport Metadata Dimension
-    └── flights/                     # Chronological Partitioned Flight Logs
+    ├── Airline_info.json
+    ├── Airport_info.json
+    └── flights/
         ├── year=2024/
         │   ├── month=01/flights_2024_01.zip
         │   ├── month=02/flights_2024_02.zip
-        │   ├── month=03/flights_2024_03.zip
-        │   ├── month=04/flights_2024_04.zip
-        │   ├── month=05/flights_2024_05.zip
-        │   ├── month=06/flights_2024_06.zip
-        │   ├── month=07/flights_2024_07.zip
-        │   ├── month=08/flights_2024_08.zip
-        │   ├── month=09/flights_2024_09.zip
-        │   ├── month=10/flights_2024_10.zip
-        │   ├── month=11/flights_2024_11.zip
-        │   └── month=12/flights_2024_12.zip
+        │   └── ...
         ├── year=2025/
         │   ├── month=01/flights_2025_01.zip
-        │   ├── month=02/flights_2025_02.zip
-        │   ├── month=03/flights_2025_03.zip
-        │   ├── month=04/flights_2025_04.zip
-        │   ├── month=05/flights_2025_05.zip
-        │   ├── month=06/flights_2025_06.zip
-        │   ├── month=07/flights_2025_07.zip
-        │   ├── month=08/flights_2025_08.zip
-        │   ├── month=09/flights_2025_09.zip
-        │   ├── month=10/flights_2025_10.zip
-        │   ├── month=11/flights_2025_11.zip
-        │   └── month=12/flights_2025_12.zip
+        │   └── ...
         └── year=2026/
             ├── month=01/flights_2026_01.zip
-            ├── month=02/flights_2026_02.zip
-            ├── month=03/flights_2026_03.zip
-            ├── month=04/flights_2026_04.zip
-            └── month=05/flights_2026_05.zip
+            └── ...
+```
+
+---
+
+# 📦 Why Hive-Style Partitioning?
+
+Using the directory structure:
+
+```text
+year=YYYY/month=MM/
+```
+
+provides several operational advantages:
+
+- 🚀 **Efficient High-Water-Mark Backfills**
+  - The Airflow DAG simply compares existing partitions with `dim_date` to identify missing months.
+
+- 🎯 **Deterministic Paths**
+  - Every month's location is known in advance without performing directory listings.
+
+- ❄️ **Snowflake-Friendly Layout**
+  - The same partition hierarchy maps naturally to Snowflake External Stages and `COPY INTO` operations.
+
+---
+
+# 📑 Why Separate Flight Data from Metadata?
+
+These datasets have very different characteristics.
+
+### ✈️ Flight Data
+
+- Structured CSV files
+- High-volume (~17M+ rows)
+- Monthly partitioned
+- Continuously growing
+
+### 📄 Metadata
+
+- JSON documents
+- Small volume
+- Slowly changing
+- Refreshed only when necessary
+
+Keeping them in separate paths avoids unnecessary partitioning for metadata while making both datasets easier to manage.
+
+---
+
+# 🔄 End-to-End Ingestion Workflow
+
+```text
+Discover Missing Months
+          │
+          ▼
+Download ZIP Files
+          │
+          ▼
+Upload to Backblaze B2
+          │
+          ▼
+Snowflake COPY INTO RAW
+          │
+          ▼
+Trigger dbt Build DAG
+          │
+          ▼
+FLIGHT_CORE Data Warehouse
+```
+
+### Workflow Steps
+
+1. 🔍 Detect missing `year/month` partitions using High-Water-Mark logic.
+2. 🌐 Download monthly ZIP files from the BTS TranStats portal.
+3. ☁️ Upload files into Backblaze B2 using the S3-compatible API.
+4. ❄️ Load new partitions into Snowflake RAW tables.
+5. ⚙️ Trigger the dbt transformation pipeline.
+6. 📊 Build the final `FLIGHT_CORE` dimensional model.
+
+The complete workflow is orchestrated by:
+
+- 🚀 `bts_ingestion_pipeline`
+- ⚙️ `bts_dbt_build_pipeline`
+
+connected together through `TriggerDagRunOperator`.
+
+---
+
+# 🔒 Immutability & Data Retention
+
+The `raw/` layer follows a **Write-Once** philosophy.
+
+- ✅ Existing files are never modified.
+- ✅ Historical data remains reproducible.
+- ✅ Source lineage is preserved.
+- ✅ BTS corrections are stored as new files instead of replacing existing ones.
+
+This guarantees complete traceability from source system to analytical warehouse.
+
+---
+
+# ❄️ Downstream Consumption
+
+Snowflake accesses the bucket through an **External Stage**.
+
+The ingestion process loads raw files into:
+
+- 📥 `RAW_FLIGHTS_2024`
+- 📥 `RAW_FLIGHTS_2025`
+- 📥 `RAW_FLIGHTS_2026`
+- 📥 Metadata RAW tables
+
+The dbt staging model (`stg_flights`) unions yearly raw tables before building the final **FLIGHT_CORE** fact constellation.
+
+```text
+Backblaze B2
+      │
+      ▼
+Snowflake External Stage
+      │
+      ▼
+RAW Tables
+      │
+      ▼
+stg_flights
+      │
+      ▼
+FLIGHT_CORE
+```

@@ -1,0 +1,91 @@
+<svg viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B3D62"/>
+    </marker>
+    <linearGradient id="b2grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B3D62"/>
+      <stop offset="100%" stop-color="#124A75"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="560" fill="#FFFFFF"/>
+
+  <text x="500" y="35" text-anchor="middle" font-size="22" font-weight="700" fill="#0B3D62">
+    Backblaze B2 Landing Zone — Ingestion Flow
+  </text>
+
+  <!-- Sources -->
+  <g>
+    <rect x="30" y="80" width="220" height="70" rx="8" fill="#F2F6FA" stroke="#0B3D62" stroke-width="1.5"/>
+    <text x="140" y="105" text-anchor="middle" font-size="13" font-weight="600" fill="#0B3D62">BTS TranStats</text>
+    <text x="140" y="122" text-anchor="middle" font-size="11" fill="#345">Monthly Flight CSVs (.zip)</text>
+    <text x="140" y="137" text-anchor="middle" font-size="11" fill="#345">2024 · 2025 · 2026</text>
+  </g>
+
+  <g>
+    <rect x="30" y="170" width="220" height="60" rx="8" fill="#F2F6FA" stroke="#0B3D62" stroke-width="1.5"/>
+    <text x="140" y="195" text-anchor="middle" font-size="13" font-weight="600" fill="#0B3D62">OurAirports</text>
+    <text x="140" y="212" text-anchor="middle" font-size="11" fill="#345">airport_info.json</text>
+  </g>
+
+  <g>
+    <rect x="30" y="250" width="220" height="60" rx="8" fill="#F2F6FA" stroke="#0B3D62" stroke-width="1.5"/>
+    <text x="140" y="275" text-anchor="middle" font-size="13" font-weight="600" fill="#0B3D62">Skytrax</text>
+    <text x="140" y="292" text-anchor="middle" font-size="11" fill="#345">airline_info.json</text>
+  </g>
+
+  <!-- Python extraction layer -->
+  <g>
+    <rect x="330" y="150" width="220" height="130" rx="8" fill="#FFF8E7" stroke="#C98A1D" stroke-width="1.5"/>
+    <text x="440" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#8A5A0E">Python Extraction Layer</text>
+    <text x="440" y="200" text-anchor="middle" font-size="11" fill="#5A3E10">requests → download</text>
+    <text x="440" y="218" text-anchor="middle" font-size="11" fill="#5A3E10">tenacity → retry logic</text>
+    <text x="440" y="236" text-anchor="middle" font-size="11" fill="#5A3E10">boto3 → B2 (S3-compatible)</text>
+    <text x="440" y="254" text-anchor="middle" font-size="11" fill="#5A3E10">upload &amp; partition writer</text>
+  </g>
+
+  <!-- Arrows sources -> python -->
+  <path d="M 250 115 L 330 190" stroke="#0B3D62" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 250 200 L 330 210" stroke="#0B3D62" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 250 280 L 330 235" stroke="#0B3D62" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- B2 Bucket -->
+  <g>
+    <rect x="630" y="90" width="320" height="330" rx="10" fill="url(#b2grad)"/>
+    <text x="790" y="120" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">Backblaze B2 Bucket</text>
+    <text x="790" y="138" text-anchor="middle" font-size="11" fill="#CFE0EE">airline-on-time-data-ahmed</text>
+
+    <rect x="655" y="155" width="270" height="40" rx="6" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.4"/>
+    <text x="790" y="172" text-anchor="middle" font-size="11.5" fill="#FFFFFF">raw/file1.json</text>
+    <text x="790" y="186" text-anchor="middle" font-size="10" fill="#CFE0EE">Skytrax airline dimension</text>
+
+    <rect x="655" y="205" width="270" height="40" rx="6" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.4"/>
+    <text x="790" y="222" text-anchor="middle" font-size="11.5" fill="#FFFFFF">raw/file2.json</text>
+    <text x="790" y="236" text-anchor="middle" font-size="10" fill="#CFE0EE">OurAirports airport dimension</text>
+
+    <rect x="655" y="255" width="270" height="145" rx="6" fill="#FFFFFF" fill-opacity="0.16" stroke="#FFFFFF" stroke-opacity="0.5"/>
+    <text x="790" y="278" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">raw/flights/</text>
+    <text x="790" y="298" text-anchor="middle" font-size="10.5" fill="#EAF2FA">year=2024/month=01…12/*.zip</text>
+    <text x="790" y="316" text-anchor="middle" font-size="10.5" fill="#EAF2FA">year=2025/month=01…12/*.zip</text>
+    <text x="790" y="334" text-anchor="middle" font-size="10.5" fill="#EAF2FA">year=2026/month=01…05/*.zip</text>
+    <text x="790" y="356" text-anchor="middle" font-size="9.5" fill="#B9D0E4" font-style="italic">Hive-style partitioning</text>
+    <text x="790" y="372" text-anchor="middle" font-size="9.5" fill="#B9D0E4" font-style="italic">(year / month)</text>
+  </g>
+
+  <!-- Arrow python -> B2 -->
+  <path d="M 550 215 L 630 215" stroke="#0B3D62" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Snowflake -->
+  <g>
+    <rect x="655" y="460" width="270" height="70" rx="8" fill="#EAF6FB" stroke="#1C6E9C" stroke-width="1.5"/>
+    <text x="790" y="488" text-anchor="middle" font-size="13" font-weight="700" fill="#1C6E9C">Snowflake External Stage</text>
+    <text x="790" y="506" text-anchor="middle" font-size="11" fill="#1C4E63">RAW schema · COPY INTO / write_pandas</text>
+    <text x="790" y="520" text-anchor="middle" font-size="10" fill="#1C4E63">BTS_AIRLINE_WH</text>
+  </g>
+
+  <path d="M 790 420 L 790 460" stroke="#0B3D62" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Legend -->
+  <text x="30" y="410" font-size="11" fill="#888">Immutable landing zone → decouples extraction from transformation</text>
+</svg>

@@ -5726,5 +5726,69 @@
       "Elevation_ft": 4473
     },
     "Timezone": "America/Denver"
-  }
+  } ,
+  {
+  "Airport_Code": "LYH",
+  "Airport_Name": "Lynchburg Regional Airport",
+  "Airport_Type": "medium_airport",
+  "Location": {
+    "City": "Lynchburg",
+    "State": "Virginia",
+    "Country": "United States"
+  },
+  "Coordinates": {
+    "Latitude": 37.3253,
+    "Longitude": -79.2011,
+    "Elevation_ft": 938
+  },
+  "Timezone": "America/New_York"
+},
+{
+  "Airport_Code": "SHD",
+  "Airport_Name": "Shenandoah Valley Regional Airport",
+  "Airport_Type": "small_airport",
+  "Location": {
+    "City": "Weyers Cave",
+    "State": "Virginia",
+    "Country": "United States"
+  },
+  "Coordinates": {
+    "Latitude": 38.2638,
+    "Longitude": -78.8964,
+    "Elevation_ft": 1201
+  },
+  "Timezone": "America/New_York"
+},
+{
+  "Airport_Code": "PAH",
+  "Airport_Name": "Barkley Regional Airport",
+  "Airport_Type": "medium_airport",
+  "Location": {
+    "City": "West Paducah",
+    "State": "Kentucky",
+    "Country": "United States"
+  },
+  "Coordinates": {
+    "Latitude": 37.0603,
+    "Longitude": -88.7730,
+    "Elevation_ft": 410
+  },
+  "Timezone": "America/Chicago"
+},
+{
+  "Airport_Code": "LWB",
+  "Airport_Name": "Greenbrier Valley Airport",
+  "Airport_Type": "medium_airport",
+  "Location": {
+    "City": "Lewisburg",
+    "State": "West Virginia",
+    "Country": "United States"
+  },
+  "Coordinates": {
+    "Latitude": 37.8583,
+    "Longitude": -80.4000,
+    "Elevation_ft": 2302
+  },
+  "Timezone": "America/New_York"
+}
 ]
