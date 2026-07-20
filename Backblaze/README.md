@@ -1,13 +1,7 @@
-# 💾 Backblaze B2 Landing Zone & Data Lake Architecture
+<h1 align="center"> ☁️ Backblaze B2 Landing Zone & Data Lake Architecture</h1>
 
-![Storage](https://img.shields.io/badge/Storage-Backblaze%20B2-E31C79?style=flat-square)
-![Format](https://img.shields.io/badge/Format-CSV%20%7C%20JSON-blue?style=flat-square)
-![Partitioning](https://img.shields.io/badge/Partitioning-Year%20%2F%20Month-informational?style=flat-square)
-![Stage](https://img.shields.io/badge/Consumed%20By-Snowflake-29B5E8?style=flat-square)
 
----
-
-## 📌 Overview
+# 📌 Overview
 
 | Property | Value |
 |----------|-------|
@@ -115,27 +109,32 @@ These datasets have very different characteristics.
 
 Keeping them in separate paths avoids unnecessary partitioning for metadata while making both datasets easier to manage.
 
----
 
-# 🔄 End-to-End Ingestion Workflow
 
-```text
-Discover Missing Months
-          │
-          ▼
-Download ZIP Files
-          │
-          ▼
-Upload to Backblaze B2
-          │
-          ▼
-Snowflake COPY INTO RAW
-          │
-          ▼
-Trigger dbt Build DAG
-          │
-          ▼
-FLIGHT_CORE Data Warehouse
+# 📥 End-to-End Ingestion Workflow
+
+```mermaid
+flowchart TD
+
+    subgraph INGESTION["📥 Ingestion Pipeline"]
+        direction TB
+        A["🔍 Discover Missing Months"]
+        B["📦 Download ZIP Files"]
+        C["☁️ Upload to Backblaze B2"]
+        D["❄️ COPY INTO Snowflake RAW"]
+    end
+
+    subgraph TRANSFORMATION["🔄 Transformation Pipeline"]
+        direction TB
+        E["🚀 Trigger dbt Build DAG"]
+        F["⭐ FLIGHT_CORE Data Warehouse"]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
 ```
 
 ### Workflow Steps
@@ -182,18 +181,22 @@ The ingestion process loads raw files into:
 
 The dbt staging model (`stg_flights`) unions yearly raw tables before building the final **FLIGHT_CORE** fact constellation.
 
-```text
-Backblaze B2
-      │
-      ▼
-Snowflake External Stage
-      │
-      ▼
-RAW Tables
-      │
-      ▼
-stg_flights
-      │
-      ▼
-FLIGHT_CORE
+---
+
+```mermaid
+flowchart TD
+    A["☁️ Backblaze B2"]
+
+    subgraph SNOWFLAKE["❄️ Snowflake"]
+        direction TB
+        B["External Stage"]
+        C["RAW Schema"]
+        D["stg_flights (dbt Staging)"]
+        E["FLIGHT_CORE (Galaxy Schema)"]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
 ```

@@ -1,13 +1,6 @@
-# 📊 Power BI Reporting Layer
+<h1 align="center">📊 Power BI Reporting Layer</h1>
 
-![Power BI](https://img.shields.io/badge/Visualization-Power%20BI-F2C811?style=flat-square)
-![Warehouse](https://img.shields.io/badge/Data%20Source-Snowflake-29B5E8?style=flat-square)
-![Model](https://img.shields.io/badge/Schema-Galaxy%20Schema-blue?style=flat-square)
-![Records](https://img.shields.io/badge/Flights-17M+-success?style=flat-square)
-
----
-
-## 📌 Reporting Layer Overview
+# 📌 Reporting Layer Overview
 
 The reporting layer represents the final analytical component of the BTS Airline Analytics Data Warehouse.
 
@@ -15,30 +8,36 @@ After the raw BTS flight records are ingested into Snowflake and transformed thr
 
 The dashboards transform more than **16 million domestic flight records** into meaningful KPIs and interactive visual analytics that support strategic and operational decision-making.
 
----
+
 
 # 🏗️ Reporting Architecture
 
-```text
-BTS Flight Data
-        │
-        ▼
-Backblaze B2 Landing Zone
-        │
-        ▼
-Snowflake RAW Layer
-        │
-        ▼
-dbt Transformation
-        │
-        ▼
-FLIGHT_CORE Warehouse
-        │
-        ▼
-Power BI Semantic Model
-        │
-        ▼
-Interactive Executive Dashboards
+```mermaid
+flowchart TD
+
+    A["🛫 BTS Flight Data"]
+
+    subgraph STORAGE["Storage"]
+        B["☁️ Backblaze B2 Landing Zone"]
+    end
+
+    subgraph WAREHOUSE["Snowflake Data Warehouse"]
+        C["❄️ RAW Layer"]
+        D["🔄 dbt Transformation"]
+        E["⭐ FLIGHT_CORE Warehouse"]
+    end
+
+    subgraph ANALYTICS["Analytics"]
+        F["📊 Power BI Semantic Model"]
+        G["📈 Executive Dashboards"]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
 ```
 
 ---
@@ -288,7 +287,7 @@ Track KPIs such as:
 
 to enable proactive operational decision-making instead of reactive responses.
 
----
+
 
 # 🚀 Conclusion
 

@@ -1,6 +1,8 @@
 <h1 align="center">✈️ BTS Airline Analytics DWH</h1>
 
+
 ## 📌 Project Overview
+
 
 ### This project implements a BTS Transformation using dbt and Snowflake. Raw flight, airline, and airport data from the Bureau of Transportation Statistics (BTS), along with semi-structured metadata, are transformed through a modern ELT pipeline into a Galaxy Schema consisting of three fact tables and three shared dimensions. The warehouse is designed to support analytical reporting on flight operations, delays, cancellations, airports, and airlines while ensuring data quality through comprehensive data and unit testing.
 
@@ -336,7 +338,7 @@ Unit tests validate transformation logic using mocked input fixtures.
 | `fact_flight_operation` | 2          |
 | `fact_flight_delay`     | 2          |
 
-**Total:** ✅ **18 Unit Tests**
+### **Total:** ✅ **18 Unit Tests**
 
 ## 📋 Custom Singular Tests
 

@@ -2,6 +2,7 @@
 
 # ✈️ BTS Airline Analytics DWH
 
+
 ## 📌 Project Overview
 
 ### This project implements a BTS Transformation using dbt and Snowflake. Raw flight, airline, and airport data from the Bureau of Transportation Statistics (BTS), along with semi-structured metadata, are transformed through a modern ELT pipeline into a Galaxy Schema consisting of three fact tables and three shared dimensions. The warehouse is designed to support analytical reporting on flight operations, delays, cancellations, airports, and airlines while ensuring data quality through comprehensive data and unit testing.
@@ -10,7 +11,7 @@
 
 The diagram illustrates the complete end-to-end data pipeline, from raw data ingestion through transformation and testing to the final analytical dashboards.
 
-![Work_Flow](/BTS_Transformation/BTS_Transformation/assets/Work_Flow.png)
+![Work_Flow](/assets/Work_Flow.png)
 
 The pipeline follows a layered ELT architecture:
 
@@ -258,11 +259,11 @@ Flight operational metrics naturally separate into different analytical domains 
 
 ## 🔄 Transformtion Pipeline
 
-![ELT Pipeline](/BTS_Transformation/BTS_Transformation/assets/ELT_Pipeline.svg)
+![ELT Pipeline](/assets/ELT_Pipeline.svg)
 
 ## 🗺️ Data Model
 
-![Data Model](/BTS_Transformation/BTS_Transformation/assets/Schema.svg)
+![Data Model](/assets/Schema.svg)
 
 `dim_airport` is a **role-playing dimension** referenced twice from `fact_flight` using `Origin_Airport_Code` and `Dest_Airport_Code`.
 
@@ -338,7 +339,7 @@ Unit tests validate transformation logic using mocked input fixtures.
 | `fact_flight_operation` | 2          |
 | `fact_flight_delay`     | 2          |
 
-**Total:** ✅ **18 Unit Tests**
+### **Total:** ✅ **18 Unit Tests**
 
 ## 📋 Custom Singular Tests
 

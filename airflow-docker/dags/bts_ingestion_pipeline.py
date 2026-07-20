@@ -5,7 +5,6 @@
 
 import socket
 
-# Force IPv4-only DNS resolution to avoid IPv6 lookup failures in Docker.
 _original_getaddrinfo = socket.getaddrinfo
 
 
@@ -16,6 +15,7 @@ def _ipv4_only_getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
 socket.getaddrinfo = _ipv4_only_getaddrinfo
 
 import io
+import logging
 import os
 import zipfile
 from datetime import date, datetime, timedelta
@@ -34,6 +34,10 @@ from tenacity import (
 
 from airflow.decorators import dag, task
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
+from airflow.utils.email import send_email
+from airflow.utils.trigger_rule import TriggerRule
+
+log = logging.getLogger(__name__)
 
 
 # -----------------------------------------------------------------------------
@@ -55,8 +59,23 @@ B2_APPLICATION_KEY = os.environ["B2_APPLICATION_KEY"]
 B2_ENDPOINT_URL = os.environ["B2_ENDPOINT_URL"]
 BUCKET_NAME = os.environ["B2_BUCKET_NAME"]
 
+# -----------------------------------------------------------------------------
+# Email alerting configuration.
+# -----------------------------------------------------------------------------
+ALERT_EMAIL_TO = os.environ["ALERT_EMAIL_TO"].split(",")
 
-# Create an S3-compatible client for Backblaze B2.
+# -----------------------------------------------------------------------------
+# Airflow REST API configuration (used to read task instance states, since
+# direct ORM/database access is not permitted from worker tasks in Airflow 3).
+# -----------------------------------------------------------------------------
+AIRFLOW_API_BASE_URL = os.environ.get(
+    "AIRFLOW_API_BASE_URL", "http://airflow-apiserver:8080"
+)
+AIRFLOW_API_USER = os.environ.get("_AIRFLOW_WWW_USER_USERNAME", "airflow")
+AIRFLOW_API_PASSWORD = os.environ.get("_AIRFLOW_WWW_USER_PASSWORD", "airflow")
+
+
+
 def _b2_client():
     return boto3.client(
         "s3",
@@ -66,8 +85,6 @@ def _b2_client():
     )
 
 
-# Retry Snowflake connections automatically if temporary
-# network or DNS resolution errors occur.
 @retry(
     stop=stop_after_attempt(5),
     wait=wait_exponential(multiplier=2, min=5, max=30),
@@ -85,16 +102,116 @@ def _connect_snowflake(**kwargs):
     return snowflake.connector.connect(**kwargs)
 
 
+# -----------------------------------------------------------------------------
+# Status email helpers.
+# -----------------------------------------------------------------------------
+def _status_color(state):
+    return {
+        "success": "#2E7D32",
+        "failed": "#C62828",
+        "upstream_failed": "#C62828",
+        "skipped": "#9E9E9E",
+        "up_for_retry": "#F9A825",
+        "running": "#1565C0",
+    }.get(state, "#616161")
+
+
+def _build_task_rows(task_instances):
+    rows = []
+    for ti in task_instances:
+        state = ti.get("state")
+        task_id = ti.get("task_id")
+        duration = ti.get("duration")
+        color = _status_color(state)
+        duration_str = f"{duration:.1f}s" if duration else "-"
+        rows.append(f"""
+        <tr>
+            <td style="padding:8px 12px;border-bottom:1px solid #EEE;">{task_id}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #EEE;">
+                <span style="background:{color};color:#FFF;padding:2px 10px;border-radius:12px;font-size:12px;">
+                    {state or "none"}
+                </span>
+            </td>
+            <td style="padding:8px 12px;border-bottom:1px solid #EEE;">{duration_str}</td>
+        </tr>""")
+    return "".join(rows)
+
+
+def _build_email_body(dag_id, run_id, logical_date, start_date, task_instances, status_label, header_color):
+    return f"""
+    <div style="font-family:Segoe UI, Arial, sans-serif;max-width:600px;margin:auto;border:1px solid #E0E0E0;border-radius:8px;overflow:hidden;">
+        <div style="background:{header_color};padding:16px 20px;">
+            <span style="color:#FFF;font-size:16px;font-weight:600;">{status_label}</span>
+        </div>
+        <div style="padding:20px;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;color:#333;margin-bottom:20px;">
+                <tr>
+                    <td style="padding:4px 0;color:#777;width:120px;">DAG</td>
+                    <td style="padding:4px 0;font-weight:600;">{dag_id}</td>
+                </tr>
+                <tr>
+                    <td style="padding:4px 0;color:#777;">Run ID</td>
+                    <td style="padding:4px 0;">{run_id}</td>
+                </tr>
+                <tr>
+                    <td style="padding:4px 0;color:#777;">Logical Date</td>
+                    <td style="padding:4px 0;">{logical_date}</td>
+                </tr>
+                <tr>
+                    <td style="padding:4px 0;color:#777;">Start Date</td>
+                    <td style="padding:4px 0;">{start_date}</td>
+                </tr>
+            </table>
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+                <tr style="background:#FAFAFA;text-align:left;">
+                    <th style="padding:8px 12px;color:#555;">Task</th>
+                    <th style="padding:8px 12px;color:#555;">Status</th>
+                    <th style="padding:8px 12px;color:#555;">Duration</th>
+                </tr>
+                {_build_task_rows(task_instances)}
+            </table>
+        </div>
+        <div style="background:#FAFAFA;padding:12px 20px;font-size:11px;color:#999;">
+            BTS Airline Analytics DWH — Automated Airflow Notification
+        </div>
+    </div>
+    """
+
+
+def _get_airflow_access_token():
+    """Authenticate against the Airflow API server and return a bearer token."""
+    response = requests.post(
+        f"{AIRFLOW_API_BASE_URL}/auth/token",
+        json={"username": AIRFLOW_API_USER, "password": AIRFLOW_API_PASSWORD},
+        timeout=30,
+    )
+    response.raise_for_status()
+    return response.json()["access_token"]
+
+
+def _get_task_instances(dag_id, run_id):
+    """Fetch all task instance states for a given DAG run via the REST API."""
+    token = _get_airflow_access_token()
+    headers = {"Authorization": f"Bearer {token}"}
+
+    response = requests.get(
+        f"{AIRFLOW_API_BASE_URL}/api/v2/dags/{dag_id}/dagRuns/{run_id}/taskInstances",
+        headers=headers,
+        timeout=30,
+    )
+    response.raise_for_status()
+    return response.json()["task_instances"]
+
+
 @dag(
     dag_id="bts_ingestion_pipeline",
-    schedule="0 12 1 * *",  # Runs on the first day of every month at 12:00.
+    schedule="0 12 1 * *",
     start_date=datetime(2026, 1, 1),
     catchup=False,
     tags=["bts", "ingestion", "snowflake", "backblaze"],
 )
 def bts_ingestion_pipeline():
 
-    # Determine which monthly datasets are missing from the warehouse.
     @task(retries=3, retry_delay=timedelta(minutes=1), retry_exponential_backoff=True)
     def get_missing_months() -> list[list[int]]:
         """Return all missing months up to the latest completed month."""
@@ -143,7 +260,6 @@ def bts_ingestion_pipeline():
 
         return missing
 
-    # Download missing BTS files and upload them to Backblaze B2.
     @task(retries=3, retry_delay=timedelta(minutes=1), retry_exponential_backoff=True)
     def download_upload_to_b2(missing_months: list[list[int]]) -> list[dict]:
         """Download monthly ZIP files and store them in Backblaze B2."""
@@ -186,7 +302,6 @@ def bts_ingestion_pipeline():
 
         return uploaded
 
-    # Load uploaded files from Backblaze B2 into Snowflake RAW tables.
     @task(retries=3, retry_delay=timedelta(minutes=1), retry_exponential_backoff=True)
     def load_to_snowflake(uploaded_files: list[dict]):
         """Append newly ingested data into yearly RAW tables."""
@@ -211,12 +326,10 @@ def bts_ingestion_pipeline():
             target_table = f"RAW_FLIGHTS_{year}"
 
             try:
-                # Retrieve the target table schema.
                 cur.execute(f"SELECT * FROM BTS_AIRLINE_DB.RAW.{target_table} LIMIT 0")
                 snowflake_cols = [desc[0] for desc in cur.description]
                 sf_col_mapping = {col.upper(): col for col in snowflake_cols}
 
-                # Download and extract the ZIP file from Backblaze B2.
                 obj = b2_client.get_object(Bucket=BUCKET_NAME, Key=key)
                 zip_bytes = obj["Body"].read()
 
@@ -233,7 +346,6 @@ def bts_ingestion_pipeline():
                             low_memory=False,
                         )
 
-                        # Normalize column names and keep only matching Snowflake columns.
                         df.columns = [c.upper().strip() for c in df.columns]
                         df = df.loc[:, ~df.columns.str.contains("UNNAMED|:")]
 
@@ -245,7 +357,6 @@ def bts_ingestion_pipeline():
                         df = df.rename(columns=sf_col_mapping)
                         df = df.fillna("")
 
-                        # Append records into the target RAW table.
                         success, nchunks, nrows, _ = write_pandas(
                             conn=ctx,
                             df=df,
@@ -264,18 +375,58 @@ def bts_ingestion_pipeline():
         cur.close()
         ctx.close()
 
-    # Trigger the dbt transformation pipeline after ingestion completes.
     trigger_dbt_build = TriggerDagRunOperator(
         task_id="trigger_dbt_build",
         trigger_dag_id="bts_dbt_build_pipeline",
         wait_for_completion=False,
     )
 
+    # Runs regardless of upstream success or failure, and reports the
+    # overall run status by email. Task instance states are fetched via the
+    # Airflow REST API, since direct ORM/database access is blocked for
+    # worker tasks in Airflow 3.
+    @task(trigger_rule=TriggerRule.ALL_DONE)
+    def send_status_email(**context):
+        log.info("========== STATUS EMAIL TASK EXECUTED ==========")
+
+        dag_run = context["dag_run"]
+        dag_id = dag_run.dag_id
+        run_id = dag_run.run_id
+        logical_date = dag_run.logical_date
+        start_date = dag_run.start_date
+
+        task_instances = _get_task_instances(dag_id, run_id)
+
+        upstream_states = [
+            ti.get("state")
+            for ti in task_instances
+            if ti.get("task_id") != "send_status_email"
+        ]
+
+        has_failure = any(
+            state in ("failed", "upstream_failed") for state in upstream_states
+        )
+
+        if has_failure:
+            subject = f"[FAILURE] {dag_id} - {logical_date}"
+            body = _build_email_body(
+                dag_id, run_id, logical_date, start_date,
+                task_instances, "DAG Run Failed", "#C62828",
+            )
+        else:
+            subject = f"[SUCCESS] {dag_id} - {logical_date}"
+            body = _build_email_body(
+                dag_id, run_id, logical_date, start_date,
+                task_instances, "DAG Run Succeeded", "#2E7D32",
+            )
+
+        send_email(to=ALERT_EMAIL_TO, subject=subject, html_content=body)
+
     missing = get_missing_months()
     uploaded = download_upload_to_b2(missing)
     loaded = load_to_snowflake(uploaded)
 
-    loaded >> trigger_dbt_build
+    loaded >> trigger_dbt_build >> send_status_email()
 
 
 bts_ingestion_pipeline()

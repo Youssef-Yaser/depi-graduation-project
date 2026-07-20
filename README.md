@@ -1,17 +1,14 @@
-# ✈️ BTS Airline Analytics Data Warehouse
+<h1 align="center">✈️ BTS Airline Analytics DWH</h1>
 
-![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat-square&logo=python)
-![Snowflake](https://img.shields.io/badge/Warehouse-Snowflake-29B5E8?style=flat-square&logo=snowflake)
-![dbt](https://img.shields.io/badge/Transformation-dbt-FF694B?style=flat-square&logo=dbt)
-![Apache Airflow](https://img.shields.io/badge/Orchestration-Airflow-017CEE?style=flat-square&logo=apacheairflow)
-![Power BI](https://img.shields.io/badge/Visualization-Power%20BI-F2C811?style=flat-square&logo=powerbi)
-![Backblaze B2](https://img.shields.io/badge/Storage-Backblaze%20B2-E21E80?style=flat-square)
-![Docker](https://img.shields.io/badge/Container-Docker-2496ED?style=flat-square&logo=docker)
+![ELT](https://img.shields.io/badge/Pipeline-ELT-4CAF50?style=flat-square&logo=apachekafka&logoColor=white)
+![Snowflake](https://img.shields.io/badge/Warehouse-Snowflake-29B5E8?style=flat-square&logo=snowflake&logoColor=white)
+![Backblaze B2](https://img.shields.io/badge/Storage-Backblaze%20B2-E21E80?style=flat-square&logo=backblaze&logoColor=white)
+![dbt](https://img.shields.io/badge/Transformation-dbt-FF694B?style=flat-square&logo=dbt&logoColor=white)
+![Data Modeling](https://img.shields.io/badge/Data%20Modeling-Galaxy%20Schema-6A1B9A?style=flat-square&logo=databricks&logoColor=white)
+![Apache Airflow](https://img.shields.io/badge/Orchestration-Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white)
+![Docker](https://img.shields.io/badge/Container-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Power BI](https://img.shields.io/badge/Visualization-Power%20BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
 
-
-An end-to-end modern **Data Engineering** project that automates the ingestion, transformation, orchestration, and visualization of U.S. domestic airline operations using a cloud-native ELT architecture.
-
----
 
 # 📑 Table of Contents
 
@@ -31,7 +28,7 @@ An end-to-end modern **Data Engineering** project that automates the ingestion, 
 - [📚 Project Documentation](#-project-documentation)
 - [👨‍💻 Author](#-author)
 
----
+  
 
 # 📖 Project Overview
 
@@ -43,9 +40,9 @@ Rather than focusing solely on reporting, this project demonstrates how modern D
 
 The resulting warehouse enables airlines and aviation analysts to evaluate operational performance, monitor delays and cancellations, compare airport efficiency, analyze airline reliability, and identify long-term trends affecting domestic air transportation across the United States.
 
----
 
-## 🚀 Project Highlights
+
+# 🚀 Project Highlights
 
 - ✈️ Processes more than **17 Million flight records**
 - ☁️ Cloud-native ELT architecture
@@ -83,7 +80,6 @@ The dataset contains detailed operational records for domestic commercial flight
 
 Together, these datasets form the foundation of a unified aviation analytics platform capable of supporting operational reporting, performance benchmarking, and strategic decision-making.
 
----
 
 ## 📦 Dataset Summary
 
@@ -99,7 +95,7 @@ Together, these datasets form the foundation of a unified aviation analytics pla
 | **Metadata Sources** | 2 JSON Files |
 | **Storage Format** | CSV (ZIP) & JSON |
 
----
+
 
 ## 📁 Data Sources
 
@@ -133,33 +129,37 @@ Each layer is responsible for a specific stage of the data lifecycle, ensuring s
 
 ![End-to-End Architecture](/BTS_Transformation/BTS_Transformation/assets/Work_Flow.png)
 
----
 
 ## 🔄 Pipeline Overview
 
-```text
-BTS TranStats
-        │
-        ▼
-Python Extraction Layer
-        │
-        ▼
-Backblaze B2 Landing Zone
-        │
-        ▼
-Snowflake RAW Layer
-        │
-        ▼
-dbt Transformation Layer
-        │
-        ▼
-FLIGHT_CORE Galaxy Schema
-        │
-        ▼
-Power BI Dashboards
+
+```mermaid
+flowchart TD
+    A["🛫 BTS TranStats"]:::source
+    B["🐍 Python Extraction Layer"]:::python
+    C["☁️ Backblaze B2 Landing Zone"]:::storage
+    D["❄️ Snowflake RAW Layer"]:::snowflake
+    E["🔄 dbt Transformation Layer"]:::dbt
+    F["⭐ FLIGHT_CORE Galaxy Schema"]:::warehouse
+    G["📊 Power BI Dashboards"]:::bi
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+
+    classDef source fill:#1976D2,color:#fff,stroke:#0D47A1,stroke-width:2px;
+    classDef python fill:#3776AB,color:#fff,stroke:#1E4E79,stroke-width:2px;
+    classDef storage fill:#E31C79,color:#fff,stroke:#A01255,stroke-width:2px;
+    classDef snowflake fill:#29B5E8,color:#fff,stroke:#0078A8,stroke-width:2px;
+    classDef dbt fill:#FF694B,color:#fff,stroke:#D14C2F,stroke-width:2px;
+    classDef warehouse fill:#6A1B9A,color:#fff,stroke:#4A148C,stroke-width:2px;
+    classDef bi fill:#F2C811,color:#000,stroke:#C49E00,stroke-width:2px;
 ```
 
----
+
 
 ## 🔁 Data Flow
 
@@ -172,7 +172,7 @@ The pipeline follows the ELT (Extract, Load, Transform) paradigm.
 5. 🌬 Apache Airflow orchestrates and automates the entire workflow.
 6. 📊 Power BI connects directly to the curated warehouse for interactive reporting.
 
----
+
 
 # ⚙️ Technology Stack
 
@@ -191,9 +191,8 @@ The project combines modern cloud technologies to build a scalable, automated, a
 | 📊 Visualization | Power BI | Business Intelligence |
 | 📚 Version Control | Git & GitHub | Source code management |
 
----
 
-# 📂 Repository Structure
+# 📂 Project Structure
 
 ```text
 BTS-Airline-Analytics
@@ -204,7 +203,9 @@ BTS-Airline-Analytics
 │
 ├── PowerBI/                 # Dashboards & reports
 │
-├── Docs                     # Images & documentation
+├── Snowflake/                # Snowflake 
+│
+├── Backblaze/                # Backblaze
 │
 ├── README.md                # Project documentation
 │
@@ -223,7 +224,7 @@ This architectural decision improves reliability, simplifies recovery, and prese
 
 > 📖 For a detailed explanation of the Landing Zone architecture, storage strategy, and ingestion workflow, see the [Backblaze B2 Documentation](./Backblaze/README.md).
 
----
+
 
 ## Responsibilities
 
@@ -234,13 +235,13 @@ This architectural decision improves reliability, simplifies recovery, and prese
 - Decouple extraction from transformation
 - Reduce warehouse storage costs
 
----
+
 
 ## Landing Zone Architecture
 
 ![Backblaze B2 Architecture](/Backblaze/assets/b2_landing_zone_architecture.svg)
 
----
+
 
 # ❄️ Snowflake Data Warehouse
 
@@ -252,7 +253,6 @@ The transformation process follows the ELT paradigm, where raw data is first loa
 
 > 📖 Detailed Snowflake implementation can be found in the [Snowflake Documentation](./Snowflake/README.md).
 
----
 
 ## Warehouse Layers
 
@@ -268,7 +268,7 @@ Main RAW tables include:
 - `RAW_AIRPORT_INFO`
 - `RAW_AIRLINE_INFO`
 
----
+
 
 ### 🥈 Staging Layer
 
@@ -284,7 +284,7 @@ Main staging model:
 
 - `stg_flights`
 
----
+
 
 ### 🥇 Analytics Layer
 
@@ -292,7 +292,7 @@ The analytics layer contains the final dimensional warehouse used by Power BI an
 
 It is implemented as a **Galaxy Schema** optimized for large-scale analytical queries.
 
----
+
 
 # ⭐ Galaxy Schema
 
@@ -302,7 +302,6 @@ Unlike a traditional Star Schema, the Galaxy Schema allows several fact tables t
 
 ![Galaxy Schema](/BTS_Transformation/BTS_Transformation/assets/Schema.svg)
 
----
 
 ## Fact Tables
 
@@ -312,7 +311,7 @@ Unlike a traditional Star Schema, the Galaxy Schema allows several fact tables t
 | ⏱️ `fact_flight_delay` | Delay analysis |
 | ⚙️ `fact_flight_operation` | Operational metrics and cancellations |
 
----
+
 
 ## Dimension Tables
 
@@ -322,7 +321,7 @@ Unlike a traditional Star Schema, the Galaxy Schema allows several fact tables t
 | 🛫 `dim_airline` | Airline metadata and ratings |
 | 🏢 `dim_airport` | Airport information and classifications |
 
----
+
 
 ## Why Galaxy Schema?
 
@@ -335,7 +334,7 @@ The Galaxy Schema was selected because it enables:
 - Improved query performance
 - Easy future expansion
 
----
+
 
 # 🔄 dbt Transformation Layer
 
@@ -344,8 +343,7 @@ dbt is responsible for transforming raw operational data into trusted analytical
 The transformation layer converts raw flight records into a clean dimensional warehouse through modular SQL models, incremental loading, automated testing, and comprehensive documentation.
 
 > 📖 Complete transformation documentation is available in the [dbt Documentation](./BTS_Transformation/README.md).
-
----
+ 
 
 ## dbt Responsibilities
 
@@ -357,7 +355,7 @@ The transformation layer converts raw flight records into a clean dimensional wa
 - Validate data quality
 - Generate documentation
 
----
+
 
 ## dbt Project Architecture
 
@@ -365,7 +363,7 @@ The transformation layer converts raw flight records into a clean dimensional wa
 
 The lineage graph illustrates the dependencies between staging models, dimensions, and fact tables, making the transformation workflow transparent and easy to maintain.
 
----
+
 
 ## Data Quality
 
@@ -383,27 +381,13 @@ The transformation layer includes automated validation to ensure the warehouse r
 
 These tests execute automatically during the `dbt build` process, preventing invalid data from propagating into the reporting layer.
 
----
+
 
 ## Transformation Workflow
 
-```text
-RAW Tables
-      │
-      ▼
-Staging Models
-      │
-      ▼
-Dimension Models
-      │
-      ▼
-Fact Models
-      │
-      ▼
-Business Warehouse
-```
+![ELT Pipeline](/BTS_Transformation/BTS_Transformation//assets/ELT_Pipeline.svg)
 
----
+
 
 ## Key Features
 
@@ -425,13 +409,11 @@ The orchestration layer separates data ingestion from data transformation, allow
 
 > 📖 For complete implementation details, DAG definitions, and orchestration architecture, see the [Airflow Documentation](./airflow-docker/README.md).
 
----
 
 ## Workflow Overview
 
 ![Airflow Pipeline](/airflow-docker/assets/pipeline_architecture.svg)
 
----
 
 ## DAG Architecture
 
@@ -444,36 +426,36 @@ The orchestration layer consists of two independent DAGs.
 
 Separating ingestion from transformation improves monitoring, retry handling, and operational flexibility.
 
----
 
 ## Pipeline Workflow
+```mermaid
+flowchart TD
+    A["🕒 Monthly Scheduler"]:::scheduler
+    B["🚀 bts_ingestion_pipeline"]:::airflow
+    C["📥 Download BTS Data"]:::python
+    D["☁️ Upload to Backblaze B2"]:::storage
+    E["❄️ Load Snowflake RAW"]:::snowflake
+    F["🔔 Trigger dbt DAG"]:::airflow
+    G["🔄 dbt Build"]:::dbt
+    H["📊 Refresh Power BI"]:::bi
 
-```text
-Monthly Scheduler
-        │
-        ▼
-bts_ingestion_pipeline
-        │
-        ▼
-Download BTS Data
-        │
-        ▼
-Upload to Backblaze B2
-        │
-        ▼
-Load Snowflake RAW
-        │
-        ▼
-Trigger dbt DAG
-        │
-        ▼
-dbt Build
-        │
-        ▼
-Refresh Power BI
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+
+    classDef scheduler fill:#424242,color:#fff,stroke:#212121,stroke-width:2px;
+    classDef airflow fill:#017CEE,color:#fff,stroke:#01579B,stroke-width:2px;
+    classDef python fill:#3776AB,color:#fff,stroke:#1E4E79,stroke-width:2px;
+    classDef storage fill:#E31C79,color:#fff,stroke:#A01255,stroke-width:2px;
+    classDef snowflake fill:#29B5E8,color:#fff,stroke:#0078A8,stroke-width:2px;
+    classDef dbt fill:#FF694B,color:#fff,stroke:#D14C2F,stroke-width:2px;
+    classDef bi fill:#F2C811,color:#000,stroke:#C49E00,stroke-width:2px;
 ```
 
----
 
 ## Reliability Features
 
@@ -487,7 +469,6 @@ The orchestration layer includes several mechanisms to improve reliability and r
 - Automated recovery after missed schedules
 - Fault-tolerant network operations
 
----
 
 ## Successful Pipeline Execution
 
@@ -495,7 +476,7 @@ The following screenshot shows a successful production pipeline execution.
 
 ![Airflow Success](/airflow-docker/assets/airflow_ingestion_success.png)
 
----
+
 
 # 📊 Power BI Reporting Layer
 
@@ -553,7 +534,7 @@ Provides an executive overview of airline operations, flight volumes, cancellati
 - March experiences the highest traffic volume.
 - Holiday periods increase operational disruptions.
 
----
+
 
 # Dashboard 2 — Delay Analysis
 
@@ -600,7 +581,6 @@ The reporting layer supports interactive business exploration through:
 - Monthly trend analysis
 - Operational performance tracking
 
----
 
 # 💡 Key Business Insights
 
@@ -610,38 +590,35 @@ The integrated analytics platform reveals several important operational insights
 
 Weather-related disruptions account for the majority of flight cancellations, highlighting the need for better forecasting and operational contingency planning.
 
----
 
 ### 🛫 Large Hub Airports Experience the Greatest Operational Pressure
 
 Major airports contribute the highest share of delay minutes, indicating congestion and capacity constraints at high-traffic hubs.
 
----
+
 
 ### 📈 Flight Demand Follows Clear Seasonal Patterns
 
 Traffic volume varies significantly throughout the year, emphasizing the importance of seasonal staffing and capacity planning.
 
----
 
 ### 🏢 Airline Performance Varies Significantly
 
 Operational efficiency differs considerably across airlines, creating opportunities for benchmarking and best-practice analysis.
 
----
 
 ### 📍 Geographic Performance Is Uneven
 
 While high-volume states maintain relatively stable performance, several lower-volume regions experience substantially higher average delays.
 
----
+
 
 
 # 🎯 Strategic Recommendations
 
 Based on the analytical findings produced by the data warehouse and Power BI dashboards, several strategic recommendations can be made to improve airline operational efficiency and enhance passenger experience.
 
----
+
 
 ## 🌦️ 1. Strengthen Weather Response Strategies
 
@@ -660,7 +637,7 @@ Weather accounts for the largest percentage of flight cancellations across the a
 - Improved schedule reliability
 - Better passenger satisfaction
 
----
+
 
 ## 🛫 2. Optimize Operations at Major Airports
 
@@ -679,7 +656,6 @@ Large airports generate the highest proportion of delay minutes due to congestio
 - Improved airport throughput
 - Better resource utilization
 
----
 
 ## 🔧 3. Reduce Carrier-Controlled Delays
 
@@ -698,7 +674,6 @@ Carrier-related delays remain one of the largest controllable operational factor
 - Improved operational reliability
 - Lower maintenance disruptions
 
----
 
 ## 📅 4. Improve Seasonal Capacity Planning
 
@@ -717,8 +692,6 @@ Flight demand follows clear seasonal trends throughout the year.
 - Reduced congestion
 - Improved customer experience
 
----
-
 ## 🎄 5. Prepare More Effectively for Holiday Operations
 
 Holiday periods consistently experience increased operational disruptions.
@@ -736,7 +709,6 @@ Holiday periods consistently experience increased operational disruptions.
 - Faster operational recovery
 - Improved passenger confidence
 
----
 
 ## 📍 6. Investigate High-Delay States
 
@@ -782,9 +754,9 @@ Track executive KPIs such as:
 
 
 
-## Project Components
+# 📚 Project Documentation
 
-The project is organized into multiple independent modules.
+This repository is divided into several independently documented components.
 
 | Component | Documentation |
 |-----------|---------------|
@@ -796,21 +768,8 @@ The project is organized into multiple independent modules.
 
 Each module includes detailed documentation covering architecture, implementation, design decisions, and operational workflow.
 
----
 
-# 📚 Project Documentation
 
-This repository is divided into several independently documented components.
-
-| Layer | Description |
-|--------|-------------|
-| ☁️ Landing Zone | Raw cloud object storage architecture |
-| ❄️ Snowflake | Cloud data warehouse implementation |
-| 🔄 dbt | Data transformation, testing, and documentation |
-| 🌬️ Airflow | Workflow orchestration and automation |
-| 📊 Power BI | Executive dashboards and reporting layer |
-
----
 
 # 🏆 Project Achievements
 
@@ -824,19 +783,19 @@ This repository is divided into several independently documented components.
 - ✅ Interactive Business Dashboards
 - ✅ Fully Documented Architecture
 
----
+
 
 # 👨‍💻 Author
 
-**Youssef Yaser**
+### **Youssef Yaser**
 
 Aspiring Data Engineer passionate about building scalable data platforms, cloud-native data warehouses, and modern analytics solutions.
 
-## Connect with Me
+# Connect with Me
 
-- 💼 LinkedIn: https://www.linkedin.com/in/youssef-yasser-data/
-- 💻 GitHub: https://github.com/Youssef-Yaser
-- 📧 Email: youssefyaser561974@gmail.com
+### - 💼 LinkedIn: https://www.linkedin.com/in/youssef-yasser-data/
+### - 💻 GitHub: https://github.com/Youssef-Yaser
+### - 📧 Email: youssefyaser561974@gmail.com
 
 
 
@@ -846,7 +805,6 @@ If you found this project helpful or interesting, consider giving it a ⭐ on Gi
 
 Your support helps others discover the project and motivates future improvements.
 
----
 
 # 📄 License
 
