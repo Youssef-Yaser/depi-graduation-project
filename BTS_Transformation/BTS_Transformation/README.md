@@ -256,17 +256,22 @@ Flight operational metrics naturally separate into different analytical domains 
 
 `dim_airport` is joined twice from `fact_flight`—once as the origin airport and once as the destination airport. A single dimension table is reused instead of maintaining duplicate airport dimensions.
 
-## 🔄 Transformtion Pipeline
+# DBT Transformtion Pipeline
 
-![ELT Pipeline](/BTS_Transformation/BTS_Transformation/assets/ELT_Pipeline.svg)
+![ELT Pipeline](/BTS_Transformation/BTS_Transformation/assets/ELT_Pipeline.png)
 
-## 🗺️ Data Model
+#  Data Modeling
 
-![Data Model](/BTS_Transformation/BTS_Transformation/assets/Schema.svg)
+![Data Model](/BTS_Transformation/BTS_Transformation/assets/schema.jpeg)
 
 `dim_airport` is a **role-playing dimension** referenced twice from `fact_flight` using `Origin_Airport_Code` and `Dest_Airport_Code`.
 
 `fact_flight_operation` and `fact_flight_delay` maintain a strict **1:1 relationship** with `fact_flight` through `Flight_Key`.
+
+# 🔗 Data Lineage
+
+
+![Lineage Graph](/BTS_Transformation/BTS_Transformation/assets/Lineage_Graph.png)
 
 ## 💾 Materialization
 
@@ -275,9 +280,9 @@ All models are materialized into `BTS_AIRLINE_DB.FLIGHT_CORE`.
 The schema contains:
 
 - 🌱 Seeds
-- 🔄 Staging Models
+- 🔄 Staging Models  (As Viwes)
 - 📚 Dimension Tables
-- 📊 Fact Tables
+- 📊 Fact Tables (As Incremental Tables )
 
 ### 🔄 Incremental Fact Tables
 
@@ -378,19 +383,4 @@ Reusable analytical SQL queries under `analyses/` for ad-hoc business exploratio
 | `flight_delay_summary`                 | Which airlines have the worst arrival delays, and what's driving them?      |
 | `holiday_vs_regular_day_performance`   | Do cancellation and delay rates differ between holidays and regular days?   |
 
-### ⚙️ Why Keep Analyses Separate from Models?
 
-Analyses are exploratory and business-facing rather than part of the transformation DAG, so they live under `analyses/` and are compiled via `dbt compile` without being materialized as warehouse objects.
-
-
-## 🛠️ Tech Stack
-
-| Component         | Technology                     |
-| ------------------ | -------------------------------- |
-| ❄️ Data Warehouse | Snowflake                        |
-| 🔄 Transformation | dbt Core                         |
-| 📦 Package        | dbt_utils                        |
-| ☁️ Cloud Storage  | Backblaze B2                     |
-| 🏗️ Data Modeling | Galaxy Schema                    |
-| 📚 Documentation  | dbt Docs                         |
-| ✅ Testing         | Generic, Singular & Unit Tests   |

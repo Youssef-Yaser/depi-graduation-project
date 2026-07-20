@@ -15,15 +15,14 @@
 - [📖 Project Overview](#-project-overview)
 - [🎯 Business Problem](#-business-problem)
 - [📊 Dataset Overview](#-dataset-overview)
-- [🏗️ End-to-End Architecture](#️-end-to-end-architecture)
-- [⚙️ Technology Stack](#️-technology-stack)
-- [📂 Repository Structure](#-repository-structure)
+- [🏗️ Architecture](#️-architecture)
+- [📂 Project Structure](#-project-structure)
 - [☁️ Backblaze B2 Landing Zone](#️-backblaze-b2-landing-zone)
 - [❄️ Snowflake Data Warehouse](#️-snowflake-data-warehouse)
 - [🔄 dbt Transformation Layer](#-dbt-transformation-layer)
 - [🌬️ Apache Airflow Orchestration](#️-apache-airflow-orchestration)
-- [📊 Power BI Dashboards](#-power-bi-dashboards)
-- [💡 Business Insights](#-business-insights)
+- [📊 Power BI Reporting Layer](#-power-bi-reporting-layer)
+- [💡 Key Business Insights](#-key-business-insights)
 - [🎯 Strategic Recommendations](#-strategic-recommendations)
 - [📚 Project Documentation](#-project-documentation)
 - [👨‍💻 Author](#-author)
@@ -39,22 +38,6 @@ The project ingests monthly flight performance data published by the **Bureau of
 Rather than focusing solely on reporting, this project demonstrates how modern Data Engineering technologies can be integrated into a scalable ELT architecture that supports automated data ingestion, incremental processing, data quality validation, dimensional modeling, and business intelligence.
 
 The resulting warehouse enables airlines and aviation analysts to evaluate operational performance, monitor delays and cancellations, compare airport efficiency, analyze airline reliability, and identify long-term trends affecting domestic air transportation across the United States.
-
-
-
-# 🚀 Project Highlights
-
-- ✈️ Processes more than **17 Million flight records**
-- ☁️ Cloud-native ELT architecture
-- 🪣 Backblaze B2 as Landing Zone
-- ❄️ Snowflake Cloud Data Warehouse
-- 🔄 dbt for transformations and testing
-- 🌬️ Apache Airflow orchestration
-- 📊 Interactive Power BI dashboards
-- ⭐ Galaxy Schema dimensional model
-- ✅ Incremental data loading
-- 🧪 Automated data quality testing
-- 🔁 Monthly automated pipeline execution
 
 
 # 🎯 Business Problem
@@ -87,8 +70,8 @@ Together, these datasets form the foundation of a unified aviation analytics pla
 |-----------|-------|
 | **Primary Source** | Bureau of Transportation Statistics (BTS) |
 | **Coverage** | U.S. Domestic Flights |
-| **Time Period** | January 2024 – May 2026 |
-| **Monthly Flight Files** | 29 ZIP Files |
+| **Time Period** |  2024 –>  2026 |
+| **BTS Flight Files** | +30 ZIP Files |
 | **Flight Records** | 17+ Million |
 | **Raw Data Size** | ~7 GB |
 | **Flight Columns** | 75 Columns |
@@ -106,28 +89,12 @@ Together, these datasets form the foundation of a unified aviation analytics pla
 | ⭐ **Skytrax** | Airline metadata including airline names, classifications, and customer ratings used to enrich the dimensional model. |
 
 
-## 💼 Business Value of the Dataset
-
-The dataset enables organizations to answer a wide range of operational and strategic business questions, including:
-
-- Which airlines operate the largest number of flights?
-- Which airports experience the highest delays?
-- What are the primary causes of flight cancellations?
-- How does operational performance vary across states?
-- Which months have the highest traffic volume?
-- Do highly rated airlines provide better on-time performance?
-- How do holidays impact airline operations?
-
-
-
-
-# 🏗️ End-to-End Architecture
+# 🏗️ Architecture 
 
 The project follows a modern cloud-native ELT architecture where data flows through multiple specialized layers before reaching business users.
-
 Each layer is responsible for a specific stage of the data lifecycle, ensuring scalability, reliability, and maintainability.
 
-![End-to-End Architecture](/BTS_Transformation/BTS_Transformation/assets/Work_Flow.png)
+![Architecture](/BTS_Transformation/BTS_Transformation/assets/Work_Flow.png)
 
 
 ## 🔄 Pipeline Overview
@@ -136,7 +103,7 @@ Each layer is responsible for a specific stage of the data lifecycle, ensuring s
 ```mermaid
 flowchart TD
     A["🛫 BTS TranStats"]:::source
-    B["🐍 Python Extraction Layer"]:::python
+    B["📥 ingestion Layer"]:::python
     C["☁️ Backblaze B2 Landing Zone"]:::storage
     D["❄️ Snowflake RAW Layer"]:::snowflake
     E["🔄 dbt Transformation Layer"]:::dbt
@@ -197,17 +164,17 @@ The project combines modern cloud technologies to build a scalable, automated, a
 ```text
 BTS-Airline-Analytics
 │
-├── airflow-docker/          # Apache Airflow orchestration
+├── airflow-docker/           # Apache Airflow orchestration
 │
-├── BTS_Transformation/      # dbt project
+├── BTS_Transformation/       # dbt project
 │
-├── PowerBI/                 # Dashboards & reports
+├── PowerBI/                  # Dashboards & reports
 │
 ├── Snowflake/                # Snowflake 
 │
 ├── Backblaze/                # Backblaze
 │
-├── README.md                # Project documentation
+├── README.md                 # Project documentation
 │
 └── LICENSE
 ```
@@ -251,16 +218,30 @@ The warehouse follows a layered architecture consisting of a RAW ingestion layer
 
 The transformation process follows the ELT paradigm, where raw data is first loaded into Snowflake and then transformed using dbt.
 
+# Snowflake Schema Strcture
+
+![Snowflake Setup](/Snowflake/assets/snowflake_setup.png)
+
+
+
 > 📖 Detailed Snowflake implementation can be found in the [Snowflake Documentation](./Snowflake/README.md).
 
 
-## Warehouse Layers
+# Warehouse Layers
+
+The warehouse follows a multi-layered ELT architecture implemented with **dbt**, where each layer has a well-defined responsibility. This design improves modularity, maintainability, and data quality while enabling scalable analytical workloads.
+
+## ELT Pipeline
+
+![ELT Pipeline](/BTS_Transformation/BTS_Transformation/assets/ELT_Pipeline.png)
+
+---
 
 ### 🥉 RAW Layer
 
-The RAW layer stores data exactly as it is received from Backblaze B2 with minimal processing.
+The RAW layer serves as the immutable landing zone, storing source data exactly as it is ingested from Backblaze B2 into Snowflake without business transformations.
 
-Main RAW tables include:
+**RAW tables:**
 
 - `RAW_FLIGHTS_2024`
 - `RAW_FLIGHTS_2025`
@@ -268,39 +249,53 @@ Main RAW tables include:
 - `RAW_AIRPORT_INFO`
 - `RAW_AIRLINE_INFO`
 
-
+---
 
 ### 🥈 Staging Layer
 
-The staging layer standardizes raw data by:
+The Staging layer cleans and standardizes raw datasets into reusable models that serve as the foundation for downstream transformations.
 
-- Casting data types
-- Cleaning invalid values
-- Renaming columns
-- Applying business rules
-- Creating reusable intermediate models
+**Responsibilities**
 
-Main staging model:
+- Standardize data types
+- Handle invalid and missing values
+- Rename and organize columns
+- Apply business rules
+- Create reusable staging models
+
+**Staging models:**
 
 - `stg_flights`
+- `stg_airport_info`
+- `stg_airline_info`
 
-
+---
 
 ### 🥇 Analytics Layer
 
-The analytics layer contains the final dimensional warehouse used by Power BI and downstream analytics.
+The Analytics layer contains the final dimensional warehouse, implemented as a **Galaxy Schema** following Kimball modeling principles. It is optimized for analytical queries and business intelligence workloads.
 
-It is implemented as a **Galaxy Schema** optimized for large-scale analytical queries.
+**Dimension Models**
+
+- `dim_date`
+- `dim_airport`
+- `dim_airline`
+
+**Fact Models**
+
+- `fact_flight`
+- `fact_flight_delay`
+- `fact_flight_operation`
 
 
 
-# ⭐ Galaxy Schema
+# ⭐ Data Model (Galaxy Schema)
 
 The warehouse is modeled as a **Fact Constellation (Galaxy Schema)** to support multiple analytical subject areas while sharing common business dimensions.
 
 Unlike a traditional Star Schema, the Galaxy Schema allows several fact tables to reuse the same conformed dimensions, reducing redundancy and improving analytical flexibility.
 
-![Galaxy Schema](/BTS_Transformation/BTS_Transformation/assets/Schema.svg)
+![Galaxy Schema](/BTS_Transformation/BTS_Transformation/assets/schema.jpeg)
 
 
 ## Fact Tables
@@ -357,7 +352,7 @@ The transformation layer converts raw flight records into a clean dimensional wa
 
 
 
-## dbt Project Architecture
+# dbt Lineage Graph
 
 ![dbt Lineage Graph](/BTS_Transformation/BTS_Transformation/assets/Lineage_Graph.png)
 
@@ -379,25 +374,7 @@ The transformation layer includes automated validation to ensure the warehouse r
 - Unit Tests
 - Custom Business Rule Tests
 
-These tests execute automatically during the `dbt build` process, preventing invalid data from propagating into the reporting layer.
 
-
-
-## Transformation Workflow
-
-![ELT Pipeline](/BTS_Transformation/BTS_Transformation//assets/ELT_Pipeline.svg)
-
-
-
-## Key Features
-
-- Incremental processing
-- Modular SQL models
-- Automated testing
-- Documentation generation
-- Lineage visualization
-- Reusable transformations
-- Production-ready modeling
 
 # 🌬️ Apache Airflow Orchestration
 
@@ -412,40 +389,47 @@ The orchestration layer separates data ingestion from data transformation, allow
 
 ## Workflow Overview
 
-![Airflow Pipeline](/airflow-docker/assets/pipeline_architecture.svg)
+The orchestration layer is implemented using two decoupled Apache Airflow DAGs. The ingestion pipeline discovers and loads new BTS datasets into Snowflake RAW tables, then automatically triggers the dbt transformation pipeline. Both DAGs send email notifications summarizing their execution status, enabling continuous monitoring and rapid issue detection.
+
+![Airflow Workflow](/airflow-docker/assets/workflow_diagram.png)
 
 
 ## DAG Architecture
 
-The orchestration layer consists of two independent DAGs.
-
 | DAG | Responsibility |
 |------|----------------|
-| 📥 **bts_ingestion_pipeline** | Discovers missing months, downloads BTS data, uploads to Backblaze B2, and loads Snowflake RAW tables |
-| 🔄 **bts_dbt_build_pipeline** | Executes `dbt build` to refresh the dimensional warehouse after successful ingestion |
+| 📥 **bts_ingestion_pipeline** | Discovers missing monthly datasets, downloads BTS data, uploads files to Backblaze B2, loads Snowflake RAW tables, triggers the dbt pipeline, and sends an execution status email |
+| 🔄 **bts_dbt_build_pipeline** | Executes `dbt build` to refresh the  Data Warehouse and sends a summary email containing the build results |
 
 Separating ingestion from transformation improves monitoring, retry handling, and operational flexibility.
 
 
 ## Pipeline Workflow
+
 ```mermaid
 flowchart TD
     A["🕒 Monthly Scheduler"]:::scheduler
-    B["🚀 bts_ingestion_pipeline"]:::airflow
-    C["📥 Download BTS Data"]:::python
-    D["☁️ Upload to Backblaze B2"]:::storage
-    E["❄️ Load Snowflake RAW"]:::snowflake
-    F["🔔 Trigger dbt DAG"]:::airflow
-    G["🔄 dbt Build"]:::dbt
-    H["📊 Refresh Power BI"]:::bi
+    B["📥 bts_ingestion_pipeline"]:::airflow
+    C["Download Missing BTS Files"]:::python
+    D["Upload to Backblaze B2"]:::storage
+    E["Load Snowflake RAW"]:::snowflake
+    F["Trigger dbt Pipeline"]:::airflow
+    G["📧 Ingestion Status Email"]:::email
+    H["🔄 bts_dbt_build_pipeline"]:::airflow
+    I["Run dbt Build"]:::dbt
+    J["📧 dbt Build Report"]:::email
+    K["📊 Power BI "]:::bi
 
     A --> B
     B --> C
     C --> D
     D --> E
     E --> F
-    F --> G
-    G --> H
+    F --> H
+    H --> I
+    I --> J
+    I --> K
+    B --> G
 
     classDef scheduler fill:#424242,color:#fff,stroke:#212121,stroke-width:2px;
     classDef airflow fill:#017CEE,color:#fff,stroke:#01579B,stroke-width:2px;
@@ -454,29 +438,28 @@ flowchart TD
     classDef snowflake fill:#29B5E8,color:#fff,stroke:#0078A8,stroke-width:2px;
     classDef dbt fill:#FF694B,color:#fff,stroke:#D14C2F,stroke-width:2px;
     classDef bi fill:#F2C811,color:#000,stroke:#C49E00,stroke-width:2px;
+    classDef email fill:#43A047,color:#fff,stroke:#2E7D32,stroke-width:2px;
 ```
-
 
 ## Reliability Features
 
 The orchestration layer includes several mechanisms to improve reliability and resilience.
 
-- Automatic retry policies
-- Exponential backoff
+- Automatic retries with exponential backoff
 - High-water-mark incremental ingestion
 - Schema validation before loading
-- Decoupled DAG execution
-- Automated recovery after missed schedules
+- Decoupled ingestion and transformation DAGs
+- Automatic downstream DAG triggering
+- Automated email notifications for both pipelines
+- Recovery after missed schedules
 - Fault-tolerant network operations
 
 
-## Successful Pipeline Execution
+## Successful DAG Execution
 
-The following screenshot shows a successful production pipeline execution.
+The figure below shows both Airflow DAGs completing successfully. The ingestion pipeline loads the latest BTS data, triggers the dbt transformation pipeline, and both workflows send automated email notifications upon completion.
 
-![Airflow Success](/airflow-docker/assets/airflow_ingestion_success.png)
-
-
+![Successful Airflow Execution](/airflow-docker/assets/airflow_success.jpeg)
 
 # 📊 Power BI Reporting Layer
 
@@ -752,37 +735,19 @@ Track executive KPIs such as:
 - Improved executive visibility
 
 
-
-
 # 📚 Project Documentation
 
 This repository is divided into several independently documented components.
 
 | Component | Documentation |
 |-----------|---------------|
-| ☁️ Backblaze B2 Landing Zone | [`Backblaze/README.md`](./Backblaze/datalake.md) |
+| ☁️ Backblaze B2 Landing Zone | [`Backblaze/README.md`](./Backblaze/README.md) |
 | ❄️ Snowflake Data Warehouse | [`Snowflake/README.md`](./Snowflake/README.md) |
-| 🔄 dbt Transformation | [`BTS_Transformation/README.md`](./BTS_Transformation/BTS_Transformation/transformation.md) |
-| 🌬️ Apache Airflow | [`airflow-docker/README.md`](./airflow-docker/orchestration.md) |
-| 📊 Power BI Reporting | [`PowerBI/README.md`](./PowerBI/dash_details.md) |
+| 🔄 dbt Transformation | [`BTS_Transformation/README.md`](./BTS_Transformation/BTS_Transformation/README.md) |
+| 🌬️ Apache Airflow | [`airflow-docker/README.md`](./airflow-docker/README.md) |
+| 📊 Power BI Reporting | [`PowerBI/README.md`](./PowerBI/README.md) |
 
 Each module includes detailed documentation covering architecture, implementation, design decisions, and operational workflow.
-
-
-
-
-# 🏆 Project Achievements
-
-- ✅ End-to-End ELT Pipeline
-- ✅ Cloud-Native Architecture
-- ✅ Automated Monthly Data Ingestion
-- ✅ Incremental Data Processing
-- ✅ Galaxy Schema Data Warehouse
-- ✅ Automated Data Quality Testing
-- ✅ Workflow Orchestration with Airflow
-- ✅ Interactive Business Dashboards
-- ✅ Fully Documented Architecture
-
 
 
 # 👨‍💻 Author
@@ -796,19 +761,4 @@ Aspiring Data Engineer passionate about building scalable data platforms, cloud-
 ### - 💼 LinkedIn: https://www.linkedin.com/in/youssef-yasser-data/
 ### - 💻 GitHub: https://github.com/Youssef-Yaser
 ### - 📧 Email: youssefyaser561974@gmail.com
-
-
-
-# ⭐ Support the Project
-
-If you found this project helpful or interesting, consider giving it a ⭐ on GitHub.
-
-Your support helps others discover the project and motivates future improvements.
-
-
-# 📄 License
-
-This project is licensed under the **MIT License**.
-
-See the [LICENSE](LICENSE) file for more information.
 

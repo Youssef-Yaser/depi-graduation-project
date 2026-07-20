@@ -2,27 +2,24 @@
 
 Infrastructure layer for the **BTS Airline Analytics Data Warehouse**.
 
-
-This directory provisions the complete Snowflake environment and loads raw datasets into the **RAW** layer before **dbt** transformations begin.
-
-![Snowflake Setup Flow](assets/snowflake_setup_flow.svg)
+![Snowflake Setup](/Snowflake/assets/snowflake_setup.png)
 
 > **Important**
 >
 > The Snowflake environment **must be fully provisioned before running `dbt build`**. dbt assumes that all infrastructure and raw data already exist.
 
----
+
 
 # ✨ Responsibilities
 
-- Provision Snowflake infrastructure
+
 - Configure Backblaze B2 storage integration
 - Create ingestion components
 - Load raw flight datasets
 - Load airport and airline metadata
 - Prepare the warehouse for dbt transformations
 
----
+
 
 # 🏗️ Infrastructure Components
 
@@ -162,31 +159,6 @@ flowchart TD
     E --> F["⚡ write_pandas()"]
     F --> G["❄️ Snowflake RAW Tables"]
 ```
-
-
-
----
-
-
-# 🔐 Security Notes
-
-- Never commit Backblaze credentials.
-- Keep `AWS_KEY_ID` and `AWS_SECRET_KEY` outside version control.
-- Replace credential placeholders before execution.
-- Prefer Snowflake Secrets or environment variables in production.
-
----
-
-# 📌 Design Principles
-
-- Snowflake provisions infrastructure and ingests raw data.
-- Raw datasets remain immutable.
-- Semi-structured metadata is preserved using `VARIANT`.
-- dbt performs all transformations.
-- Business logic is isolated from ingestion.
-- The environment is fully reproducible by executing the scripts in order.
-
----
 
 # 📂 Directory Overview
 

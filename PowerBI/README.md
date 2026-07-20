@@ -6,7 +6,7 @@ The reporting layer represents the final analytical component of the BTS Airline
 
 After the raw BTS flight records are ingested into Snowflake and transformed through dbt into the **FLIGHT_CORE** dimensional model, Power BI provides an interactive business intelligence layer that enables decision-makers to monitor airline operations, investigate delays, identify cancellation patterns, and evaluate operational performance across airlines, airports, and states.
 
-The dashboards transform more than **16 million domestic flight records** into meaningful KPIs and interactive visual analytics that support strategic and operational decision-making.
+The dashboards transform more than **17 million domestic flight records** into meaningful KPIs and interactive visual analytics that support strategic and operational decision-making.
 
 
 
@@ -40,7 +40,7 @@ flowchart TD
     F --> G
 ```
 
----
+
 
 # 🗂️ Semantic Model
 
@@ -48,7 +48,7 @@ The reporting layer is built directly on top of the **FLIGHT_CORE Galaxy Schema*
 
 The model consists of three fact tables connected through three conformed dimensions, allowing Power BI to efficiently aggregate millions of flight records while maintaining high query performance.
 
-![Galaxy Schema](/PowerBI/assets/galaxy_schema.png)
+![Galaxy Schema](/PowerBI/assets/Modling_page.png)
 
 ### Fact Tables
 
@@ -62,7 +62,7 @@ The model consists of three fact tables connected through three conformed dimens
 - 🛫 `dim_airline`
 - 🏢 `dim_airport`
 
----
+
 
 # 📈 Executive KPIs
 
@@ -70,7 +70,7 @@ The dashboards continuously monitor the overall health of airline operations thr
 
 | KPI | Value |
 |------|------:|
-| ✈️ Total Flights | 16M+ |
+| ✈️ Total Flights | 17M+ |
 | ✅ On-Time Arrival Rate | 78.9% |
 | 🛫 On-Time Departure Rate | 78.6% |
 | ⏱ Average Departure Delay | 13.1 Minutes |
@@ -78,13 +78,13 @@ The dashboards continuously monitor the overall health of airline operations thr
 | 📍 Average Flight Distance | 840 Miles |
 | ❌ Cancellation Rate | 1.56% |
 
----
+
 
 # 🖥️ Dashboard Pages
 
 The reporting solution is divided into two complementary dashboards.
 
----
+
 
 # ✈️ Dashboard 1 — Flight Performance & Cancellations
 
@@ -287,11 +287,3 @@ Track KPIs such as:
 
 to enable proactive operational decision-making instead of reactive responses.
 
-
-
-# 🚀 Conclusion
-
-This reporting layer transforms millions of raw BTS flight records into actionable business intelligence by combining a dimensional warehouse, optimized semantic model, and interactive Power BI dashboards.
-
-Together with Snowflake, dbt, Airflow, and Backblaze B2, it completes an end-to-end modern data engineering pipeline capable of supporting operational monitoring and data-driven decision-making for airline executives.
-[View Power BI Report](https://your-powerbi-link-here.com)

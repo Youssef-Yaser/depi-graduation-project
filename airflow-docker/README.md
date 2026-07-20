@@ -58,7 +58,7 @@ flowchart TD
 
 ## 🚀 Execution Flow
 
-![Workflow](/assets/workflow_diagram.png)
+![Workflow](/airflow-docker/assets/workflow_diagram.png)
 
 ### Pipeline Stages
 
@@ -227,7 +227,7 @@ Benefits include:
 
 ## 📥 Ingestion DAG Graph
 
-![Ingestion DAG](/assets/bts_ingestion_pipeline-graph.png)
+![Ingestion DAG](/airflow-docker/assets/bts_ingestion_pipeline-graph.png)
 
 > **bts_ingestion_pipeline** orchestrates the monthly ingestion workflow by detecting missing reporting months, downloading source data, loading Snowflake RAW tables, and triggering the downstream transformation pipeline.
 
@@ -235,7 +235,7 @@ Benefits include:
 
 ## 🔄 dbt Build DAG Graph
 
-![dbt DAG](/assets/bts_dbt_build_pipeline-graph.png)
+![dbt DAG](/airflow-docker/assets/bts_dbt_build_pipeline-graph.png)
 
 > **bts_dbt_build_pipeline** executes the complete `dbt build` workflow after successful ingestion, ensuring that the analytics warehouse remains synchronized with the latest RAW data.
 
