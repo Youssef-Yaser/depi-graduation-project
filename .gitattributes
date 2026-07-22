@@ -1,0 +1,40 @@
+###############################################################################
+# GitHub Linguist Configuration
+# Project: BTS Flight Analytics DWH
+###############################################################################
+
+
+
+# Treat all SQL files as SQL (avoid PLpgSQL classification)
+*.sql linguist-language=SQL
+
+
+
+# dbt
+**/target/** linguist-generated=true
+**/logs/** linguist-generated=true
+
+# Python
+**/__pycache__/** linguist-generated=true
+*.pyc linguist-generated=true
+
+
+
+venv/** linguist-vendored
+.venv/** linguist-vendored
+
+
+
+.vscode/** linguist-vendored
+.idea/** linguist-vendored
+
+
+
+.github/** linguist-documentation=true
+
+
+docs/** linguist-documentation=true
+assets/** linguist-documentation=true
+
+
+*.ipynb linguist-documentation=true
