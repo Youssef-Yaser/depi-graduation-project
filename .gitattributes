@@ -1,40 +1,37 @@
 ###############################################################################
-# GitHub Linguist Configuration
-# Project: BTS Flight Analytics DWH
+# GitHub Linguist
 ###############################################################################
 
-
-
-# Treat all SQL files as SQL (avoid PLpgSQL classification)
+# Count SQL in language statistics
 *.sql linguist-language=SQL
+*.sql linguist-detectable=true
+*.sql text
 
+###############################################################################
+# Ignore generated files
+###############################################################################
 
-
-# dbt
 **/target/** linguist-generated=true
 **/logs/** linguist-generated=true
 
-# Python
-**/__pycache__/** linguist-generated=true
-*.pyc linguist-generated=true
-
-
+###############################################################################
+# Ignore virtual environments
+###############################################################################
 
 venv/** linguist-vendored
 .venv/** linguist-vendored
+depi_venv/** linguist-vendored
 
+###############################################################################
+# Ignore Python cache
+###############################################################################
 
+**/__pycache__/** linguist-generated=true
+*.pyc linguist-generated=true
+
+###############################################################################
+# Ignore IDE
+###############################################################################
 
 .vscode/** linguist-vendored
 .idea/** linguist-vendored
-
-
-
-.github/** linguist-documentation=true
-
-
-docs/** linguist-documentation=true
-assets/** linguist-documentation=true
-
-
-*.ipynb linguist-documentation=true
